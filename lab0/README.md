@@ -88,9 +88,8 @@ run into problems. Here are the steps we followed:
     - **MongoDB**:
 
         MongoDB is a "document database" that stores and queries collections
-        of JSON-like documents.  Spend a bit of time familiarizing yourself
-        with its features by browsing [the MongoDB
-        website](http://www.mongodb.org).
+        of JSON-like documents.  More details at the [the MongoDB
+        website](http://www.mongodb.org). We will cover MongoDB later in the semester.
 
         To ensure that you have it installed correctly, `mongo` and verify that you see the following:
 
