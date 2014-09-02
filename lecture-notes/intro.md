@@ -7,7 +7,7 @@
 ## Motivation
 
 - Explosion of data, in pretty much every domain
--- Sensing devices and sensor networks that can monitor everything 24/7 from temperature to pollution to vital signs
+    - Sensing devices and sensor networks that can monitor everything 24/7 from temperature to pollution to vital signs
     - Increasingly sophisticated smart phones
     - Internet, social networks makes it easy to publish data
     - Scientific experiments and simulations produce astronomical volumes of data
@@ -23,6 +23,9 @@
 - Increasing data Volumes 
     - [Scientific data](http://www.wired.com/2014/08/sciences-big-data-problem/): 1.5GB per genome -- can be sequenced in .5 hrs; LHC generates 100TB of data a day
     - 500M tweets per day (as of 2013)
+    - As of 2012: 2.5 Exabytes of data created every day
+    - EBay: Two data warehouses with 7.5PB and 40PB
+    - FICO monitors 2.5 billion active accounts worldwide
 - Variety:
     - Structured data, spreadsheets, photos, videos, natural text, ...
 - Velocity
@@ -37,8 +40,9 @@
 
 - Terms increasingly used synonymously: also data analytics, data mining, business intelligence
     - Loosely used to refer to any process where interesting things are inferred from data
+    - [How Big Data Will Change ...](https://www.google.com/search?q=%22how+big+data+will+change%22)
 - Data scientist called the sexiest job of the 21st century
-    - Everyone is a data scientist now
+    - The term has becoming very muddled at this point
 - Overhyped words
 
 ![Gartner Hype Cycle 2014](multimedia/Gartner_Hype_2014.jpg)
@@ -51,7 +55,7 @@
 
 - No
 - Extracting insights and knowledge from data very important, and will continue to increase in importance
-    - Big data techniques are revolutionizing things in many domains
+    - Big data techniques are revolutionizing things in many domains like Education, Food Supply, Disease Epidemics, ...
 - But: it is not much different from what we, especially statisticians, have been doing for many years
 - What is different?
     - Much more data is digitally available than was before
@@ -119,9 +123,11 @@
 
 ## Where Data Scientist Spends Most Time
 
-- ['Janitor Work' in Data Science](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html); [Research Direction in Data Wrangling](http://vis.stanford.edu/papers/data-wrangling)
+- ['Janitor Work' in Data Science](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html); [Research Directions in Data Wrangling](http://vis.stanford.edu/papers/data-wrangling)
+    - Estimates that 80-90% of the work is in data cleaning and wrangling
 
 <IMG SRC=multimedia/wrangling.png height=530>
+
 
 ---
 
@@ -135,9 +141,14 @@
 
 - From: [how to hire a data scientist](http://mathbabe.org/2011/09/25/why-and-how-to-hire-a-data-scientist-for-your-business/)
 - Data grappling skills: how to move data around and manipulate it with some programming langauge
+    - Scripting languages like Python, Ruby; Data storage tools like relational databases, key-value Stores; Programming frameworks like SQL, Hadoop, etc.
 - Data viz experience: how to draw informative pictures of data
+    - Many tools (e.g., D3.js, plotting libraries)
+    - Harder question is knowing what to draw
 - Knowledge of stats, errorbars, confidence intervals
+    - Python libraries; Matlab; R
 - Experience with forecasting and prediction, both general and specific
+    - Basic Machine Learning techniques 
 - Great communication skills: to communicate the findings
 
 ---
