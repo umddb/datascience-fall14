@@ -91,7 +91,7 @@ run into problems. Here are the steps we followed:
         of JSON-like documents.  More details at the [the MongoDB
         website](http://www.mongodb.org). We will cover MongoDB later in the semester.
 
-        To ensure that you have it installed correctly, `mongo` and verify that you see the following:
+        To ensure that you have it installed correctly, type `mongo` and verify that you see the following:
 
         ```
         MongoDB shell version: 2.4.9
