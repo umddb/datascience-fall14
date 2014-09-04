@@ -35,16 +35,6 @@
     
 --- 
 
-## <del>Lying with</del> Misuse of Statistics
-
-<img src="multimedia/jure1.png" height=500>
-
-<br>
-
-<img src="multimedia/jure2.png" height=500>
-
----
-
 ## Basic Probability
 
 - Probability is concerned with the outcome of a *trial* (also called *experiment* or *observation*)
@@ -60,8 +50,12 @@
 - Bayes Theorem
     - P(A | B) = P(B | A) * P(A) / P(B)
     - Simple equation, but fundamental to Bayesian inference
-- Conditional Independence
+- Conditional Independence: A and B are conditionally independent given C if:
+    - Pr(A AND B | C) = Pr(A | C) * Pr(B | C)
+    - Powerful in reducing the computational efforts in storing and manipulating large joint probability distributions
 - Entropy
+    - A measure of the uncertainty in a probability distribution
+    - [Wikipedia Article](http://en.wikipedia.org/wiki/Entropy_%28information_theory%29)
 
 --- 
 
@@ -85,26 +79,6 @@
 
 --- 
 
-
-## Misuse of Statistics
-
-<img src="multimedia/mislea20.gif" height=500>
-
---- 
-
-
-## Misuse of Statistics
-
-<img src="multimedia/statSAT3.gif" height=500>
-
-<br>
-<br>
-
-<img src="multimedia/statSAT4.gif" height=200>
-
---- 
-
-
 ## Some Potential Sources of Biases
 
 - Sample Bias
@@ -118,24 +92,11 @@
     - How was the sample selected? Was it truly random? Potential biases?
     - How were questions worded? How is missing data/attrition handled? 
     - Was the sample size large enough? 
+- Also watch out for:
+    - Confirmation bias
+    - Anchor bias
 
 ---
-
-## Misuse of Statistics
-
-<img src="multimedia/Bush_cuts2.png" height=300>
-
---- 
-
-## Misuse of Statistics
-
-- [OKCupid's prescription for intro emails](http://blog.okcupid.com/index.php/online-dating-advice-exactly-what-to-say-in-a-first-message/)
-    - Avoid physical compliments
-
-![OKCupid](multimedia/cupid.png)
-
----
-
 
 ## Some Potential Sources of Biases
 
@@ -178,45 +139,6 @@
     - 95% for 2 standard deviations; 68% for 1
 - **Central Limit Theorem**: As sample size approaches infinity, distribution of sample means will follow a normal distribution irrespective of the original distribution
 
---- 
-
-## Misuse of Statistics
-
-- From: Teaching Statistics: Bag of Tricks; by Gelman and Nolan
-- **The most dangerous profession**: In a study in 1685 of the ages and professions of deceased men, it was found that the profession with the lowest average age of death was *student*. Why does being a student appear to be so dangerous?
-- **Age and palm lines**: A study of 100 recently deceased people found a strong positive correlation between the age of death and the length of the longest line on the palm. Does this provide support for the claim that a long line on the palm predicts a long life?
-- **Barroom brawls**: A study of fights in bars in which someone was killed found that, in 90% of the cases, the person who started the fight was the one who died.
-
---- 
-
-## Misuse of Statistics
-
-<img src=multimedia/cyclists-washington-post.png height=200>
-
-- [Source](http://andrewgelman.com/2014/06/17/lie-statistics-example-23110/)
-- A Washington Post article says: In the first study of its kind, researchers from Washington State University and elsewhere found  a 14 percent greater risk of head injuries to cyclists associated with cities that have bike share programs. In fact, when they compared raw head injury data for cyclists in five cities before and after they added bike share programs, the researchers found a 7.8 percent increase in the number of head injuries to cyclists.
-
-<br>
-
-- Actually: head injuries declined from 319 to 273, and overall injuries declined from 757 to 545
-    - So the **proportion** of head injuries went up !!
-
----
-
-## Misuse of Statistics
-
-![Drivers](multimedia/drivers.gif)
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-![Drivers](multimedia/stataccidents2.gif)
-
-
-
 ---
 
 ## Confidence Intervals
@@ -232,11 +154,11 @@
     - Higher number of samples --> smaller interval
         - Inverse square root relationship
 
-
 --- 
 
 ## Hypothesis Testing
 
+- [Nice examples of Hypothesis Testing](http://www.unc.edu/~blopes/files/stat11spring03/Files/HypothesisTesting.pdf)
 - H_0 is called the *null hypothesis*, and H_1 is the *alternative hypothesis*
     - Mutually exclusive and exhaustive
     - H_0 can never be proven to be true
@@ -281,3 +203,66 @@
     - A p-value of 0.01 does not mean 99% probability of the hypothesis being true -- in fact the probability of false alarm may be 11% or higher
     - p-hacking: cherry picking data points etc., to get the p-values
 - Much discussion/debate about this issue in recent years
+
+--- 
+
+## Misuse of Statistics
+
+- This famous, but old book on statistics goes into detail about [How to lie with statistics](http://www.horace.org/blog/wp-content/uploads/2012/05/How-to-Lie-With-Statistics-1954-Huff.pdf)
+
+- Lists of many misleading graphs: [1](http://www.statisticshowto.com/misleading-graphs/), [2](http://passyworldofmathematics.com/misleading-graphs/)
+
+<img src="multimedia/mislea20.gif" height=500>
+
+---
+
+<img src="multimedia/statSAT3.gif" height=500>
+
+<br>
+<br>
+
+<img src="multimedia/statSAT4.gif" height=200>
+
+---
+
+<img src="multimedia/Bush_cuts2.png" height=300>
+
+--- 
+
+- [OKCupid's prescription for intro emails](http://blog.okcupid.com/index.php/online-dating-advice-exactly-what-to-say-in-a-first-message/)
+    - Avoid physical compliments
+
+![OKCupid](multimedia/cupid.png)
+
+--- 
+
+![Drivers](multimedia/drivers.gif)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+![Drivers](multimedia/stataccidents2.gif)
+
+---
+
+<img src=multimedia/cyclists-washington-post.png height=200>
+
+- [Source](http://andrewgelman.com/2014/06/17/lie-statistics-example-23110/)
+- A Washington Post article says: In the first study of its kind, researchers from Washington State University and elsewhere found  a 14 percent greater risk of head injuries to cyclists associated with cities that have bike share programs. In fact, when they compared raw head injury data for cyclists in five cities before and after they added bike share programs, the researchers found a 7.8 percent increase in the number of head injuries to cyclists.
+
+<br>
+
+- Actually: head injuries declined from 319 to 273, and overall injuries declined from 757 to 545
+    - So the **proportion** of head injuries went up !!
+
+---
+
+## Misuse of Statistics
+
+- From: Teaching Statistics: Bag of Tricks; by Gelman and Nolan
+- **The most dangerous profession**: In a study in 1685 of the ages and professions of deceased men, it was found that the profession with the lowest average age of death was *student*. Why does being a student appear to be so dangerous?
+- **Age and palm lines**: A study of 100 recently deceased people found a strong positive correlation between the age of death and the length of the longest line on the palm. Does this provide support for the claim that a long line on the palm predicts a long life?
+- **Barroom brawls**: A study of fights in bars in which someone was killed found that, in 90% of the cases, the person who started the fight was the one who died.
