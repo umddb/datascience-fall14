@@ -1,7 +1,5 @@
 ## CMSC 498: Basic Statistics
 
-<p><span class="math">\(H_2 = \frac{1}{2}\)</span></p>
-
 ---
 
 ## Statistical Inference
