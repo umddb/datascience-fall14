@@ -91,6 +91,19 @@
 
 --- 
 
+## Linear Regression
+
+- Transformations
+    - The *linearity* assumption is only about the parameters
+    - We can take arbitrary transformations of the independent variables themselves
+    - The following is a linear regression
+        - r is the response variable, x, y, z, are the independent variables
+        - r = c_1 x^2 + c_2 x + c_3 + c_4 y^3 + c_5 log(z) + c_6 x * y + c_7 x * y^2 * log(z)
+- Assumption of independence
+    - Things break down if the predictor variables are not independent, or if the errors are not independent
+
+---
+
 ## Classification
 
 - One of the most common ML tasks
@@ -113,6 +126,29 @@
 
 ---
 
-## Clustering
+## Classification: Decision Trees
 
---- 
+- Very intuitive and easy-to-use classification models
+    - Works for categorical and numerical features
+- Many techniques developed for learning them over large volumes of data
+
+<img src="multimedia/classification4.png" height=300>
+
+---
+
+## Classification: Logistic Regression
+
+- An example of a classification model, not a regression model
+- Logistic function: 
+    - F(t) = 1/ (1 + e<sup>-t</sup>)
+    - Always between 0 and 1
+    - Can be intepreted as a probability
+- Say: features are: x, y, and response variable is r which takes two values (true and false)
+- Consider the formula:
+    - F = 1 / (1 + e<sup>-(c_1 x + c_2 y + c_3)</sup>)
+    - Treat it as a probability that the response variable is true or false
+- Learning problem: from training data, estimate the coefficients c_i's
+
+---
+
+## Classification: Support Vector Machines
