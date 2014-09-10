@@ -152,3 +152,13 @@
 ---
 
 ## Classification: Support Vector Machines
+
+- One of the most popular classification techniques</li>
+- Very powerful, and flexible</li>
+- Also called max-margin classifier</li>
+
+<img src="multimedia/classification5.png" height=300>
+
+<br> <br> <br>
+
+<img src="multimedia/classification6.png" height=300>
