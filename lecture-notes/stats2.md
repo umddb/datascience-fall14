@@ -154,11 +154,103 @@
 ## Classification: Support Vector Machines
 
 - One of the most popular classification techniques</li>
-- Very powerful, and flexible</li>
-- Also called max-margin classifier</li>
+    - Very powerful, and flexible</li>
+    - Also called max-margin classifier</li>
+- Goal is to maximally separate the two classes with a hyperplane 
+    - In the example below, H1 does not separate the classes. H2 does, but only with a small margin. H3 separates them with the maximum margin.
 
 <img src="multimedia/classification5.png" height=300>
 
-<br> <br> <br>
+- Maximum-margin hyperplane and margins for an SVM trained with samples from two classes. Samples on the margin are called the support vectors.
 
 <img src="multimedia/classification6.png" height=300>
+
+---
+
+## Classification: Support Vector Machines
+
+- What if the two classes are not linearly separable ??
+- Soft-margin SVMs: 
+    - Allow for mislabeled samples, i.e., samples that lie on the wrong side of the hyperplane
+    - But penalize them
+    - **New optimization goal**: Find a hyperplane with high margin but with only a few mislabelled examples
+- Finding the optimal separating hyperplan (with a soft-margin one) is quite efficient
+    - Between O(n^2) and O(n^3), where n is the number of training samples
+    - Work well for high-dimensional data as well
+
+---
+
+## Classification: Support Vector Machines: Kernel Trick
+
+- Can be used to construct non-linear classifiers
+- Example:
+    - Let **x<sup>i</sup>** = (x<sup>i</sup><sub>1</sub>, x<sup>i</sup><sub>2</sub>) denote the original samples
+    - Consider a transformation: 
+        - (x<sup>i</sup><sub>1</sub>, x<sup>i</sup><sub>2</sub>) --> ( (x<sup>i</sup><sub>1</sub>)<sup>2</sup>,  sqrt(2)  x<sup>i</sup><sub>1</sub> x<sup>i</sup><sub>2</sub>, (x<sup>i</sup><sub>2</sub>)<sup>2</sup> )
+    - An ellipse in the original 2-dimensional space becomes a hyperplane in the 3-dimensional transformed space
+        - i.e., we can learn a linear classifier in the 3-dimensional space, and transform it back
+
+<img src="multimedia/classifier7.jpg" height=400>
+
+---
+
+## Classification: Support Vector Machines: Kernel Trick
+
+- Quite powerful
+    - The transformed space is often infinite dimensional
+- For solving the SVM optimization problem, we only need to be able to compute distance between two vectors
+    - **K(x, y)** = dot product of transformed versions of **x** and **y**
+    - Called Kernel Function
+- Examples of Kernel Functions:
+    - Polynomial Kernel
+    - Radial Basis Function Kernel: K(x, y) = exp(\gamma ||x - y||^2)
+- Choosing a Kernel:
+    - Largely based on domain knowledge
+    - Kernel function can be thought of as a similarity measure
+    - Cross-validation can be used to systematically choose a Kernel and its parameters
+
+
+--- 
+
+## Cluster Analysis
+
+- Goal is to group the samples into clusters so that the objects in a cluster are more similar to each other than to objects outside
+    - Somewhat vague definition -- different ways to formalize it
+- [*K-means* Clustering](http://en.wikipedia.org/wiki/K-means_clustering):
+    - A commonly used formalization
+    - Goal is find *k* groups so that within-cluster distances are minimized
+    - Problem is NP-Hard
+    - Heuristic algorithm (also typically called *K-means* algorithm):
+        - Pick *K* centroids randomly
+        - Assign each of the data points to the closest centroid
+        - Recompute centroid as the centroid of the data points assigned to it
+        - Repeat till convergence
+    - Usually converges quickly
+    - Drawbacks:
+        - Need to know *K*
+        - Can't capture many types of clusters
+        - Can converge to local minima (drawback of the greedy algorithm, not the formalization)
+
+<img src="multimedia/clustering1.png" height=200>
+
+--- 
+
+## Cluster Analysis
+
+- Hierarchical Clustering
+    - Build nested clusters by merging (bottom-up) or splitting (top-down)
+    - Agglomerative Clustering: a bottom-up strategy
+        - Start with each data point in its own cluster
+        - Merge the closest two clusters
+        - Repeat till you are left with one cluster
+- DBSCAN
+    - Clusters are high-density areas separated by low-density areas
+    - So clusters can be of any shape (unlike K-Means)
+
+---
+
+## Cluster Analysis
+
+- From Scikit User Guide:
+
+<img src="multimedia/clustering2.png" height=400>
