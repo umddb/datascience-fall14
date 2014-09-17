@@ -31,7 +31,7 @@ background: white;
 
 .b {
 position: absolute;
-height: 1200px;
+height: 2400px;
 width: 2400px;
 z-index: 2;
 background: white;
