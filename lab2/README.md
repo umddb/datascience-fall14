@@ -117,30 +117,30 @@ Here are some example queries on the olympics dataset and the SQL for them.
 
    - Find the country with the highest population density (population/area-sqkm).
    
-           select name 
-           from countries 
-           where population/area_sqkm = (select max(population/area_sqkm) from countries);
+         select name 
+         from countries 
+         where population/area_sqkm = (select max(population/area_sqkm) from countries);
    
        Note that using a nested "subquery" (which first finds the maximum value of the density) as above is the most compact way to write this query.
    
    - What was the duration of the 2004 Olympics (use startdate and enddate to find this) ? 
    
-           select olympic_id, enddate - startdate + 1
-           from olympics o 
-           where o.year = 2004;
+         select olympic_id, enddate - startdate + 1
+         from olympics o 
+         where o.year = 2004;
    
    There are many interesting and useful functions on the "date" datatype. See:  http://www.postgresql.org/docs/current/interactive/functions-datetime.html
    
    - Write a query to add a new column called `country_id` to the IndividualMedals table (created during the assignment). 
-   
-           alter table IndividualMedals add country_id char(3);
+
+     `alter table IndividualMedals add country_id char(3);`
        
    - Initially the `country\_id` column in the IndividualMedals table would be listed as empty.  Write a query to **update** the table to set it appropriately.
    
-           update IndividualMedals im
-           set country_id = (select country_id
-                   from players p
-                   where p.player_id = im.player_id);
+         update IndividualMedals im
+         set country_id = (select country_id
+         from players p
+         where p.player_id = im.player_id);
 
 
    - **(WITH)** In many cases you might find it easier to create temporary tables, especially
@@ -148,6 +148,19 @@ Here are some example queries on the olympics dataset and the SQL for them.
    the full query and makes it easier to debug. It is preferable to use the WITH construct
    for this purpose. The syntax appears to differ across systems, but here is the link
    to PostgreSQL: http://www.postgresql.org/docs/9.0/static/queries-with.html
+
+   Following query finds the player who had the most Gold medals over the two olympics.
+
+         with temp1 as (
+               select player_id, count(medal_obtained) as num_golds
+               from results
+               where medal_obtained like '%GOLD%'
+               group by player_id)
+         select players.name 
+         from players, temp1 
+         where temp1.player_id = players.player_id and temp1.num_golds = (select max(num_golds) from temp1);
+
+
 
    - **(LIMIT)** PostgreSQL allows you to limit the number of results displayed which 
    is useful for debugging etc. Here is an example:
@@ -157,9 +170,6 @@ Here are some example queries on the olympics dataset and the SQL for them.
 
 ---
 
-### Assignment
+### Assignment Part 1
 
 
-3. For 2000 Olympics, find the 5 countries with the largest values of
-``number-of-team-medals/area_sqkm''. Don't use rank() or limit or any other shortcut.
-Hint: Use ``WITH''.
