@@ -262,24 +262,24 @@ messaging, whereas the other two support richer data structures and remote proce
 #### Installing Avro
 Lab2 contains the avro package: `avro-1.7.7.tar.gz`; otherwise you can download it from the link above.
 
-    - To install, in terminal: `tar xvf avro-1.7.7.tar.gz`, followed by `cd avro-1.7.7`, followed by `sudo python setup.py install`
-    - Confirm it is installed by running `python`, and `import avro` (should not raise ImportError)
+   - To install, in terminal: `tar xvf avro-1.7.7.tar.gz`, followed by `cd avro-1.7.7`, followed by `sudo python setup.py install`
+   - Confirm it is installed by running `python`, and `import avro` (should not raise ImportError)
 
 #### Defining a Schema
 Avro schemas are defined in JSON. The following is an example schema for one of the Olympics tables (also provided as `country.avsc`).
 
-            {
-                "namespace": "olympics.avro",
-                "type": "record",
-                "name": "Country",
-                "fields": [
-                    {"name": "country_id",  "type": "string"},
-                    {"name": "name", "type": "string"},
-                    {"name": "area_sqkm", "type": "int"},
-                    {"name": "population", "type": "int"},
-                    {"name": "description", "type": ["string", "null"]}
-                ]
-            }
+         {
+             "namespace": "olympics.avro",
+             "type": "record",
+             "name": "Country",
+             "fields": [
+                 {"name": "country_id",  "type": "string"},
+                 {"name": "name", "type": "string"},
+                 {"name": "area_sqkm", "type": "int"},
+                 {"name": "population", "type": "int"},
+                 {"name": "description", "type": ["string", "null"]}
+             ]
+         }
 
 The last field is an example of an optional field, since it can be a string as well as null. See [Avro Schema
 Declaration](http://avro.apache.org/docs/current/spec.html#schemas) for much more detail.
@@ -288,4 +288,4 @@ Declaration](http://avro.apache.org/docs/current/spec.html#schemas) for much mor
 
 We have provided you with a `countries.avro` file which contains information about countries in a serialized form, created using 
 `serialize_countries.pl`. Your task is to write a python script, called `count.py`, to read the data into a DataFrame, count the 
-number of countries with population over 10000000, and print the count. The script should be submitted.
+number of countries with population over 10000000 using pandas, and print the count. The script should be submitted.
