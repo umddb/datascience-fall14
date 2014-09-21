@@ -1,0 +1,157 @@
+event_id,name,eventtype,olympic_id,is_team_event,num_players_in_team,result_noted_in
+E1     ,10000m Men                              ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E2     ,10000m Men                              ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E3     ,10000m Women                            ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E4     ,10000m Women                            ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E5     ,100m Backstroke Men                     ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E6     ,100m Backstroke Men                     ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E7     ,100m Backstroke Women                   ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E8     ,100m Backstroke Women                   ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E9     ,100m Breaststroke Men                   ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E10    ,100m Breaststroke Men                   ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E11    ,100m Breaststroke Women                 ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E12    ,100m Breaststroke Women                 ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E13    ,100m Butterfly Men                      ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E14    ,100m Butterfly Men                      ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E15    ,100m Butterfly Women                    ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E16    ,100m Butterfly Women                    ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E17    ,100m Freestyle Men                      ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E18    ,100m Freestyle Men                      ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E19    ,100m Freestyle Women                    ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E20    ,100m Freestyle Women                    ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E21    ,100m Hurdles Women                      ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E22    ,100m Hurdles Women                      ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E23    ,100m Men                                ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E24    ,100m Men                                ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E25    ,100m Women                              ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E26    ,100m Women                              ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E27    ,110m Hurdles Men                        ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E28    ,110m Hurdles Men                        ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E29    ,1500m Freestyle Men                     ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E30    ,1500m Freestyle Men                     ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E31    ,1500m Men                               ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E32    ,1500m Men                               ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E33    ,1500m Women                             ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E34    ,1500m Women                             ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E35    ,200m Backstroke Men                     ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E36    ,200m Backstroke Men                     ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E37    ,200m Backstroke Women                   ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E38    ,200m Backstroke Women                   ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E39    ,200m Breaststroke Men                   ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E40    ,200m Breaststroke Men                   ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E41    ,200m Breaststroke Women                 ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E42    ,200m Breaststroke Women                 ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E43    ,200m Butterfly Men                      ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E44    ,200m Butterfly Men                      ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E45    ,200m Butterfly Women                    ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E46    ,200m Butterfly Women                    ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E47    ,200m Freestyle Men                      ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E48    ,200m Freestyle Men                      ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E49    ,200m Freestyle Women                    ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E50    ,200m Freestyle Women                    ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E51    ,200m Individual Medley Men              ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E52    ,200m Individual Medley Men              ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E53    ,200m Individual Medley Women            ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E54    ,200m Individual Medley Women            ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E55    ,200m Men                                ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E56    ,200m Men                                ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E57    ,200m Women                              ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E58    ,200m Women                              ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E59    ,20km Walk Men                           ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E60    ,20km Walk Men                           ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E61    ,20km Walk Women                         ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E62    ,20km Walk Women                         ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E63    ,3000m Steeplechase Men                  ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E64    ,3000m Steeplechase Men                  ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E65    ,400m Freestyle Men                      ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E66    ,400m Freestyle Men                      ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E67    ,400m Freestyle Women                    ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E68    ,400m Freestyle Women                    ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E69    ,400m Hurdles Men                        ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E70    ,400m Hurdles Men                        ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E71    ,400m Hurdles Women                      ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E72    ,400m Hurdles Women                      ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E73    ,400m Individual Medley Men              ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E74    ,400m Individual Medley Men              ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E75    ,400m Individual Medley Women            ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E76    ,400m Individual Medley Women            ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E77    ,400m Men                                ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E78    ,400m Men                                ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E79    ,400m Women                              ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E80    ,400m Women                              ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E81    ,4x100m Freestyle Relay Men              ,SWI                 ,ATH2004,1,4,seconds                                                                                             
+E82    ,4x100m Freestyle Relay Men              ,SWI                 ,SYD2000,1,4,seconds                                                                                             
+E83    ,4x100m Freestyle Relay Women            ,SWI                 ,ATH2004,1,4,seconds                                                                                             
+E84    ,4x100m Freestyle Relay Women            ,SWI                 ,SYD2000,1,4,seconds                                                                                             
+E85    ,4x100m Medley Relay Men                 ,SWI                 ,ATH2004,1,4,seconds                                                                                             
+E86    ,4x100m Medley Relay Men                 ,SWI                 ,SYD2000,1,4,seconds                                                                                             
+E87    ,4x100m Medley Relay Women               ,SWI                 ,ATH2004,1,4,seconds                                                                                             
+E88    ,4x100m Medley Relay Women               ,SWI                 ,SYD2000,1,4,seconds                                                                                             
+E89    ,4x100m Relay Men                        ,ATH                 ,ATH2004,1,4,seconds                                                                                             
+E90    ,4x100m Relay Men                        ,ATH                 ,SYD2000,1,4,seconds                                                                                             
+E91    ,4x100m Relay Women                      ,ATH                 ,ATH2004,1,4,seconds                                                                                             
+E92    ,4x100m Relay Women                      ,ATH                 ,SYD2000,1,4,seconds                                                                                             
+E93    ,4x200m Freestyle Relay Men              ,SWI                 ,ATH2004,1,4,seconds                                                                                             
+E94    ,4x200m Freestyle Relay Men              ,SWI                 ,SYD2000,1,4,seconds                                                                                             
+E95    ,4x200m Freestyle Relay Women            ,SWI                 ,ATH2004,1,4,seconds                                                                                             
+E96    ,4x200m Freestyle Relay Women            ,SWI                 ,SYD2000,1,4,seconds                                                                                             
+E97    ,4x400m Relay Men                        ,ATH                 ,ATH2004,1,4,seconds                                                                                             
+E98    ,4x400m Relay Men                        ,ATH                 ,SYD2000,1,4,seconds                                                                                             
+E99    ,4x400m Relay Women                      ,ATH                 ,ATH2004,1,4,seconds                                                                                             
+E100   ,4x400m Relay Women                      ,ATH                 ,SYD2000,1,4,seconds                                                                                             
+E101   ,5000m Men                               ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E102   ,5000m Men                               ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E103   ,5000m Women                             ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E104   ,5000m Women                             ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E105   ,50km Walk Men                           ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E106   ,50km Walk Men                           ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E107   ,50m Freestyle Men                       ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E108   ,50m Freestyle Men                       ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E109   ,50m Freestyle Women                     ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E110   ,50m Freestyle Women                     ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E111   ,800m Freestyle Women                    ,SWI                 ,ATH2004,0,-1,seconds                                                                                             
+E112   ,800m Freestyle Women                    ,SWI                 ,SYD2000,0,-1,seconds                                                                                             
+E113   ,800m Men                                ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E114   ,800m Men                                ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E115   ,800m Women                              ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E116   ,800m Women                              ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E117   ,Decathlon Men                           ,ATH                 ,ATH2004,0,-1,points                                                                                              
+E118   ,Decathlon Men                           ,ATH                 ,SYD2000,0,-1,points                                                                                              
+E119   ,Discus Throw Men                        ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E120   ,Discus Throw Men                        ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E121   ,Discus Throw Women                      ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E122   ,Discus Throw Women                      ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E123   ,Hammer Throw Men                        ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E124   ,Hammer Throw Men                        ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E125   ,Hammer Throw Women                      ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E126   ,Hammer Throw Women                      ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E127   ,Heptathlon Women                        ,ATH                 ,ATH2004,0,-1,points                                                                                              
+E128   ,Heptathlon Women                        ,ATH                 ,SYD2000,0,-1,points                                                                                              
+E129   ,High Jump Men                           ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E130   ,High Jump Men                           ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E131   ,High Jump Women                         ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E132   ,High Jump Women                         ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E133   ,Javelin Throw Men                       ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E134   ,Javelin Throw Men                       ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E135   ,Javelin Throw Women                     ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E136   ,Javelin Throw Women                     ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E137   ,Long Jump Men                           ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E138   ,Long Jump Men                           ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E139   ,Long Jump Women                         ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E140   ,Long Jump Women                         ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E141   ,Marathon Men                            ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E142   ,Marathon Men                            ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E143   ,Marathon Women                          ,ATH                 ,ATH2004,0,-1,seconds                                                                                             
+E144   ,Marathon Women                          ,ATH                 ,SYD2000,0,-1,seconds                                                                                             
+E145   ,Pole Vault Men                          ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E146   ,Pole Vault Men                          ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E147   ,Pole Vault Women                        ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E148   ,Pole Vault Women                        ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E149   ,Shot Put Men                            ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E150   ,Shot Put Men                            ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E151   ,Shot Put Women                          ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E152   ,Shot Put Women                          ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E153   ,Triple Jump Men                         ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E154   ,Triple Jump Men                         ,ATH                 ,SYD2000,0,-1,meters                                                                                              
+E155   ,Triple Jump Women                       ,ATH                 ,ATH2004,0,-1,meters                                                                                              
+E156   ,Triple Jump Women                       ,ATH                 ,SYD2000,0,-1,meters                                                                                              

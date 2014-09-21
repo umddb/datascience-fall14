@@ -1,0 +1,12 @@
+{
+    "namespace": "olympics.avro",
+    "type": "record",
+    "name": "Country",
+    "fields": [
+        {"name": "country_id",  "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "area_sqkm", "type": "int"},
+        {"name": "population", "type": "int"},
+        {"name": "description", "type": ["string", "null"]}
+    ]
+}

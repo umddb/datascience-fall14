@@ -292,3 +292,69 @@
         - So if a tuple (m1, 1990) has no match in starsIn, we get (m1, 1990, NULL) in the result
      - The count(starName) works correctly then.
      - Note: count(*) would not work correctly (NULLs can have unintuitive behavior)
+
+---
+
+## Other SQL Constructs
+
+- Views
+        create view DisneyMovies
+        select *
+        from movie m
+        where m.studioname = 'disney';
+    - Can use it in any place where a tablename is used
+    - Views are used quite extensively to: (1) simplify queries, (2) hide data (by giving users access only to specific views)
+    - Views maybe *materialized* or not
+
+- NULLs
+    - Value of any attribute can be NULL
+        - Because: value is unknown, or it is not applicable, or hidden, etc.
+    - Can lead to counterintuitive behavior
+    - For example, the following query does not return movies where lenght = NULL
+
+         `select * from movies where length >= 120 or length <= 120`
+    - Aggregate operations can be especially tricky
+
+- Transactions
+    - A transaction is a sequence of queries and update statements executed as a single unit
+    - For example, transferring money from one account to another
+        - Both the *deduction* from one account and *credit* to the other account should happen, or neither should
+
+- Triggers
+    - A trigger is a statement that is executed automatically by the system as a side effect of a modification to the database
+
+
+- Integrity Constraints
+    - Predicates on the database that must always hold
+    - Key Constraints: Specifiying something is a primary key or unique
+            CREATE TABLE customer (
+                    ssn CHAR(9) PRIMARY KEY, 
+                    cname CHAR(15), address CHAR(30), city CHAR(10), 
+                    UNIQUE (cname, address, city)); 
+    - Attribute constraints: Constraints on the values of attributes
+
+            `bname char(15) not null`
+
+            `balance int not null, check (balance >= 0)`
+    - Referential integrity: prevent dangling tuples
+            CREATE TABLE  branch(bname CHAR(15) PRIMARY KEY, ...);
+            CREATE TABLE loan(..., FOREIGN KEY bname REFERENCES branch);
+         - Can tell the system what to do if a referenced tuple is being deleted
+
+    - Global Constraints
+        - Single-table
+              CREATE TABLE branch (...,
+                       bcity  CHAR(15), 
+                       assets INT, 
+                       CHECK (NOT(bcity = ‘Bkln’) OR assets > 5M))
+        - Multi-table
+              CREATE ASSERTION loan-constraint
+              CHECK (NOT EXISTS (
+                       SELECT   * 
+                       FROM loan AS L
+                       WHERE  NOT EXISTS(
+                                SELECT   *
+                                FROM borrower B, depositor D, account A
+                                WHERE B.cname = D.cname  AND
+                                         D.acct_no = A.acct_no  AND
+                                         L.lno  = B.lno)))
