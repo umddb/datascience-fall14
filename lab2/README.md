@@ -221,8 +221,7 @@ Write SQL queries for the following.
               where extract(year from p.birthdate) = 1975
               group by c.name;
 
-**Submission instructions:** A template answers file is provided, where you should add both your SQL queries as well as the result outputs. The text file should be
-submitted.
+**Submission instructions:** A template answers file is provided (`sql_submission.txt`), where you should add both your SQL queries as well as the result outputs. The text file should be submitted.
 
 
 ---
@@ -240,15 +239,15 @@ The two primary data structures of pandas are: **Series (1-dimensional)** and **
 Another useful resource would be the [Comparison with SQL](http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html).
 
 We have created a small notebook using the Olympics data that goes over some basic functionality of pandas: 
+http://nbviewer.ipython.org/github/umddb/datascience-fall14/blob/master/lab2/Pandas_Getting_Started.ipynb
 
 #### Assignment Part 2
 Submit an IPython notebook that does the following.
-
-        - Load the provided three CSV files (players.csv, countries.csv, events.csv)
-        - Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
-        - Find players from 'USA' whose names start with 'A'. 
-        - Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
-        - Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
+     - Load the provided three CSV files (players.csv, countries.csv, events.csv)
+     - Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
+     - Find players from 'USA' whose names start with 'A'. 
+     - Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
+     - Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
 
 ---
 
