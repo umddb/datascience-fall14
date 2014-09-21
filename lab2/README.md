@@ -261,7 +261,6 @@ messaging, whereas the other two support richer data structures and remote proce
 
 #### Installing Avro
 Lab2 contains the avro package: `avro-1.7.7.tar.gz`; otherwise you can download it from the link above.
-
    - To install, in terminal: `tar xvf avro-1.7.7.tar.gz`, followed by `cd avro-1.7.7`, followed by `sudo python setup.py install`
    - Confirm it is installed by running `python`, and `import avro` (should not raise ImportError)
 
