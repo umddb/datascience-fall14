@@ -1,14 +1,14 @@
-# Basic SQL + Python Pandas
+## Basic SQL + Python Pandas
 
 The goal of this assignment to introduce you to SQL and the similar functionality provided by Python Pandas library.
 
 ---
 
-## SQL
+### SQL
 
 We will use the open source PostgreSQL database system for this assignment. 
 
-### Setting up PostgreSQL on the virtual machine
+#### Setting up PostgreSQL on the virtual machine
 
 PostgreSQL is already installed on your virtual machine. The current version of PostgreSQL is 9.3.5. You will find the detailed documentation at:
 http://www.postgresql.org/docs/9.3/static/index.html
@@ -68,7 +68,7 @@ Now you can start using the database.
 
    - To populate the database using the provided olympics dataset, use the following: `\i populate.sql`. For this to work, the `populate.sql` file must be in the same directory as the one where you started psql. This commands creates the tables, and inserts the tuples. We will discuss the schema of the dataset in the next section.
 
-### Olympics Dataset
+#### Olympics Dataset
 
 The dataset contains the details of the 2000 and 2004 Summer Olympics, for a subset of the games
 (**swimming** and **athletics**). More specifically,
@@ -92,7 +92,7 @@ You can load the database in psql using:
 
 You may have to give an explicit path for populate.sql (tab-autocomplete works well in psql).
 
-### Introduction to SQL
+#### Introduction to SQL
 
 Queries in psql must be terminated with a semicolon. After populating the database, you can test it by 
 running simple queries like: 
@@ -181,7 +181,7 @@ Here are some example queries on the olympics dataset and the SQL for them.
 
 ---
 
-### Assignment Part 1
+#### Assignment Part 1
 Write SQL queries for the following.
 
    1. Write a query to find the three medalists and their winning times for ``110m Hurdles Men'' at 2000 Olympics.
@@ -215,15 +215,19 @@ Write SQL queries for the following.
    1. Say we want to find the number of players in each country born in 1975. The following query works, but doesn't list
    countries with 0 players born in 1975 (we would like those countries in the output with 0 as the second column). 
    Confirm that replacing `inner join` with `left outer join` doesn't work. How would you fix the query (while still using `left outer join`)?
-            select c.name, count(p.name)
-            from countries c inner join players p on c.country_id = p.country_id
-            where extract(year from p.birthdate) = 1975
-            group by c.name;
+
+              select c.name, count(p.name)
+              from countries c inner join players p on c.country_id = p.country_id
+              where extract(year from p.birthdate) = 1975
+              group by c.name;
+
+**Submission instructions:** A template answers file is provided, where you should add both your SQL queries as well as the result outputs. The text file should be
+submitted.
 
 
 ---
 
-## Pandas
+### Pandas
 
 (Source: [Pandas Documentation](http://pandas.pydata.org/pandas-docs/stable/index.html))
 **pandas** is a Python package providing fast, flexible, and expressive data structures designed to make working with *relational* or *labeled* data both easy and intuitive.
@@ -237,17 +241,18 @@ Another useful resource would be the [Comparison with SQL](http://pandas.pydata.
 
 We have created a small notebook using the Olympics data that goes over some basic functionality of pandas: 
 
-### Assignment Part 2
+#### Assignment Part 2
 Submit an IPython notebook that does the following.
-    - Load the provided three CSV files (players.csv, countries.csv, events.csv)
-    - Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
-    - Find players from 'USA' whose names start with 'A'. 
-    - Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
-    - Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
+
+        - Load the provided three CSV files (players.csv, countries.csv, events.csv)
+        - Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
+        - Find players from 'USA' whose names start with 'A'. 
+        - Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
+        - Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
 
 ---
 
-## Avro
+### Avro
 
 [Apache Avro](http://avro.apache.org/docs/current/gettingstartedpython.html) is a data serialization system that uses JSON-based schemas, and is increasingly used to exchange data between systems and programs. Similar other technologies
 include **protocol buffers** (from Google) and Apache Thrift (originally from Facebook). All of these require explicitly defined schemas, and support many different
@@ -255,29 +260,32 @@ languages.
 Protocol buffers are the oldest among these three and are primarily used for
 messaging, whereas the other two support richer data structures and remote procedure calls as well.
 
-### Installing Avro
+#### Installing Avro
 Lab2 contains the avro package: `avro-1.7.7.tar.gz`; otherwise you can download it from the link above.
-    - In terminal: `tar xvf avro-1.7.7.tar.gz`, followed by `cd avro-1.7.7`, followed by `sudo python setup.py install`
+
+    - To install, in terminal: `tar xvf avro-1.7.7.tar.gz`, followed by `cd avro-1.7.7`, followed by `sudo python setup.py install`
     - Confirm it is installed by running `python`, and `import avro` (should not raise ImportError)
 
-### Defining a Schema
+#### Defining a Schema
 Avro schemas are defined in JSON. The following is an example schema for one of the Olympics tables (also provided as `country.avsc`).
-        {
-            "namespace": "olympics.avro",
-            "type": "record",
-            "name": "Country",
-            "fields": [
-                {"name": "country_id",  "type": "string"},
-                {"name": "name", "type": "string"},
-                {"name": "area_sqkm", "type": "int"},
-                {"name": "population", "type": "int"},
-                {"name": "description", "type": ["string", "null"]}
-            ]
-        }
+
+            {
+                "namespace": "olympics.avro",
+                "type": "record",
+                "name": "Country",
+                "fields": [
+                    {"name": "country_id",  "type": "string"},
+                    {"name": "name", "type": "string"},
+                    {"name": "area_sqkm", "type": "int"},
+                    {"name": "population", "type": "int"},
+                    {"name": "description", "type": ["string", "null"]}
+                ]
+            }
+
 The last field is an example of an optional field, since it can be a string as well as null. See [Avro Schema
 Declaration](http://avro.apache.org/docs/current/spec.html#schemas) for much more detail.
 
-### Assignment Part 3
+#### Assignment Part 3
 
 We have provided you with a `countries.avro` file which contains information about countries in a serialized form, created using 
 `serialize_countries.pl`. Your task is to write a python script, called `count.py`, to read the data into a DataFrame, count the 
