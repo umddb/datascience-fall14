@@ -243,11 +243,11 @@ http://nbviewer.ipython.org/github/umddb/datascience-fall14/blob/master/lab2/Pan
 
 #### Assignment Part 2
 Submit an IPython notebook that does the following.
-    * Load the provided three CSV files (players.csv, countries.csv, events.csv)
-    * Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
-    * Find players from 'USA' whose names start with 'A'. 
-    * Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
-    * Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
+   * Load the provided three CSV files (players.csv, countries.csv, events.csv)
+   * Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
+   * Find players from 'USA' whose names start with 'A'. 
+   * Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
+   * Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
 
 ---
 
