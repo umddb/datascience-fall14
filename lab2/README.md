@@ -247,7 +247,7 @@ Submit an IPython notebook that does the following.
    * Count the total number of players whose names start with a vowel ('A', 'E', 'I', 'O', 'U'). (Hint: See [Extracting Substrings](http://pandas.pydata.org/pandas-docs/stable/basics.html#extracting-substrings))
    * Find players from 'USA' whose names start with 'A'. 
    * Construct a dataframe with two columns: `country_name`, `num_players`. Use `groupby`.
-   * Give an example of a "left outer join" using pandas, using the three relations (the example doesn't have to make sense).
+   * Convert the above left outer join query (last question in the SQL assignment) into pandas equivalent. See http://pandas.pydata.org/pandas-docs/stable/merging.html for details on how to do outer joins in pandas.
 
 ---
 
