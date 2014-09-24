@@ -1,0 +1,454 @@
+name,player_id,country_id,birthdate
+Aaron Egbele                            ,EGBELAAR01,NGR,1978-04-21
+Aaron Peirsol                           ,PEIRSAAR01,USA,1978-08-26
+Abderrahmane Hammad                     ,HAMMAABD01,ALG,1980-10-04
+Adam Nelson                             ,NELSOADA01,USA,1984-10-13
+Agnes Kovacs                            ,KOVACAGN01,HUN,1982-06-17
+Ai Shibata                              ,SHIBAAI01 ,JPN,1975-11-22
+Aigars Fadejevs                         ,FADEJAIG01,LAT,1973-12-04
+Aissa Djabir Said-Guerni                ,SAIDGAIS01,ALG,1977-04-04
+Aleen Bailey                            ,BAILEALE01,JAM,1974-10-11
+Aleksander Tammert                      ,TAMMEALE01,EST,1975-01-10
+Aleksandr Popov                         ,POPOVALE01,RUS,1971-01-25
+Aleksey Voyevodin                       ,VOYEVALE01,RUS,1984-03-23
+Ali Ezzine                              ,EZZINALI01,MAR,1971-12-26
+Ali Saidi-Sief                          ,SAIDIALI01,ALG,1984-09-26
+Alice Mills                             ,MILLSALI01,AUS,1975-02-17
+Allyson Felix                           ,FELIXALL01,USA,1975-01-04
+Alvin Harrison                          ,HARRIALV01,USA,1976-05-15
+Amanda Beard                            ,BEARDAMA01,USA,1980-10-22
+Amanda Weir                             ,WEIRAMA01 ,USA,1979-01-09
+Amy van Dyken                           ,VANDYAMY01,USA,1983-07-26
+Ana Guevara                             ,GUEVAANA01,MEX,1985-10-08
+Anastasia Kelesidou                     ,KELESANA01,GRE,1973-06-02
+Andre Silva                             ,SILVAAND01,BRA,1984-07-09
+Andreas Thorkildsen                     ,THORKAND01,NOR,1978-08-15
+Andriy Serdinov                         ,SERDIAND01,UKR,1979-07-08
+Angelo Taylor                           ,TAYLOANG02,USA,1974-08-24
+Anier Garcia                            ,GARCIANI01,CUB,1979-09-11
+Anna Rogowska                           ,ROGOWANN01,POL,1983-12-08
+Anna-Karin Kammerling                   ,KAMMEANN01,SWE,1971-01-17
+Anne Poleska                            ,POLESANN01,GER,1978-11-06
+Anthony Ervin                           ,ERVINANT01,USA,1972-02-14
+Antje Buschschulte                      ,BUSCHANT01,GER,1971-02-19
+Antonio Pettigrew                       ,PETTIANT01,USA,1976-03-21
+Arsi Harju                              ,HARJUARS01,FIN,1973-10-17
+Ashley Callus                           ,CALLUASH01,AUS,1972-02-22
+Assefa Mezgebu                          ,MEZGEASS01,ETH,1979-12-21
+Astrid Kumbernuss                       ,KUMBEAST01,GER,1979-12-26
+Athanasia Tsoumeleka                    ,TSOUMATH01,GRE,1976-11-15
+Ato Boldon                              ,BOLDOATO01,TRI,1985-02-10
+Austra Skujyte                          ,SKUJYAUS01,LTU,1974-12-19
+BJ Bedford                              ,BEDFOBJ01 ,USA,1981-04-08
+Beatrice Caslaru                        ,CASLABEA01,ROM,1972-12-01
+Bernard Lagat                           ,LAGATBER01,KEN,1977-09-17
+Bernard Williams III                    ,WILLIBER02,USA,1978-05-02
+Beverly McDonald                        ,MCDONBEV01,JAM,1978-07-21
+Brahim Lahlafi                          ,LAHLABRA01,MAR,1980-04-11
+Brendan Hansen                          ,HANSEBRE01,USA,1977-07-18
+Brian Lewis                             ,LEWISBRI01,USA,1983-02-25
+Brimin Kiprop                           ,KIPROBRI01,KEN,1977-05-14
+Brooke Bennett                          ,BENNEBRO01,USA,1984-09-18
+Brooke Hanson                           ,HANSOBRO01,AUS,1985-10-15
+Bryan Clay                              ,CLAYBRY01 ,USA,1974-12-12
+Calvin Harrison                         ,HARRICAL01,USA,1975-11-27
+Camelia Potec                           ,POTECCAM01,ROM,1980-09-21
+Carlos Jayme                            ,JAYMECAR01,BRA,1975-10-01
+Carly Piper                             ,PIPERCAR01,USA,1984-06-01
+Carolina Kluft                          ,KLUFTCAR01,SWE,1975-12-02
+Catherine Ndereba                       ,NDERECAT01,KEN,1977-08-19
+Catherine Scott-Pomales                 ,SCOTTCAT01,JAM,1985-02-21
+Cathy Freeman                           ,FREEMCAT01,AUS,1978-07-07
+Chandra Sturrup                         ,STURRCHA01,BAH,1980-02-02
+Chantal Groot                           ,GROOTCHA01,NED,1981-04-13
+Chris Fydler                            ,FYDLECHR01,AUS,1974-11-19
+Chris Huffins                           ,HUFFICHR01,USA,1978-01-06
+Chris Thompson                          ,THOMPCHR01,USA,1977-08-17
+Chris Williams                          ,WILLICHR02,JAM,1971-12-18
+Christian Olsson                        ,OLSSOCHR01,SWE,1978-03-25
+Christine Arron                         ,ARRONCHR01,FRA,1983-04-11
+Chryste Gaines                          ,GAINECHR01,USA,1973-01-22
+Claudia Poll                            ,POLLCLA01 ,CRC,1972-06-10
+Claudinei da Silva                      ,DASILCLA01,BRA,1982-12-22
+Clement Chukwu                          ,CHUKWCLE01,NGR,1977-08-12
+Clinton Hill                            ,HILLCLI01 ,AUS,1974-07-04
+Coby Miller                             ,MILLECOB01,USA,1979-06-21
+Courtney Shealy                         ,SHEALCOU01,USA,1981-05-01
+Cristina Teuscher                       ,TEUSCCRI01,USA,1971-08-04
+Curtis Myden                            ,MYDENCUR01,CAN,1978-04-07
+Dana Vollmer                            ,VOLLMDAN01,USA,1980-07-07
+Daniel Gyurta                           ,GYURTDAN01,HUN,1973-03-16
+Daniel Kowalski                         ,KOWALDAN01,AUS,1985-10-05
+Daniela Gotz                            ,GOTZDAN01 ,GER,1984-08-25
+Danila Burkenya                         ,BURKEDAN02,RUS,1973-11-19
+Danny McFarlane                         ,MCFARDAN01,JAM,1975-10-27
+Danny McFarlane                         ,MCFARDAN02,JAM,1983-09-22
+Dara Torres                             ,TORREDAR01,USA,1975-07-07
+Darian Townsend                         ,TOWNSDAR01,RSA,1975-08-06
+Darold Williamson                       ,WILLIDAR01,USA,1971-11-07
+Darren Campbell                         ,CAMPBDAR01,GBR,1975-08-15
+David Davies                            ,DAVIEDAV01,GBR,1978-07-14
+Davide Rummolo                          ,RUMMODAV01,ITA,1985-02-21
+Debbie Ferguson                         ,FERGUDEB01,BAH,1983-10-06
+Deedee Trotter                          ,TROTTDEE01,USA,1974-01-23
+Deena Kastor                            ,KASTODEE01,USA,1971-02-26
+Deji Aliu                               ,ALIUDEJ01 ,NGR,1977-09-11
+Denis Kapustin                          ,KAPUSDEN01,RUS,1978-10-07
+Denis Nizhegorodov                      ,NIZHEDEN01,RUS,1976-09-08
+Denise Lewis                            ,LEWISDEN01,GBR,1976-10-09
+Denys Sylantyev                         ,SYLANDEN01,UKR,1978-12-25
+Deon Hemmings                           ,HEMMIDEO01,JAM,1978-10-14
+Derartu Tulu                            ,TULUDER01 ,ETH,1978-11-05
+Derrick Brew                            ,BREWDER01 ,USA,1980-02-23
+Diana Mocanu                            ,MOCANDIA01,ROM,1982-12-16
+Diana Munz                              ,MUNZDIA01 ,USA,1975-11-22
+Dmitriy Karpov                          ,KARPODMI01,KAZ,1981-05-13
+Domenico Fioravanti                     ,FIORADOM01,ITA,1980-07-04
+Duje Draganja                           ,DRAGADUJ01,CRO,1979-06-19
+Dwight Phillips                         ,PHILLDWI01,USA,1980-06-12
+Dyana Calub                             ,CALUBDYA01,AUS,1983-08-02
+Ed Moses                                ,MOSESED01 ,USA,1980-09-25
+Edson Ribeiro                           ,RIBEIEDS01,BRA,1984-12-12
+Edvaldo Silva Filho                     ,SILVAEDV01,BRA,1971-03-25
+Ejigayehu Dibaba                        ,DIBABEJI01,ETH,1977-04-20
+Ekaterini Thanou                        ,THANOEKA01,GRE,1983-07-06
+Eliud Kipchoge                          ,KIPCHELI01,KEN,1971-11-17
+Elya Zvereva                            ,ZVEREELY01,BLR,1975-11-02
+Emiliano Brembilla                      ,BREMBEMI01,ITA,1974-11-05
+Enefiok Udo-Obong                       ,UDOOBENE01,NGR,1971-04-10
+Erick Wainaina                          ,WAINAERI01,KEN,1972-08-07
+Erik Vendt                              ,VENDTERI01,USA,1973-09-02
+Erki Nool                               ,NOOLERK01 ,EST,1982-01-21
+Esref Apak                              ,APAKESR01 ,TUR,1976-01-05
+Ezekiel Kemboi                          ,KEMBOEZE01,KEN,1985-01-09
+Fani Halkia                             ,HALKIFAN01,GRE,1982-09-15
+Federica Pellegrini                     ,PELLEFED01,ITA,1978-08-12
+Felix Sanchez                           ,SANCHFEL01,DOM,1973-10-20
+Fernanda Ribeiro                        ,RIBEIFER01,POR,1985-10-20
+Fernando Scherer                        ,SCHERFER01,BRA,1974-09-16
+Filippo Magnini                         ,MAGNIFIL01,ITA,1984-02-20
+Fiona May                               ,MAYFIO01  ,ITA,1979-03-18
+Francis Obikwelu                        ,OBIKWFRA01,POR,1977-07-01
+Francisco Javier Fernandez              ,FERNAFRA01,ESP,1979-04-05
+Francoise Mbango Etone                  ,MBANGFRA01,CMR,1973-09-24
+Frantz Kruger                           ,KRUGEFRA01,RSA,1985-08-18
+Franziska van Almsick                   ,VANALFRA01,GER,1971-03-26
+Freddy Mayola                           ,MAYOLFRE01,CUB,1981-05-23
+Gabriela Szabo                          ,SZABOGAB01,ROM,1981-09-11
+Gary Hall Jr.                           ,HALLJGAR01,USA,1971-09-02
+Geoff Huegill                           ,HUEGIGEO01,AUS,1975-08-01
+George Bovell                           ,BOVELGEO01,TRI,1984-09-17
+Georgina Bardach                        ,BARDAGEO01,ARG,1978-05-22
+Gete Wami                               ,WAMIGET01 ,ETH,1972-05-25
+Gezahgne Abera                          ,ABERAGEZ01,ETH,1976-05-22
+Giaan Rooney                            ,ROONEGIA01,AUS,1974-04-13
+Giuseppe Gibilisco                      ,GIBILGIU01,ITA,1972-04-13
+Glory Alozie                            ,ALOZIGLO01,NGR,1983-06-19
+Grant Hackett                           ,HACKEGRA01,AUS,1971-05-03
+Greg Haughton                           ,HAUGHGRE01,JAM,1971-05-06
+Gustavo Franca Borges                   ,BORGEGUS01,BRA,1984-02-22
+Hadi Souan Somayli                      ,SOMAYHAD01,KSA,1971-03-23
+Haile Gebrselassie                      ,GEBRSHAI01,ETH,1975-10-18
+Hannah Stockbauer                       ,STOCKHAN01,GER,1971-03-01
+Hasna Benhassi                          ,BENHAHAS01,MAR,1974-05-09
+Heike Drechsler                         ,DRECHHEI01,GER,1979-07-08
+Hestrie Cloete                          ,CLOETHES01,RSA,1975-08-10
+Hicham el Guerrouj                      ,ELGUEHIC01,MAR,1981-06-02
+Hrysopiyi Devetzi                       ,DEVETHRY01,GRE,1985-02-06
+Hugues Duboscq                          ,DUBOSHUG01,FRA,1983-11-13
+Huina Xing                              ,XINGHUI01 ,CHN,1977-12-24
+Ian Crocker                             ,CROCKIAN01,USA,1976-09-05
+Ian Thorpe                              ,THORPIAN01,AUS,1985-08-02
+Igor Astapkovich                        ,ASTAPIGO01,BLR,1982-03-15
+Inge Dekker                             ,DEKKEING01,NED,1983-05-25
+Inge de Bruijn                          ,DEBRUING01,NED,1978-04-01
+Ionela Tirlea-Manolache                 ,TIRLEION01,ROM,1975-07-12
+Irina Khabarova                         ,KHABAIRI01,RUS,1971-05-25
+Irina Privalova                         ,PRIVAIRI01,RUS,1982-05-11
+Irina Simagina                          ,SIMAGIRI01,RUS,1979-07-25
+Irina Yatchenko                         ,YATCHIRI01,BLR,1972-04-12
+Isabella Ochichi                        ,OCHICISA01,KEN,1984-11-15
+Ivan Garcia                             ,GARCIIVA01,CUB,1980-02-27
+Ivan Pedroso                            ,PEDROIVA01,CUB,1977-11-01
+Ivan Tikhon                             ,TIKHOIVA01,BLR,1972-04-09
+Ivano Brugnetti                         ,BRUGNIVA01,ITA,1979-09-17
+Jai Taurima                             ,TAURIJAI01,AUS,1971-11-21
+James Godday                            ,GODDAJAM01,NGR,1978-05-26
+Jamie Rauch                             ,RAUCHJAM01,USA,1976-08-05
+Jan Zelezny                             ,ZELEZJAN01,CZR,1976-11-09
+Jane Saville                            ,SAVILJAN01,AUS,1977-10-11
+Jaroslav Baba                           ,BABAJAR01 ,CZR,1971-09-26
+Jason Gardener                          ,GARDEJAS01,GBR,1977-01-03
+Jason Lezak                             ,LEZAKJAS01,USA,1974-04-26
+Javier Sotomayor                        ,SOTOMJAV01,CUB,1975-10-11
+Jearl Miles                             ,MILESJEA01,USA,1973-04-12
+Jenny Thompson                          ,THOMPJEN01,USA,1981-11-03
+Jens Kruppa                             ,KRUPPJEN01,GER,1978-01-13
+Jeremy Wariner                          ,WARINJER01,USA,1978-04-18
+Jiaying Pang                            ,PANGJIA01 ,CHN,1974-06-08
+Joachim Olsen                           ,OLSENJOA01,DEN,1985-08-10
+Joan Lino Martinez                      ,MARTIJOA01,ESP,1985-09-09
+Joanna Hayes                            ,HAYESJOA01,USA,1984-03-19
+Jodie Henry                             ,HENRYJOD01,AUS,1980-10-22
+Joel Sanchez                            ,SANCHJOE01,MEX,1980-06-22
+Johan Kenkhuis                          ,KENKHJOH01,NED,1985-11-12
+Johanna Sjoberg                         ,SJOBEJOH01,SWE,1974-05-01
+John Godina                             ,GODINJOH01,USA,1979-03-04
+John Moffitt                            ,MOFFIJOH01,USA,1981-09-14
+John Steffensen                         ,STEFFJOH01,AUS,1985-03-25
+Jolanda Ceplak                          ,CEPLAJOL01,SLO,1980-12-21
+Jon Drummond                            ,DRUMMJON01,USA,1972-01-13
+Jonathan Edwards                        ,EDWARJON01,GBR,1973-07-27
+Jose Angel Cesar                        ,CESARJOS01,CUB,1972-07-24
+Josh Davis                              ,DAVISJOS01,USA,1973-10-19
+Joyce Chepchumba                        ,CHEPCJOY01,KEN,1976-05-18
+Jude Monye                              ,MONYEJUD01,NGR,1984-03-15
+Junko Onishi                            ,ONISHJUN01,JPN,1971-02-06
+Justin Gatlin                           ,GATLIJUS01,USA,1980-04-16
+Justin Norris                           ,NORRIJUS01,AUS,1975-07-21
+Kaitlin Sandeno                         ,SANDEKAI01,USA,1971-04-10
+Kajsa Bergqvist                         ,BERGQKAJ01,SWE,1973-10-11
+Kamila Skolimowska                      ,SKOLIKAM01,POL,1978-09-01
+Kara Lynn Joyce                         ,JOYCEKAR01,USA,1984-07-20
+Katharine Merry                         ,MERRYKAT01,GBR,1984-11-14
+Kelly Holmes                            ,HOLMEKEL01,GBR,1985-07-07
+Kelly Sotherton                         ,SOTHEKEL01,GBR,1979-08-07
+Kenenisa Bekele                         ,BEKELKEN01,ETH,1978-11-10
+Kerstin Kielga                          ,KIELGKER01,GER,1979-03-07
+Kieren Perkins                          ,PERKIKIE01,AUS,1971-05-22
+Kirsten Munchow                         ,MUNCHKIR01,GER,1971-04-21
+Kirsten Thomson                         ,THOMSKIR01,AUS,1979-08-16
+Kirsty Coventry                         ,COVENKIR01,ZIM,1984-05-16
+Kjersti Plaetzer                        ,PLAETKJE01,NOR,1983-10-22
+Klaas-Erik Zwering                      ,ZWERIKLA01,NED,1980-02-11
+Klete Keller                            ,KELLEKLE01,USA,1980-06-13
+Koji Murofushi                          ,MUROFKOJ01,JPN,1973-03-17
+Konstantinos Kenteris                   ,KENTEKON01,GRE,1985-06-15
+Kosuke Kitajima                         ,KITAJKOS01,JPN,1975-11-15
+Kristy Kowal                            ,KOWALKRI01,USA,1979-08-06
+LaTasha Colander-Richardson             ,COLANLAT01,USA,1972-11-02
+Larisa Kruglova                         ,KRUGLLAR01,RUS,1973-04-09
+Larisa Peleshenko                       ,PELESLAR01,RUS,1979-01-25
+Lars Conrad                             ,CONRALAR01,GER,1980-09-04
+Lars Frolander                          ,FROLALAR01,SWE,1975-08-20
+Lars Riedel                             ,RIEDELAR01,GER,1975-04-11
+Larsen Jensen                           ,JENSELAR01,USA,1983-10-01
+Laszlo Cseh                             ,CSEHLAS01 ,HUN,1981-01-25
+Laure Manaudou                          ,MANAULAU01,FRA,1983-12-14
+Lauryn Williams                         ,WILLILAU01,USA,1972-02-24
+Lawrence Johnson                        ,JOHNSLAW01,USA,1976-05-08
+Leisel Jones                            ,JONESLEI01,AUS,1980-10-19
+Lenny Krayzelburg                       ,KRAYZLEN01,USA,1984-04-19
+Lidia Simon                             ,SIMONLID01,ROM,1985-05-18
+Lindsay Benko                           ,BENKOLIN01,USA,1974-01-26
+Liping Wang                             ,WANGLIP02 ,CHN,1977-05-07
+Lisbeth Lenton                          ,LENTOLIS01,AUS,1984-12-22
+Llewellyn Herbert                       ,HERBELLE01,RSA,1971-08-15
+Lorraine Graham                         ,GRAHALOR01,JAM,1979-04-21
+Louise Johncke                          ,JOHNCLOU01,SWE,1976-01-24
+Luis Alberto Perez                      ,PEREZLUI01,CUB,1984-02-20
+Lyndon Ferns                            ,FERNSLYN01,RSA,1975-09-27
+Mai Nakamura                            ,NAKAMMAI01,JPN,1984-11-03
+Malia Metella                           ,METELMAL01,FRA,1978-02-02
+Manon van Rooijen                       ,VANROMAN01,NED,1982-03-06
+Marcel Wouda                            ,WOUDAMAR01,NED,1972-06-06
+Maria Cioncan                           ,CIONCMAR01,ROM,1977-10-05
+Maria Mutola                            ,MUTOLMAR01,MOZ,1985-09-11
+Maria Vasco                             ,VASCOMAR01,ESP,1971-11-02
+Marian Oprea                            ,OPREAMAR01,ROM,1974-05-16
+Marion Jones                            ,JONESMAR03,USA,1980-04-02
+Mark Crear                              ,CREARMAR01,USA,1981-11-24
+Mark Lewis-Francis                      ,LEWISMAR01,GBR,1976-09-08
+Mark Ormrod                             ,ORMROMAR01,AUS,1973-10-26
+Markus Rogan                            ,ROGANMAR01,AUT,1985-06-03
+Marleen Veldhuis                        ,VELDHMAR01,NED,1978-10-20
+Marlon Devonish                         ,DEVONMAR01,GBR,1979-07-01
+Martijn Zuijdweg                        ,ZUIJDMAR01,NED,1974-08-04
+Martina Moravkova                       ,MORAVMAR01,SVK,1974-07-04
+Masami Tanaka                           ,TANAKMAS01,JPN,1984-07-26
+Massimiliano Rosolino                   ,ROSOLMAS01,ITA,1972-04-22
+Matt Hemingway                          ,HEMINMAT01,USA,1981-02-01
+Matthew Welsh                           ,WELSHMAT01,AUS,1979-05-08
+Maurice Greene                          ,GREENMAU01,USA,1973-01-09
+Maxim Tarasov                           ,TARASMAX01,RUS,1983-06-16
+Mbulaeni Mulaudzi                       ,MULAUMBU01,RSA,1979-11-18
+Mebrahtom Keflezighi                    ,KEFLEMEB01,USA,1975-08-21
+Megan Quann                             ,QUANNMEG01,USA,1974-01-11
+Melissa Morrison                        ,MORRIMEL01,USA,1971-02-21
+Merlene Ottey-Page                      ,OTTEYMER01,JAM,1982-09-04
+Meseret Defar                           ,DEFARMES01,ETH,1971-06-03
+Michael Blackwood                       ,BLACKMIC02,JAM,1977-08-05
+Michael Johnson                         ,JOHNSMIC01,USA,1974-12-24
+Michael Klim                            ,KLIMMIC01 ,AUS,1974-04-14
+Michael Phelps                          ,PHELPMIC01,USA,1976-02-10
+Michelle Burgher                        ,BURGHMIC01,JAM,1979-11-09
+Miki Nakao                              ,NAKAOMIK01,JPN,1979-06-08
+Millon Wolde                            ,WOLDEMIL01,ETH,1985-12-04
+Mirela Manjani                          ,MANJAMIR01,GRE,1984-09-17
+Misty Hyman                             ,HYMANMIS01,USA,1981-04-20
+Mitja Zastrow                           ,ZASTRMIT01,NED,1971-08-20
+Mizuki Noguchi                          ,NOGUCMIZ01,JPN,1972-08-20
+Monique Henderson                       ,HENDEMON01,USA,1984-04-21
+Monique Hennagan                        ,HENNAMON01,USA,1976-12-22
+Muriel Hurtis                           ,HURTIMUR01,FRA,1978-12-26
+Musa Audu                               ,AUDUMUS01 ,NGR,1971-04-10
+Nadia Davy                              ,DAVYNAD01 ,JAM,1972-04-07
+Nadine Kleinert                         ,KLEINNAD01,GER,1985-05-09
+Naman Keita                             ,KEITANAM01,FRA,1981-12-22
+Nanceen Perry                           ,PERRYNAN01,USA,1971-04-19
+Naoko Takahashi                         ,TAKAHNAO01,JPN,1984-12-07
+Natalia Antyukh                         ,ANTYUNAT01,RUS,1971-07-21
+Natalie Coughlin                        ,COUGHNAT01,USA,1978-06-25
+Natalya Nazarova                        ,NAZARNAT01,RUS,1978-09-11
+Natalya Sadova                          ,SADOVNAT01,RUS,1971-05-07
+Natasha Sazanovich                      ,SAZANNAT01,BLR,1974-01-24
+Nathan Deakes                           ,DEAKENAT01,AUS,1982-03-03
+Neil Walker                             ,WALKENEI01,USA,1973-08-11
+Nicholas Sprenger                       ,SPRENNIC01,AUS,1977-05-12
+Nick Hysong                             ,HYSONNIC01,USA,1976-01-23
+Nicola Vizzoni                          ,VIZZONIC01,ITA,1975-09-13
+Nils Schumann                           ,SCHUMNIL01,GER,1971-10-23
+Nina Zhivanevskaya                      ,ZHIVANIN01,ESP,1973-12-22
+Noah Ngeny                              ,NGENYNOA01,KEN,1985-07-03
+Noe Hernandez                           ,HERNANOE01,MEX,1978-07-08
+Nouria Merah-Benida                     ,MERAHNOU01,ALG,1973-04-05
+Nouzha Bidouane                         ,BIDOUNOU01,MAR,1973-08-27
+Novlene Williams                        ,WILLINOV01,JAM,1982-10-27
+Obadele Thompson                        ,THOMPOBA01,BAR,1983-04-10
+Olena Hovorova                          ,HOVOROLE01,UKR,1973-01-05
+Olena Krasovska                         ,KRASOOLE01,UKR,1974-06-06
+Olesya Krasnomovets                     ,KRASNOLE01,RUS,1974-08-15
+Olesya Zykina                           ,ZYKINOLE01,RUS,1971-02-27
+Olga Fyodorova                          ,FYODOOLG01,RUS,1978-06-15
+Olga Kotlyarova                         ,KOTLYOLG01,RUS,1973-06-02
+Olga Kuzenkova                          ,KUZENOLG01,RUS,1979-11-25
+Olga Shishigina                         ,SHISHOLG01,KAZ,1975-09-20
+Olimpiada Ivanova                       ,IVANOOLI01,RUS,1978-04-12
+Olusoji Fasuba                          ,FASUBOLU01,NGR,1976-10-25
+Osleidys Menendez                       ,MENENOSL01,CUB,1977-10-20
+Otis Harris Jr                          ,HARRIOTI01,USA,1971-05-26
+Otylia Jedrzejczak                      ,JEDRZOTY01,POL,1973-07-23
+Patrick Dwyer                           ,DWYERPAT01,AUS,1980-07-03
+Paul Kipsiele Koech                     ,KOECHPAU01,KEN,1978-07-08
+Paul Tergat                             ,TERGAPAU01,KEN,1973-01-23
+Pauline Davis-Thompson                  ,DAVISPAU01,BAH,1984-12-17
+Penny Heyns                             ,HEYNSPEN01,RSA,1975-09-04
+Peter Vanderkaay                        ,VANDEPET01,USA,1979-10-05
+Petra Dallmann                          ,DALLMPET01,GER,1971-07-05
+Petria Thomas                           ,THOMAPET01,AUS,1976-05-05
+Pieter van den Hoogenband               ,VANDEPIE02,NED,1974-07-06
+Razvan Florea                           ,FLORERAZ01,ROM,1983-01-11
+Regan Harrison                          ,HARRIREG02,AUS,1973-04-04
+Reiko Nakamura                          ,NAKAMREI01,JPN,1973-04-21
+Reuben Kosgei                           ,KOSGEREU01,KEN,1982-02-15
+Robert Korzeniowski                     ,KORZEROB01,POL,1985-04-07
+Roland Schoeman                         ,SCHOEROL01,RSA,1983-09-20
+Roman Schurenko                         ,SCHURROM01,UKR,1971-05-18
+Roman Sebrle                            ,SEBRLROM01,CZR,1975-08-25
+Roman Sloudnov                          ,SLOUDROM01,RUS,1981-12-19
+Roxana Maracineanu                      ,MARACROX01,FRA,1980-02-15
+Rui Silva                               ,SILVARUI01,POR,1974-08-08
+Ryan Lochte                             ,LOCHTRYA01,USA,1979-06-10
+Ryk Neethling                           ,NEETHRYK01,RSA,1985-07-09
+Samantha Arsenault                      ,ARSENSAM01,USA,1983-10-10
+Sandie Richards                         ,RICHASAN02,JAM,1984-01-25
+Sanya Richards                          ,RICHASAN01,USA,1971-07-23
+Sara Harstick                           ,HARSTSAR01,GER,1976-02-09
+Sarah Powe                              ,POWESAR01 ,GER,1971-06-25
+Sarah Ryan                              ,RYANSAR01 ,AUS,1985-05-27
+Saul Weigopwa                           ,WEIGOSAU01,NGR,1982-12-05
+Scott Goldblatt                         ,GOLDBSCO01,USA,1974-08-13
+Seleshi Sehen                           ,SEHENSEL01,ETH,1971-06-04
+Sergey Kliugin                          ,KLIUGSER01,RUS,1980-05-06
+Sergey Makarov                          ,MAKARSER03,RUS,1985-08-09
+Sevatheda Fynes                         ,FYNESSEV01,BAH,1981-09-24
+Shawn Crawford                          ,CRAWFSHA02,USA,1978-11-20
+Sherone Simpson                         ,SIMPSSHE01,JAM,1974-04-04
+Simone Cercato                          ,CERCASIM01,ITA,1983-08-04
+Solenne Figues                          ,FIGUESOL01,FRA,1974-06-18
+Sonia OSullivan                         ,OSULLSON01,IRL,1985-03-11
+Stacy Dragila                           ,DRAGISTA01,USA,1982-10-22
+Stanislava Komarova                     ,KOMARSTA01,RUS,1977-09-22
+Stefan Holm                             ,HOLMSTE01 ,SWE,1974-05-15
+Stefano Baldini                         ,BALDISTE01,ITA,1985-12-09
+Steffen Driesen                         ,DRIESSTE01,GER,1983-08-23
+Steffi Nerius                           ,NERIUSTE01,GER,1979-02-01
+Stephanie Graf                          ,GRAFSTE02 ,AUT,1973-12-14
+Stephen Parry                           ,PARRYSTE01,GBR,1972-12-13
+Stev Theloke                            ,THELOSTE01,GER,1980-07-03
+Steve Backley                           ,BACKLSTE01,GBR,1976-01-07
+Sumika Minamoto                         ,MINAMSUM01,JPN,1975-06-16
+Sunday Bada                             ,BADASUN01 ,NGR,1979-04-02
+Susan ONeill                            ,ONEILSUS01,AUS,1973-06-01
+Susanthika Jayasinghe                   ,JAYASSUS01,SRI,1985-12-14
+Svetlana Feofanova                      ,FEOFASVE01,RUS,1983-11-24
+Svetlana Gontcharenko                   ,GONTCSVE01,RUS,1984-09-15
+Svetlana Krivelyova                     ,KRIVESVE01,RUS,1972-03-05
+Sylviane Felix                          ,FELIXSYL01,FRA,1971-04-09
+Szymon Ziolkowski                       ,ZIOLKSZY01,POL,1972-12-03
+Takashi Yamamoto                        ,YAMAMTAK01,JPN,1982-08-14
+Tanya Lawrence                          ,LAWRETAN01,JAM,1978-05-04
+Tatiana Grigorieva                      ,GRIGOTAT01,AUS,1982-04-18
+Tatyana Kotova                          ,KOTOVTAT01,RUS,1973-09-18
+Tatyana Lebedeva                        ,LEBEDTAT01,RUS,1976-06-20
+Tatyana Tomashova                       ,TOMASTAT01,RUS,1978-11-22
+Terence Parkin                          ,PARKITER01,RSA,1977-01-20
+Tereza Marinova                         ,MARINTER01,BUL,1971-10-21
+Terrence Trammell                       ,TRAMMTER01,USA,1985-09-13
+Tesfaye Tola                            ,TOLATES01 ,ETH,1985-08-26
+Tetiana Tereshchuk-Antipova             ,TERESTET01,UKR,1985-08-20
+Thamar Henneken                         ,HENNETHA01,NED,1973-03-14
+Therese Alshammar                       ,ALSHATHE01,SWE,1981-03-24
+Thomas Rupprath                         ,RUPPRTHO01,GER,1972-11-23
+Timothy Mack                            ,MACKTIM01 ,USA,1972-12-05
+Tirunesh Dibaba                         ,DIBABTIR01,ETH,1981-10-21
+Toby Stevenson                          ,STEVETOB01,USA,1978-02-26
+Todd Pearson                            ,PEARSTOD01,AUS,1980-04-12
+Tom Dolan                               ,DOLANTOM01,USA,1977-12-10
+Tom Malchow                             ,MALCHTOM01,USA,1977-05-12
+Tom Wilkens                             ,WILKETOM01,USA,1978-10-04
+Tomomi Morita                           ,MORITTOM01,JPN,1980-01-10
+Tonique Williams-Darling                ,WILLITON01,BAH,1979-02-03
+Torri Edwards                           ,EDWARTOR01,USA,1972-05-25
+Torsten Spanneberg                      ,SPANNTOR01,GER,1979-09-25
+Trine Hattestad                         ,HATTETRI01,NOR,1972-02-04
+Uchenna Emedolu                         ,EMEDOUCH01,NGR,1978-02-16
+Vadims Vasilevskis                      ,VASILVAD01,LAT,1982-02-19
+Vala Flosadottir                        ,FLOSAVAL01,ISL,1977-05-26
+Vanderlei Lima                          ,LIMAVAN01 ,BRA,1982-11-11
+Veronica Campbell                       ,CAMPBVER01,JAM,1976-06-25
+Veronique Mang                          ,MANGVER01 ,FRA,1984-04-10
+Vicente Lima                            ,LIMAVIC01 ,BRA,1978-10-01
+Viktoriya Styopina                      ,STYOPVIK01,UKR,1972-06-03
+Violeta Szekely                         ,SZEKEVIO01,ROM,1972-12-15
+Virgilijus Alekna                       ,ALEKNVIR01,LTU,1975-01-12
+Vladimir Andreyev                       ,ANDREVLA02,RUS,1979-10-26
+William Kirby                           ,KIRBYWIL01,AUS,1971-07-02
+Wilma van Rijn                          ,VANRIWIL01,NED,1979-03-04
+Wilson Boit Kipketer                    ,KIPKEWIL02,KEN,1981-04-03
+Wilson Kipketer                         ,KIPKEWIL01,DEN,1975-06-21
+Xiang Liu                               ,LIUXIA03  ,CHN,1980-12-23
+Xuejuan Luo                             ,LUOXUE01  ,CHN,1976-04-06
+Yana Klochkova                          ,KLOCHYAN01,UKR,1978-05-03
+Yanina Korolchik                        ,KOROLYAN01,BLR,1983-09-23
+Yanwei Xu                               ,XUYAN02   ,CHN,1972-06-20
+Yasuko Tajima                           ,TAJIMYAS01,JPN,1985-12-11
+Yelena Isinbayeva                       ,ISINBYEL01,RUS,1979-06-13
+Yelena Prokhorova                       ,PROKHYEL01,RUS,1981-09-22
+Yelena Slesarenko                       ,SLESAYEL01,RUS,1982-10-12
+Yelena Yelesina                         ,YELESYEL01,RUS,1979-11-15
+Yingwen Zhu                             ,ZHUYIN01  ,CHN,1977-03-02
+Yipsi Moreno                            ,MORENYIP01,CUB,1972-05-22
+Yoel Garcia                             ,GARCIYOE01,CUB,1977-02-25
+Yoshihiro Okumura                       ,OKUMUYOS01,JPN,1980-03-18
+Yu Yang                                 ,YANGYU01  ,CHN,1974-01-04
+Yuko Nakanishi                          ,NAKANYUK01,JPN,1980-04-18
+Yulia Sotnikova                         ,SOTNIYUL01,RUS,1979-12-06
+Yuliya Nesterenko                       ,NESTEYUL01,BLR,1985-04-03
+Yuliya Tabakova                         ,TABAKYUL01,RUS,1985-11-19
+Yumileidi Cumba                         ,CUMBAYUM01,CUB,1971-01-06
+Yunaika Crawford                        ,CRAWFYUN01,CUB,1981-12-09
+Yuriy Bilonog                           ,BILONYUR01,UKR,1972-08-19
+Yuriy Borzakovskiy                      ,BORZAYUR01,RUS,1984-07-16
+Zersenay Tadesse                        ,TADESZER01,ERI,1975-02-26
+Zoltan Kovago                           ,KOVAGZOL01,HUN,1981-11-26
