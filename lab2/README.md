@@ -158,8 +158,8 @@ Here are some example queries on the olympics dataset and the SQL for them.
                group by player_id)
          select players.name 
          from players, temp1 
-         where temp1.player_id = players.player_id and temp1.num_golds = (select max(num_golds) from temp1);
-
+         where temp1.player_id = players.player_id and 
+               temp1.num_golds = (select max(num_golds) from temp1);
 
 
    - **(LIMIT)** PostgreSQL allows you to limit the number of results displayed which 
@@ -172,4 +172,21 @@ Here are some example queries on the olympics dataset and the SQL for them.
 
 ### Assignment Part 1
 
+Write SQL queries for the following tasks. 
 
+    - Report the three medalists and their winning times for ``100m running'' at 2000 Olympics.
+
+    - Report the total number of medals won by M. Phelps over both olympics.
+
+    - Find the country with the highest population density (population/area-sqkm).
+
+    - What was the duration of the 2004 Olympics (use startdate and enddate to find this) ? See \url{http://www.psoug.org/reference/date_func.html}.
+
+    - Find the total number of ``swimming'' events at the 2000 Olympics. 
+
+    - Create a view (call it USAPlayers) that contains just the names of the players from USA.
+
+
+--- 
+
+## Python Pandas Library
