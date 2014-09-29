@@ -79,6 +79,7 @@ See above links for some examples.
    vent). Database systems tend to be very picky about the trigger syntax, so be careful.
 
    1. Write a PL/pgSQL procedure to create a list of all "gold medalists" from USA in ATH2004 olympics, output in XML format as follows:
+
               <medal>
                   <event>Event1</event>      
                   <player>Player1</player>  
