@@ -78,7 +78,7 @@ See above links for some examples.
    dded to the Results table (don't do anything if the new entry refers to an individual
    vent). Database systems tend to be very picky about the trigger syntax, so be careful.
 
-  1. Write a PL/pgSQL procedure to create a list of all "gold medalists" from USA in ATH2004 olympics, output in XML format as follows:
+   1. Write a PL/pgSQL procedure to create a list of all "gold medalists" from USA in ATH2004 olympics, output in XML format as follows:
           <medal>
               <event>Event1</event>      
               <player>Player1</player>  
@@ -97,3 +97,5 @@ See above links for some examples.
 
 ### Pandas
 
+Follow the provided IPython Notebook:
+http://nbviewer.ipython.org/github/umddb/datascience-fall14/blob/master/lab3/AdvancedPandas.ipynb
