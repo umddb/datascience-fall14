@@ -298,10 +298,12 @@
 ## Other SQL Constructs
 
 - Views
-        create view DisneyMovies
-        select *
-        from movie m
-        where m.studioname = 'disney';
+
+            create view DisneyMovies
+            select *
+            from movie m
+            where m.studioname = 'disney';
+
     - Can use it in any place where a tablename is used
     - Views are used quite extensively to: (1) simplify queries, (2) hide data (by giving users access only to specific views)
     - Views maybe *materialized* or not
@@ -327,34 +329,39 @@
 - Integrity Constraints
     - Predicates on the database that must always hold
     - Key Constraints: Specifiying something is a primary key or unique
-            CREATE TABLE customer (
-                    ssn CHAR(9) PRIMARY KEY, 
-                    cname CHAR(15), address CHAR(30), city CHAR(10), 
-                    UNIQUE (cname, address, city)); 
+
+                CREATE TABLE customer (
+                        ssn CHAR(9) PRIMARY KEY, 
+                        cname CHAR(15), address CHAR(30), city CHAR(10), 
+                        UNIQUE (cname, address, city)); 
     - Attribute constraints: Constraints on the values of attributes
 
-            `bname char(15) not null`
+       `bname char(15) not null`
 
-            `balance int not null, check (balance >= 0)`
+       `balance int not null, check (balance >= 0)`
     - Referential integrity: prevent dangling tuples
-            CREATE TABLE  branch(bname CHAR(15) PRIMARY KEY, ...);
-            CREATE TABLE loan(..., FOREIGN KEY bname REFERENCES branch);
+
+                CREATE TABLE  branch(bname CHAR(15) PRIMARY KEY, ...);
+                CREATE TABLE loan(..., FOREIGN KEY bname REFERENCES branch);
+
          - Can tell the system what to do if a referenced tuple is being deleted
 
     - Global Constraints
         - Single-table
-              CREATE TABLE branch (...,
-                       bcity  CHAR(15), 
-                       assets INT, 
-                       CHECK (NOT(bcity = ‘Bkln’) OR assets > 5M))
+
+                  CREATE TABLE branch (...,
+                           bcity  CHAR(15), 
+                           assets INT, 
+                           CHECK (NOT(bcity = ‘Bkln’) OR assets > 5M))
         - Multi-table
-              CREATE ASSERTION loan-constraint
-              CHECK (NOT EXISTS (
-                       SELECT   * 
-                       FROM loan AS L
-                       WHERE  NOT EXISTS(
-                                SELECT   *
-                                FROM borrower B, depositor D, account A
-                                WHERE B.cname = D.cname  AND
-                                         D.acct_no = A.acct_no  AND
-                                         L.lno  = B.lno)))
+
+                  CREATE ASSERTION loan-constraint
+                  CHECK (NOT EXISTS (
+                           SELECT   * 
+                           FROM loan AS L
+                           WHERE  NOT EXISTS(
+                                    SELECT   *
+                                    FROM borrower B, depositor D, account A
+                                    WHERE B.cname = D.cname  AND
+                                             D.acct_no = A.acct_no  AND
+                                             L.lno  = B.lno)))
