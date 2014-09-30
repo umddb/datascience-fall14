@@ -113,6 +113,7 @@
         - Intended for *semi-structured* data 
         - Flexible schema
         - Example:
+
                 <?xml version="1.0" encoding="UTF-8"?>
                 <!-- Edited by XMLSpy -->
                 <CATALOG>
@@ -162,31 +163,32 @@
 
     - JSON: Javascript Object Notation
         - Very similar to XML and seems to be replacing it for many purposes
-                {
-                  "firstName": "John",
-                  "lastName": "Smith",
-                  "isAlive": true,
-                  "age": 25,
-                  "height_cm": 167.6,
-                  "address": {
-                    "streetAddress": "21 2nd Street",
-                    "city": "New York",
-                    "state": "NY",
-                    "postalCode": "10021-3100"
-                  },
-                  "phoneNumbers": [
+
                     {
-                      "type": "home",
-                      "number": "212 555-1234"
-                    },
-                    {
-                      "type": "office",
-                      "number": "646 555-4567"
+                      "firstName": "John",
+                      "lastName": "Smith",
+                      "isAlive": true,
+                      "age": 25,
+                      "height_cm": 167.6,
+                      "address": {
+                        "streetAddress": "21 2nd Street",
+                        "city": "New York",
+                        "state": "NY",
+                        "postalCode": "10021-3100"
+                      },
+                      "phoneNumbers": [
+                        {
+                          "type": "home",
+                          "number": "212 555-1234"
+                        },
+                        {
+                          "type": "office",
+                          "number": "646 555-4567"
+                        }
+                      ],
+                      "children": [],
+                      "spouse": null
                     }
-                  ],
-                  "children": [],
-                  "spouse": null
-                }
     - Property Graph Model
         - Developed for graph databases
         - Basically a edge- and vertex-labeled graph, with properties associated with each edge and vertex
@@ -200,32 +202,35 @@
     - [Protocol Buffers](https://code.google.com/p/protobuf/): Developed by Google
         - Schema is mostly relational, with support for optional fields and some other constructs
         - Schema specified using a `.proto` file
-                message Person {
-                    required int32 id = 1;
-                    required string name = 2;
-                    optional string email = 3;
-                }
+
+                    message Person {
+                        required int32 id = 1;
+                        required string name = 2;
+                        optional string email = 3;
+                    }
         - Compiled by `protoc` to produce C++, Java, or Python code
         - Programs can be written in any of those languages, e.g., C++:
-                Person person;
-                person.set_id(123);
-                person.set_name("Bob");
-                person.set_email("bob@example.com");
 
-                fstream out("person.pb", ios::out | ios::binary | ios::trunc);
-                person.SerializeToOstream(&out);
-                out.close();
+                    Person person;
+                    person.set_id(123);
+                    person.set_name("Bob");
+                    person.set_email("bob@example.com");
+                    fstream out("person.pb", ios::out | ios::binary | ios::trunc);
+                    person.SerializeToOstream(&out);
+                    out.close();
+
     - [Avro](http://avro.apache.org/): Richer data structures, JSON-specified schema
-                {
-                    "namespace": "example.avro",
-                    "type": "record",
-                    "name": "User",
-                    "fields": [
-                            {"name": "name", "type": "string"},
-                            {"name": "favorite_number",  "type": ["int", "null"]},
-                            {"name": "favorite_color", "type": ["string", "null"]}
-                    ]
-                }
+
+                    {
+                        "namespace": "example.avro",
+                        "type": "record",
+                        "name": "User",
+                        "fields": [
+                                {"name": "name", "type": "string"},
+                                {"name": "favorite_number",  "type": ["int", "null"]},
+                                {"name": "favorite_color", "type": ["string", "null"]}
+                        ]
+                    }
 
      - [Thrift](https://thrift.apache.org/): Developed by Facebook, now Apache project
            - Main goal to support Remote Procedure Calls across languages
