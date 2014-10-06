@@ -157,6 +157,8 @@
     - Comparison shopping
     - Author disambiguation in citation data
     - Connecting up accounts on online networks
+    - Crime/Fraud Detection
+    - Census
     - ...
 
 - Important to correctly identify references
@@ -168,3 +170,131 @@
     - Abbreviations/data truncation
     - Data entry errors, Missing values, Data formatting issues complicate the problem
     - Heterogeneous data from many diverse sources
+
+- No magic bullet here !!
+    - Approaches fairly domain-specific
+    - Be prepared to do a fair amount of manual work
+
+--- 
+
+## Entity Resolution: Three Slightly Different Problems
+
+- Setup:
+    - In the real world, there are some entities (people, addresses, businesses, etc.)
+    - We have a large collection of noisy, ambiguous "references" to those entities (also called "mentions")
+- **Deduplication**
+    - Cluster the records/mentions that correspond to the same entity
+    - Potentially choose/construct a cluster representative (requires "Canonicalization")
+        - This is in itself a non-trivial task (e.g., averaging may work for numerical attributes, but what about string attributes?)
+
+    <img src="multimedia/er-1.png" width=300>
+
+- **Record Linkage**
+    - Match records across two different databases (e.g., two social networks, or financial records w/ campain donations)
+    - Tyipcally assume that the two databases are fairly clean
+
+    <img src="multimedia/er-2.png" width=300>
+
+- **Reference Matching**
+    - Match "references" to clean records in a reference table
+    - Commonly comes up in "entity recognition" (e.g., matching newspaper article mentions to names of people)
+
+    <img src="multimedia/er-3.png" width=300>
+
+- Somewhat different techniques, but a lot of similarities
+
+--- 
+
+## Entity Resolution: Data Matching
+
+- Comprehensive treatment: Data Matching; P. Christen; 2012 (Springer Books -- not available for free)
+
+- One of the key issues is finding similarities between two references 
+    - What similarity function to use?
+
+- Edit Distance Functions 
+    - Levenstein: min number of changes to go from one reference to another
+        - A change is defined to be: a single character insertion or deletion or substitution
+        - May add transposition
+    - Many adjustments to the basic idea proposed (e.g., higher weights to changes at the start)
+    - Not cheap to compute, especially for millions of pairs
+
+- Set Similarity
+    - Some function of intersection size and union size
+    - E.g., Jaccard distance = size of intersection/size of union
+    - Much faster to compute
+
+- Vector Similarity
+    - Cosine similarity
+
+- Q-Grams 
+    - Find all length-q substrings in each string
+    - Use set/vector similarity on the resulting set
+
+- Several approaches that combine the above (especially q-grams and edit distance, e.g., Jaro-Winkler)
+
+- [Soundex](http://en.wikipedia.org/wiki/Soundex): Phonetic Similarity Metric
+    - Homophones should be encoded to the same representation so spelling errors can be handled
+    - Robert and Rupert get assigned the same code (R163), but Rubin yields R150
+
+- May need to use Translation Tables
+    - To handle abbreviations, nicknames, other synonyms
+
+- Different types of data requires more domain-specific functions
+    - E.g., geographical locations, postal addresses
+    - Also much work on computing distances between XML documents etc.
+
+
+--- 
+
+## Entity Resolution: Algorithms
+
+- Simple threshold method
+    - If the distance below some number, the two references are assumed to be equal
+    - May review borderline matches manually
+
+- Can be generalized to rule-based: 
+    - Example from Christen, 2012
+
+    <img src="multimedia/er-4.png" width=400>
+
+- May want to give more weight to matches involving rarer words
+    - More naturally applicable to record linkage problem
+    - If two records match on a rare name like "Machanavajjhala", they are likely to be a match
+    - Can formalize this as "probabilistic record linkage" (see tutorial slides for more details)
+
+- Constraints: May need to be satisfied, but can also be used to find matches
+    - Often have constraints on the matching possibilities
+    - Transitivity: M1 and M2 match, and M2 and M3 match, and M1 and M3 must match
+    - Exclusivity: M1 and M2 match --> M3 cannot match with M2
+    - Other types of constraints:
+        - E.g., if two papers match, their venues must match
+
+- Clustering-based ER Techniques:
+    - Deduplication is basically a clustering problem
+    - Can use clustering algorithms for this purpose
+    - But most clusters are very small (in fact of size = 1)
+    - Some clustering algorithms are better suited for this, especially Agglomerative Clustering
+        - Unlikely K-Means would work here
+
+- Collective Entity Resolution:
+    - Do the resolution collectively
+    - Much research work on this topic, but pretty domain-specific at this point
+
+
+--- 
+
+## Entity Resolution: Scaling to Big Data
+
+- One immediate problem
+    - There are N<sup>2</sup> possible matches
+    - Must reduce the search space 
+
+- Use some easy-to-evaluate criterion to restrict the pairs considered further
+    - May lead to false negative (i.e., missed matches) depending on how noisy the data is
+
+- Much work on this problem as well, but domain-specific knowledge likely to be more useful in practice
+
+- One useful technique to know: **min-hash signatures**
+    - Can quickly find potentially overlapping sets
+    - Turns up to be very useful in many domains (beyond ER)

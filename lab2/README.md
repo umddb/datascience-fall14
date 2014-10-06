@@ -165,8 +165,8 @@ Here are some example queries on the olympics dataset and the SQL for them.
                group by player_id)
          select players.name 
          from players, temp1 
-         where temp1.player_id = players.player_id and temp1.num_golds = (select max(num_golds) from temp1);
-
+         where temp1.player_id = players.player_id and 
+               temp1.num_golds = (select max(num_golds) from temp1);
 
    - **(LIMIT)** PostgreSQL allows you to limit the number of results displayed which 
    is useful for debugging etc. Here is an example:
