@@ -35,6 +35,7 @@ complicate matters significantly, and one needs to be familiar with the *three-v
 NULLs.
 
 Let's create and populate two tables: 
+
         create table R (A char(10), B integer, C integer);
         create table S (C integer, D char(10);
         insert into R values('a1', 15, 15);
