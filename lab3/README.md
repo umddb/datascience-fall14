@@ -37,7 +37,7 @@ NULLs.
 Let's create and populate two tables: 
 
         create table R (A char(10), B integer, C integer);
-        create table S (C integer, D char(10);
+        create table S (C integer, D char(10));
         insert into R values('a1', 15, 15);
         insert into R values('a2', 20, 20);
         insert into R values('a3', 30, 30);
