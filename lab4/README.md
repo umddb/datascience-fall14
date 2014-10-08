@@ -170,6 +170,9 @@ Finally, as a scripting language and with powerful string operators, Python is a
 scripts you may write using the above Unix tools can be pretty much directly mapped to Python code, although for simple things, the Unix tools are
 likely to be significantly faster.
 
+Pandas further enhances these capabilities of Python. Chapter 7 in the textbook (Python for Data Analysis) discusses data munging and cleaning abilities of
+Pandas. For example, `.pivot` can take the output of the second task and do the third task in one line.
+
 #### Assignment Part 3
 
 Perform the three tasks using Python. Submit the Python scripts and the results.
