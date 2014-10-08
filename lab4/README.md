@@ -83,19 +83,22 @@ haven't used these tools before.
 
 To get into some details:
 
-## grep
+#### grep
 
 The basic syntax for `grep` is: 
+
 	 `grep 'regexp' filename`
 
 or equivalently (using UNIX pipelining):
+
 	`cat filename | grep 'regexp'`
 
 The output contains only those lines from the file that match the regular expression. Two options to grep are useful: `grep -v` will output those lines that
 *do not* match the regular expression, and `grep -i` will ignore case while matching. See the manual (`man grep`) (or online resources) for more details.
 
-## sed
+#### sed
 Sed stands for _stream editor_. Basic syntax for `sed` is:
+
 	`sed 's/regexp/replacement/g' filename`
 
 For each line in the intput, the portion of the line that matches _regexp_ (if any) is replaced with _replacement_. Sed is quite powerful within the limits of
@@ -103,7 +106,7 @@ operating on single line at a time. You can use \\( \\) to refer to parts of the
 extracts the user id, which is available to be used in the _replacement_ as \1. 
 
 
-## awk 
+#### awk 
 
 Finally, `awk` is a powerful scripting language (not unlike perl). The basic syntax of `awk` is: 
 
@@ -115,7 +118,7 @@ expressions and the commands as $1, $2, etc. See the manual (`man awk`) or onlin
 
 
 
-## Examples 
+#### Examples 
 
 A few examples to give you a flavor of the tools and what one can do with them.
 
