@@ -1,6 +1,6 @@
 ---
 
-# CMSC 498O: Data Wrangling
+# CMSC 498O: Data Extraction, Integration, and Wrangling
 
 ---
 
@@ -256,7 +256,7 @@
 - Can be generalized to rule-based: 
     - Example from Christen, 2012
 
-    <img src="multimedia/er-4.png" width=400>
+    <img src="multimedia/er-4.png" width=600>
 
 - May want to give more weight to matches involving rarer words
     - More naturally applicable to record linkage problem
@@ -280,6 +280,10 @@
 - Collective Entity Resolution:
     - Do the resolution collectively
     - Much research work on this topic, but pretty domain-specific at this point
+    - Example from: Collective ER in Relational Data; Bhattacharya, Getoor.
+
+    <img src="multimedia/er-5.png" width=500>
+
 
 
 --- 
@@ -298,3 +302,96 @@
 - One useful technique to know: **min-hash signatures**
     - Can quickly find potentially overlapping sets
     - Turns up to be very useful in many domains (beyond ER)
+
+
+---
+
+## Data Integration
+
+- Goal: Combine data residing in different sources and provide users with a unified view of these data for querying
+    - Each data source has its own schema called **local schemas** (much work assumes relational schemas, but some work on XML as well)
+    - The unified schema is often called **mediated schema** or **global schema**
+
+- Two slightly different scenarios
+
+    1. Extract and load all data from the sources, process it, and put it all in a single database (often called *data warehousing*)
+        - Relatively easier problem - only need one-way-mappings
+        - Query performance predictable and under your control
+
+    1. Keep the data in the sources, but figure out the mappings between them and the mediated schema, and retrieve data from the sources as needed
+        - Need two-way mappings -- a query on the mediated schema needs to be translated into queries over data source schemas
+        - Not as efficient and clean as data warehousing, but a better fit for dynamic data 
+        - Or when data warehousing is not feasible
+
+- Key challenges
+    - Data extraction, reconciliation, and cleaning
+        - Get the data from each source in a structured form 
+        - Often need to use wrappers to extract data from web sources
+        - May need to define a schema
+    - Schema alignment and mapping
+        - Decide on the best mediated schema
+        - Figure out mappings and matchings between the local schemas and the global schema
+    - Answer queries over the global schema
+        - In the second scenario, need to figure out how to map a query on global schema onto queries over local schemas
+        - Also need to decide which sources contain relevant data
+    - Limitations in mechanisms for accessing sources
+        - Many sources have limits on how you can access them
+        - Limits on the number of queries you can issues (say 100 per min)
+        - Limits on the types of queries (e.g., must enter a zipcode to get information from a web source)
+
+- Example from: Querying Heterogeneous Information Sources; Levy et al.
+
+    <img src="multimedia/data-integration-1.png" width=600>
+
+
+--- 
+
+## Data Integration: Schema Matching or Alignment
+
+- Goal: Identify corresponding elements in two schemas
+    - As a first step toward constructing a global schema
+
+- **Ontology alignment** is a closely related problem, but studied in a different domain    
+    - Benchmark and yearly evaluation: http://oaei.ontologymatching.org/ 
+    - Test cases have 1000's of concepts/terms in the ontologies to be matched
+
+- Example from: Generic Schema Matching with Cupid; Madhavan et al.
+
+    <img src="multimedia/data-integration-2.png" width=600>
+
+- Techniques:
+    - Use names of the attributes, any textual description, and metadata (e.g., data types, constraints)
+    - Use structure in the schemas 
+    - Overall quite subjective
+
+---
+
+## Data Integration: Schema Mapping
+
+- Two subtly different approaches to maintain mappings between local schemas and global schema
+    - For each local schema, specify a transformation to the global schema
+    - For each local schema, specify a view on the global schema that it is equal to
+
+- Example: Books
+    - S1: Publisher XYZ Website
+            Book(ISBN, Title, List_Price, Author_List, Published_Date)
+
+    - S2: Library 
+            Books(ISBN, Title, Acquired_Date)
+            Authors(ISBN, Name)
+            Rented(ISBN, Customer_Name, Rental_Start_Date, Rental_End_Date)
+
+    - S3: Review Website
+            Books(Book_ID, Title, Authors)
+            Review(Book_ID, Reviewed_By, Review_Text)
+
+    - S4: Old Books Seller (Only books before 1950)
+            Book(Title, Price, Published_Year)
+            Authors(Title, A_Name)
+            
+    - Desired Global Schema: 
+          Book(ISBN, Title, Edition, Price)
+          Author(Author_ID, First_Name, Last_Name)
+          BookAuthors(ISBN, Author_ID)
+          Publisher(Publisher_ID, Name, Address)
+          BookPublishers(ISBN, Publisher_ID)
