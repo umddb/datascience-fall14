@@ -1,4 +1,4 @@
-## Data Cleaning
+## Data Wrangling
 
 The goal of this assignment to use a variety of tools to clean several datasets. The datasets are described first, followed
 by the tools you need to use. 
