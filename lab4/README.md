@@ -3,30 +3,54 @@
 The goal of this assignment to use a variety of tools to clean several datasets. The datasets are described first, followed
 by the tools you need to use. 
 
-There are several different files you need to submit. You should zip them all into a single archive, and upload that archive.
+There are several different files you need to submit, including a few scripts and a few screenshots (for Data Wrangler). There are two options.
+
+1. Add the scripts/commands to the `submission.txt` file in the appropriate places. Create a zip archive with this file and the screenshots and submit the archive.
+
+1. (Preferred) Fill in the `submission.docx` file (including scripts and screenshots) instead and upload it. You can also upload a `pdf` version.
 
 ---
 
 ### Datasets and Tasks
 
 The lab4 directory contains several files:
-    1. **crime.txt**: This is the one of the example files from the Data Wrangler website.
-    1. **labor.csv**: Another file from Data Wrangler website.
-    1. **cmsc.txt**: This is a cleaned-up version of the html file that you can download from UMD SOC (the original file is also there in the
-            directory). It only contains 
 
-1. A dataset of synonyms and their meanings (`synsets.txt`). Each line contains one synset with the following format:
+1. **crime.txt**: This is the one of the example files from the Data Wrangler website.
 
-    ID, &lt;synonyms separated by spaces&gt;, &lt;different meanings separated by semicolons&gt;
+1. **labor.csv**: Another file from Data Wrangler website.
 
-1. The second dataset (`worldcup.txt`) is a snippet of the following Wikipedia webpage on [FIFA (Soccer) World Cup](http://en.wikipedia.org/wiki/FIFA_World_Cup).
-Specifically it is a partially cleaned-up wiki source for the table toward the end of the page that lists teams finishing in the top 4. 
+1. **cmsc.txt**: This is a cleaned-up version of the html file that you can download from UMD SOC (the original file is also there in the directory). It does not contain the discussion sections information, and many other small exceptions are removed. 
 
+2. **worldcup.txt**: This is a snippet of the following Wikipedia webpage on [FIFA (Soccer) World Cup](http://en.wikipedia.org/wiki/FIFA_World_Cup). Specifically it is a partially cleaned-up wiki source for the table toward the end of the page that lists teams finishing in the top 4. 
 
-Your task is to clean the dataset to get the following outputs, respectively.
-    1.
-    1.
-    1.
+Your tasks (to be done using the different tools as discussed below):
+
+1. **CMSC**: Convert the cmsc.txt file into table with columns: 
+
+       Course No., Section No., Instructor, Seats, Open, Waitlist, Days, Time, Bldg., Room No.
+   So the first two outputs would be:
+
+       CMSC100, 0101, Charles Kassir, 45, 4, 0, M, 4:00pm - 4:50pm, CSI, 2117
+       CMSC106, 0101, Jianwu Wang, 45, 0, 5, TuTh, 9:30am - 10:45am, CSI,  2117
+
+1. **World Cup 1**: Create the following table from the world cup data, i.e., each line in the output contains a country, a year, and the position of the county in that year (if within top 4).
+
+       BRA, 1962, 1
+       BRA, 1970, 1
+       BRA, 1994, 1
+       BRA, 2002, 1
+       BRA, 1958, 1
+       BRA, 1998, 2
+       BRA, 1950, 2
+       ...
+
+1. **World Cup 2**: We also want a slightly different representation of the data as shown below. You may want to start with the output of the above.
+
+                 1930    1934    1938    1950    1954    ...
+       Brazil      -       -       3       2       -
+       Germany     -       3       -       -       1
+In other words, we want a 2-dimensional table where the columns the years when world cups were held, the rows are countries, and the entry is the position of that country that year if within top 4, and empty (or N/A or "-") otherwise.
+            
 
 ---
 
@@ -37,10 +61,7 @@ and make sure you can repeat the steps on the datasets provided on the website b
 datasets.
 
 #### Assignment Part 1
-Use Data Wrangler to clean and transform datasets 1 and 2. Dataset 3 is too messy for loading into Data Wrangler directly -- you would need some
-significant pre-processing before trying to use Data Wrangler to clean it.
-
-For each of the datasets (1 and 2): submit a screenshot of the final result and also export and submit the Python script.
+Use Data Wrangler to do the 3 tasks listed above. Submit a screenshot of the final results and also export and submit the Python script.
 
 ---
 
@@ -53,14 +74,13 @@ tasks with these tools.
 You are encouraged to play with these tools and familiarize yourselves with the basic usage of these tools.
 
 
-As an example, the following sequence of commands can be used to answer the third question from the [lab 2](../lab2/) ("Find the five uids that have tweeted the most").
+As an example, the following sequence of commands can be used to find the 5 countries with the highest number of players born in 1975, using the `players.csv` file in `lab2`.
 
-	grep "created\_at" twitter.json | sed 's/"user":{"id":\([0-9]*\).*/XXXXX\1/' | sed 's/.*XXXXX\([0-9]*\)$/\1/' | sort | uniq -c | sort -n | tail -5
-
-The first command (`grep`) discards the deleted tweets, the `sed` commands extract the first "user-id" from each line, `sort` sorts the user ids, and `uniq -c` counts the unique entries (i.e., user ids). The final `sort -n | tail -5` return the top 5 uids.
-Note that, combining the two `sed` commands as follows does not do the right thing -- we will let you figure out why.
-
-	grep "created\_at" twitter.json | sed 's/.*"user":{"id":\([0-9]*\).*/\1/' | sort | uniq -c | sort -n | tail -5"
+	tail +1 ../lab2/players.csv | grep "1975-" | awk -F',' '{print $3}' | sort | uniq -c | sort -n | tail -5
+    
+The first `tail` discards the first header row, the `grep` finds the players born in 1975, the `awk` script splits each line using delimiter `,` and extracts the 3rd field, `sort` sorts the country ids, and
+`uniq -c` counts the unique entries. The final `sort -n | tail -5` return the top 5 country ids. You should try partial prefix of this command to make sure you understand how each one works, especially if you
+haven't used these tools before.
 
 To get into some details:
 
@@ -103,28 +123,28 @@ expressions and the commands as $1, $2, etc. See the manual (`man awk`) or onlin
 
 A few examples to give you a flavor of the tools and what one can do with them.
 
-1. Perform the equivalent of _wrap_ on `labor.csv` (i.e., merge consecutive groups of lines referring to the same record)
+1. Perform the equivalent of _wrap_ command in Data Wrangler on `labor.csv` (i.e., merge consecutive groups of lines referring to the same record)
 
     	cat labor.csv | awk '/^Series Id:/ {print combined; combined = $0} 
                             !/^Series Id:/ {combined = combined", "$0;}
     	                    END {print combined}'
 
-1. On  `crime-clean.txt`, the following command does a _fill_ (first row of output: "Alabama, 2004, 4029.3".
+1. On  `crime.txt`, the following command does a _fill_ (first row of output: "Alabama, 2004, 4029.3".
 
-    	cat crime-clean.txt | grep -v '^,$' | awk '/^[A-Z]/ {state = $4} !/^[A-Z]/ {print state, $0}'
+    	cat crime.txt | grep -v '^,$' | awk '/^[A-Z]/ {state = $4} !/^[A-Z]/ {print state, $0}'
     
-1. On `crime-clean.txt`, the following script cleans the data as was done in the Wrangler demo in class. The following works assuming perfectly homogenous data (as the example on the Wrangler wbesite is).
+1. On `crime.txt`, the following script cleans the data as was done in the Wrangler demo in class. The following works assuming perfectly homogenous data (as the example on the Wrangler wbesite is).
 
-    	cat crime-clean.txt | grep -v '^,$' | sed 's/,$//g; s/Reported crime in //; s/[0-9]*,//' | 
+    	cat crime.txt | grep -v '^,$' | sed 's/,$//g; s/Reported crime in //; s/[0-9]*,//' | 
             awk -F',' 'BEGIN {printf "State, 2004, 2005, 2006, 2007, 2008"} 
                 /^[A-Z]/ {print c; c=$0}  
                 !/^[A-Z]/ {c=c", "$0;}    
                 END {print c}'
 
-1. On `crime-unclean.txt` the follow script perfroms the same cleaning as above, but
-allows incomplete information (e.g., some years may be missing).
+1. The follow script perfroms the same cleaning as above, but allows incomplete information (e.g., some years may be missing). The missing data is reported as 0. Note that the `crime.txt` has information for
+all 5 years for all states, but you can try removing some of those rows to make sure this script works.
 
-    	cat crime-unclean.txt | grep -v '^,$' | sed 's/Reported crime in //;' | 
+    	cat crime.txt | grep -v '^,$' | sed 's/Reported crime in //;' | 
                 awk -F',' 'BEGIN {printf "State, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008"} 
                            /^[A-Z]/ || /^$/ {if(state) {
                                         printf(state); 
@@ -141,7 +161,7 @@ off using a proper scripting language like `perl` or `python`!
     
 #### Assignment Part 2
 
-Clean the Datasets 2 and 3 using these tools. Submit the final scripts.
+Perform **CMSC** and **World Cup 1** using the UNIX tools. Task **World Cup 2** is a bit much for these tools.
 
 ---
 
@@ -153,5 +173,5 @@ likely to be significantly faster.
 
 #### Assignment Part 3
 
-Clean the Datasets 2 and 3 using Python. Submit the final scripts.
+Perform the three tasks using Python. Submit the Python scripts and the results.
 
