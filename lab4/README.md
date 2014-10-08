@@ -27,28 +27,28 @@ Your tasks (to be done using the different tools as discussed below):
 
 1. **CMSC**: Convert the cmsc.txt file into table with columns: 
 
-       Course No., Section No., Instructor, Seats, Open, Waitlist, Days, Time, Bldg., Room No.
+           Course No., Section No., Instructor, Seats, Open, Waitlist, Days, Time, Bldg., Room No.
    So the first two outputs would be:
 
-       CMSC100, 0101, Charles Kassir, 45, 4, 0, M, 4:00pm - 4:50pm, CSI, 2117
-       CMSC106, 0101, Jianwu Wang, 45, 0, 5, TuTh, 9:30am - 10:45am, CSI,  2117
+           CMSC100, 0101, Charles Kassir, 45, 4, 0, M, 4:00pm - 4:50pm, CSI, 2117
+           CMSC106, 0101, Jianwu Wang, 45, 0, 5, TuTh, 9:30am - 10:45am, CSI,  2117
 
 1. **World Cup 1**: Create the following table from the world cup data, i.e., each line in the output contains a country, a year, and the position of the county in that year (if within top 4).
 
-       BRA, 1962, 1
-       BRA, 1970, 1
-       BRA, 1994, 1
-       BRA, 2002, 1
-       BRA, 1958, 1
-       BRA, 1998, 2
-       BRA, 1950, 2
-       ...
+           BRA, 1962, 1
+           BRA, 1970, 1
+           BRA, 1994, 1
+           BRA, 2002, 1
+           BRA, 1958, 1
+           BRA, 1998, 2
+           BRA, 1950, 2
+           ...
 
 1. **World Cup 2**: We also want a slightly different representation of the data as shown below. You may want to start with the output of the above.
 
-                 1930    1934    1938    1950    1954    ...
-       Brazil      -       -       3       2       -
-       Germany     -       3       -       -       1
+                     1930    1934    1938    1950    1954    ...
+           Brazil      -       -       3       2       -
+           Germany     -       3       -       -       1
 In other words, we want a 2-dimensional table where the columns the years when world cups were held, the rows are countries, and the entry is the position of that country that year if within top 4, and empty (or N/A or "-") otherwise.
             
 
@@ -75,8 +75,7 @@ You are encouraged to play with these tools and familiarize yourselves with the 
 
 
 As an example, the following sequence of commands can be used to find the 5 countries with the highest number of players born in 1975, using the `players.csv` file in `lab2`.
-
-	tail +1 ../lab2/players.csv | grep "1975-" | awk -F',' '{print $3}' | sort | uniq -c | sort -n | tail -5
+	`tail +1 ../lab2/players.csv | grep "1975-" | awk -F',' '{print $3}' | sort | uniq -c | sort -n | tail -5`
     
 The first `tail` discards the first header row, the `grep` finds the players born in 1975, the `awk` script splits each line using delimiter `,` and extracts the 3rd field, `sort` sorts the country ids, and
 `uniq -c` counts the unique entries. The final `sort -n | tail -5` return the top 5 country ids. You should try partial prefix of this command to make sure you understand how each one works, especially if you
@@ -87,20 +86,17 @@ To get into some details:
 ## grep
 
 The basic syntax for `grep` is: 
-
-	 grep 'regexp' filename
+	 `grep 'regexp' filename`
 
 or equivalently (using UNIX pipelining):
-
-	cat filename | grep 'regexp'
+	`cat filename | grep 'regexp'`
 
 The output contains only those lines from the file that match the regular expression. Two options to grep are useful: `grep -v` will output those lines that
 *do not* match the regular expression, and `grep -i` will ignore case while matching. See the manual (`man grep`) (or online resources) for more details.
 
 ## sed
 Sed stands for _stream editor_. Basic syntax for `sed` is:
-
-	sed 's/regexp/replacement/g' filename
+	`sed 's/regexp/replacement/g' filename`
 
 For each line in the intput, the portion of the line that matches _regexp_ (if any) is replaced with _replacement_. Sed is quite powerful within the limits of
 operating on single line at a time. You can use \\( \\) to refer to parts of the pattern match. In the first sed command above, the sub-expression within \\( \\)
