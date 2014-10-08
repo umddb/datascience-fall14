@@ -282,6 +282,12 @@
     - Much research work on this topic, but pretty domain-specific at this point
 
 
+- Crowdsourcing
+    - Humans are often better at this task
+    - Can use one of the crowdsourcing mechanisms (e.g., Mechanical Turk) for getting human input on the difficult pairs
+    - Quite heavily used commercially (e.g., to disambiguate products, restaurants, etc.)
+
+
 --- 
 
 ## Entity Resolution: Scaling to Big Data
@@ -298,3 +304,8 @@
 - One useful technique to know: **min-hash signatures**
     - Can quickly find potentially overlapping sets
     - Turns up to be very useful in many domains (beyond ER)
+
+
+--- 
+
+## Data Integration

@@ -138,44 +138,19 @@ We provided the last example to show how powerful `awk` can be. However if you n
 off using a proper scripting language like `perl` or `python`!
 
     
-## Tasks:
+#### Assignment Part 2
 
-Perform the above cleaning tasks using these tools. Hints:
+Clean the Datasets 2 and 3 using these tools. Submit the final scripts.
 
-1. Use the "split" function, and "for loop" constructs (e.g., [here](http://www.math.utah.edu/docs/info/gawk_12.html)).
+---
 
-2. For World Cup data, start with this command that cleans up the data a little bit.
+### Python
 
-        cat worldcup.txt | sed 's/\[\[\([0-9]*\)[^]]*\]\]/\1/g; s/.*fb|\([A-Za-z]*\)}}/\1/g; s/<sup><\/sup>//g; s/|bgcolor[^|]*//g; s/|align=center[^|]*//g'
+Finally, as a scripting language and with powerful string operators, Python is an ideal language to write data cleaning tasks. In fact, the shell
+scripts you may write using the above Unix tools can be pretty much directly mapped to Python code, although for simple things, the Unix tools are
+likely to be significantly faster.
 
-Perform the above cleaning tasks using these tools.   No need to re-answer the questions in the Wrangler section, but recompute them to ensure your answers are consistent.
+#### Assignment Part 3
 
-#### Questions
-
-1. Submit the scripts you wrote to perform the cleaning tasks.
-2. From your experience, briefly discuss the pro and cons between using Data Wrangler as compared to lower levels tools like sed/awk?
-3. What additional operations would have made using Data Wrangler "easier"?
-
-
-# Handing in your work
-
-Answer the questions above in a text file called "lab3-lastname", where lastname is your last name.  Make sure the text file also has your complete name.   Save your Wrangler and command line scripts as separate files and create a zip file or tarball with all three files.   Upload it to the [course Stellar site](http://stellar.mit.edu/S/course/6/fa13/6.885/) as the "lab3" assignment.
-
-Now you're almost done!  Go read the assigned paper(s) for today.
-
-You can always feel free to contact us with questions on [Piazza](https://piazza.com/class/hl6u4m7ft8n373).
-
-### Feedback (optional, but valuable)
-
-If you have any comments about this lab, or any thoughts about the
-class so far, we would greatly appreciate them.  Your comments will
-be strictly used to improve the rest of the labs and classes and have
-no impact on your grade. 
-
-Some questions that would be helpful:
-
-* Is the lab too difficult or too easy?  
-* Did you look forward to any exercise that the lab did not cover?
-* Which parts of the lab were interesting or valuable towards understanding the material?
-* How is the pace of the course so far?
+Clean the Datasets 2 and 3 using Python. Submit the final scripts.
 
