@@ -9,10 +9,11 @@ There are several different files you need to submit. You should zip them all in
 
 ### Datasets and Tasks
 
-The lab4 directory contains three files:
-    1.
-    1.
-    1.
+The lab4 directory contains several files:
+    1. **crime.txt**: This is the one of the example files from the Data Wrangler website.
+    1. **labor.csv**: Another file from Data Wrangler website.
+    1. **cmsc.txt**: This is a cleaned-up version of the html file that you can download from UMD SOC (the original file is also there in the
+            directory). It only contains 
 
 1. A dataset of synonyms and their meanings (`synsets.txt`). Each line contains one synset with the following format:
 
