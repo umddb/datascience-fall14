@@ -435,8 +435,8 @@
     - Stanford NLP Course, lectures on Information Extraction and Named Entity Recognition 
         - [Coursera Link](https://class.coursera.org/nlp/lecture)
         - PDFs can be directly found at: http://web.stanford.edu/class/cs124/
-        - IE: https://web.stanford.edu/class/cs124/lec/Information_Extraction_and_Named_Entity_Recognition.pptx
-        - Relation Extraction: https://spark-public.s3.amazonaws.com/cs124/slides/rel.pdf
+        - IE Overview, by Christopher Manning: https://web.stanford.edu/class/cs124/lec/Information_Extraction_and_Named_Entity_Recognition.pptx
+        - Relation Extraction, by Dan Jurafsky: https://spark-public.s3.amazonaws.com/cs124/slides/rel.pdf
     - Natural Language Toolkit Book: http://www.nltk.org/book/ch07.html
 
 - Goal: automatically extract structured information from unstructured text to crete a structured database or a knowledge base (e.g., Google Knowledge Graph)
