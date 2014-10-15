@@ -375,8 +375,8 @@
 ## Data Integration: Schema Mapping
 
 - Two subtly different approaches to maintain mappings between local schemas and global schema
-    - For each local schema, specify a transformation to the global schema
-    - For each local schema, specify a view on the global schema that it is equal to
+    - Global-as-view approach: For each local schema, specify a transformation to the global schema
+    - Local-as-view approach:For each local schema, specify a view on the global schema that it is equal to
 
 - Example: Books
     - S1: Publisher XYZ Website
@@ -404,15 +404,40 @@
 
 
 - Global-as-View (GAV) Approach:
-    - Write the mapping from S1 to the desired global schema
+    - Write the mapping from each of S1, S2, S3, S4 to the desired global schema
+    - For example, for S2, we may do the following:
 
+        select ISBN, Title, NULL, NULL into Books
+        from S2.Books;
+        select new_author_id() as Author_ID, extract_firstname(Name) as First_Name, extract_lastname(Name) as Last_Name into Author
+        from S2.Authors;
+        select  ISBN, **Author_id**
+        from S2.Authors;
+
+    - The last one is a little bit tricky and would require a join to get back the Author_ID
+    - S2 was probably the easiest here -- the others require splitting up lists etc., and would be more involved
+ 
 - Local-as-View (LAV) Approach:
     - Write each of the sources as a view of the global schema
+    - For example: 
+        
+        S1.Book = select ISBN, Title, Price as List_Price, concat(First_Name || Last_Name) as Author_List, NULL
+                  from Book natural join Author
+                  group by ISBN, Title, Price;
 
+    - The `concat` above can be used to concatenate the author names to get a single Author_List
 
 --
 
 ## Information Extraction
+
+- Much of the following discussion and material is from the following sources:
+    - Stanford NLP Course, lectures on Information Extraction and Named Entity Recognition 
+        - [Coursera Link](https://class.coursera.org/nlp/lecture)
+        - PDFs can be directly found at: http://web.stanford.edu/class/cs124/
+        - IE: https://web.stanford.edu/class/cs124/lec/Information_Extraction_and_Named_Entity_Recognition.pptx
+        - Relation Extraction: https://spark-public.s3.amazonaws.com/cs124/slides/rel.pdf
+    - Natural Language Toolkit Book: http://www.nltk.org/book/ch07.html
 
 - Goal: automatically extract structured information from unstructured text to crete a structured database or a knowledge base (e.g., Google Knowledge Graph)
 
@@ -431,12 +456,20 @@
 
     <img src="multimedia/ie-3.png" width=400>
 
-- *Relation Extraction**:
+- **Relation Extraction**:
     - Extracting, typically binary, relationships between entities
     - E.g., "The Washington Nationals are a professional baseball team based in Washington, D.C."
         - BasedIn(Washington Nationals, Washington D.C.)
         - IsA(Washington Nationals, Professional Baseball Team)
-    - From: Stanford NLP Course Slides
 
     <img src="multimedia/ie-2.png" width=400>
 
+- Generally two distinct approaches to either problem
+    - Rule-based: Using handwritten (or in some cases, machine-learned) rules 
+        - Higher precision (i.e., extracted entities or relations are generally correct), but low recall (i.e., misses too many things)
+        - Typically assume NLP parsing as a pre-cursor
+            - Otherwise don't have enough context (is "Reading" a verb or a reference to a town?)
+    - Machine learning-based
+        - Much work on more sophisticated approaches to both problems
+
+- Read the two slide decks above for more details
