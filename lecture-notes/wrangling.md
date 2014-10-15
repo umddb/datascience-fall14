@@ -362,7 +362,7 @@
 - Techniques:
     - Use names of the attributes, any textual description, and metadata (e.g., data types, constraints)
     - Use structure in the schemas 
-    - Overall quite subjective
+    - Overall quite domain-specific
 
 ---
 
@@ -395,3 +395,42 @@
           BookAuthors(ISBN, Author_ID)
           Publisher(Publisher_ID, Name, Address)
           BookPublishers(ISBN, Publisher_ID)
+
+
+- Global-as-View (GAV) Approach:
+    - Write the mapping from S1 to the desired global schema
+
+- Local-as-View (LAV) Approach:
+    - Write each of the sources as a view of the global schema
+
+
+--
+
+## Information Extraction
+
+- Goal: automatically extract structured information from unstructured text to crete a structured database or a knowledge base (e.g., Google Knowledge Graph)
+
+- Applications:
+    - News tracking, Customer care, Data cleaning, Classified ads, PIM, Citation databases, Opinion databases, ...
+    - Apple Mail, GMail, etc., use simpler IE techniques to identify events to put in calendars etc.
+    - Constructing Knowledges Bases automatically
+    - Question Answering (e.g., IBM Watson in Jeopardy)
+
+- **Named Entity Recognition**:
+    - A key subtask: identify and classify names in the text
+    - Correctly identifying named entities can help with searching, extracting further relationships, answering questions, etc.
+    - Hard to do without using context
+
+    <img src="multimedia/ie-1.png" width=400>
+
+    <img src="multimedia/ie-3.png" width=400>
+
+- *Relation Extraction**:
+    - Extracting, typically binary, relationships between entities
+    - E.g., "The Washington Nationals are a professional baseball team based in Washington, D.C."
+        - BasedIn(Washington Nationals, Washington D.C.)
+        - IsA(Washington Nationals, Professional Baseball Team)
+    - From: Stanford NLP Course Slides
+
+    <img src="multimedia/ie-2.png" width=400>
+
