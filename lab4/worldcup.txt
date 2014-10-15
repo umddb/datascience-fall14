@@ -1,0 +1,170 @@
+! Team !! Titles !! Runners-up !! Third place !! Fourth place !! data-sort-type="number"|Top 4 <br />finishes !! data-sort-type="number"|Top 3 <br />finishes !! data-sort-type="number"|Top 2 <br />finishes
+|-
+|style="background:#fff68f"|{{fb|BRA}}
+|style="background:#fff68f"|5 ([[1958 FIFA World Cup|1958]], [[1962 FIFA World Cup|1962]], [[1970 FIFA World Cup|1970]], [[1994 FIFA World Cup|1994]], [[2002 FIFA World Cup|2002]])
+|2 ([[1950 FIFA World Cup|1950]][[#1|*]], [[1998 FIFA World Cup|1998]])
+|2 ([[1938 FIFA World Cup|1938]], [[1978 FIFA World Cup|1978]])
+|2 ([[1974 FIFA World Cup|1974]], [[2014 FIFA World Cup|2014]][[#1|*]])
+|11||9||7
+|-
+|style="background:#fff68f"|{{fb|GER}}[[#2|^]]
+|style="background:#fff68f"|4 ([[1954 FIFA World Cup|1954]], [[1974 FIFA World Cup|1974]][[#1|*]], [[1990 FIFA World Cup|1990]], [[2014 FIFA World Cup|2014]])
+|4 ([[1966 FIFA World Cup|1966]], [[1982 FIFA World Cup|1982]], [[1986 FIFA World Cup|1986]], [[2002 FIFA World Cup|2002]])
+|4 ([[1934 FIFA World Cup|1934]], [[1970 FIFA World Cup|1970]], [[2006 FIFA World Cup|2006]][[#1|*]], [[2010 FIFA World Cup|2010]])
+|1 ([[1958 FIFA World Cup|1958]])
+|13||12||8
+|-
+|style="background:#fff68f"|{{fb|ITA}}
+|style="background:#fff68f"|4 ([[1934 FIFA World Cup|1934]][[#1|*]], [[1938 FIFA World Cup|1938]], [[1982 FIFA World Cup|1982]], [[2006 FIFA World Cup|2006]])
+|2 ([[1970 FIFA World Cup|1970]], [[1994 FIFA World Cup|1994]])
+|1 ([[1990 FIFA World Cup|1990]][[#1|*]])
+|1 ([[1978 FIFA World Cup|1978]])
+|8||7||6
+|-
+|style="background:#fff68f"|{{fb|ARG}}
+|style="background:#fff68f"|2 ([[1978 FIFA World Cup|1978]][[#1|*]], [[1986 FIFA World Cup|1986]])
+|3 ([[1930 FIFA World Cup|1930]], [[1990 FIFA World Cup|1990]], [[2014 FIFA World Cup|2014]])
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|5||5||5
+|-
+|style="background:#fff68f"|{{fb|URU}}
+|style="background:#fff68f"|2 ([[1930 FIFA World Cup|1930]][[#1|*]], [[1950 FIFA World Cup|1950]])
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|3 ([[1954 FIFA World Cup|1954]], [[1970 FIFA World Cup|1970]], [[2010 FIFA World Cup|2010]])
+|5||2||2
+|-
+|style="background:#fff68f"|{{fb|FRA}}
+|style="background:#fff68f"|1 ([[1998 FIFA World Cup|1998]][[#1|*]])
+|1 ([[2006 FIFA World Cup|2006]])
+|2 ([[1958 FIFA World Cup|1958]], [[1986 FIFA World Cup|1986]])
+|1 ([[1982 FIFA World Cup|1982]])
+|5||4||2
+|-
+|style="background:#fff68f"|{{fb|ENG}}
+|style="background:#fff68f"|1 ([[1966 FIFA World Cup|1966]][[#1|*]])
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1990 FIFA World Cup|1990]])
+|2||1||1
+|-
+|style="background:#fff68f"|{{fb|ESP}}
+|style="background:#fff68f"|1 ([[2010 FIFA World Cup|2010]])
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1950 FIFA World Cup|1950]])
+|2||1||1
+|-
+|{{fb|NED}}
+|align=center|{{sort dash}}
+|3 ([[1974 FIFA World Cup|1974]], [[1978 FIFA World Cup|1978]], [[2010 FIFA World Cup|2010]])
+|1 ([[2014 FIFA World Cup|2014]])
+|1 ([[1998 FIFA World Cup|1998]])
+|5||4||3
+|-
+|style=white-space:nowrap|{{fb|TCH}}<sup>[[#3|#]]</sup>
+|align=center|{{sort dash}}
+|2 ([[1934 FIFA World Cup|1934]], [[1962 FIFA World Cup|1962]])
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|2||2||2
+|-
+|{{fb|HUN}}
+|align=center|{{sort dash}}
+|2 ([[1938 FIFA World Cup|1938]], [[1954 FIFA World Cup|1954]])
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|2||2||2
+|-
+|{{fb|SWE}}
+|align=center|{{sort dash}}
+|1 ([[1958 FIFA World Cup|1958]][[#1|*]])
+|2 ([[1950 FIFA World Cup|1950]], [[1994 FIFA World Cup|1994]])
+|1 ([[1938 FIFA World Cup|1938]])
+|4||3||1
+|-
+|{{fb|POL}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|2 ([[1974 FIFA World Cup|1974]], [[1982 FIFA World Cup|1982]])
+|align=center|{{sort dash}}
+|2||2||{{sort dash}}
+|-
+|{{fb|AUT}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1954 FIFA World Cup|1954]])
+|1 ([[1934 FIFA World Cup|1934]])
+|2||1||{{sort dash}}
+|-
+|{{fb|POR}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1966 FIFA World Cup|1966]])
+|1 ([[2006 FIFA World Cup|2006]])
+|2||1||{{sort dash}}
+|-
+|{{fb|USA}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1930 FIFA World Cup|1930]])
+|align=center|{{sort dash}}
+|1||1||{{sort dash}}
+|-
+|{{fb|CHI}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1962 FIFA World Cup|1962]][[#1|*]])
+|align=center|{{sort dash}}
+|1||1||{{sort dash}}
+|-
+|{{fb|CRO}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1998 FIFA World Cup|1998]])
+|align=center|{{sort dash}}
+|1||1||{{sort dash}}
+|-
+|{{fb|TUR}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[2002 FIFA World Cup|2002]])
+|align=center|{{sort dash}}
+|1||1||{{sort dash}}
+|-
+|{{fb|YUG}}<sup>[[#3|#]]</sup>
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|2 ([[1930 FIFA World Cup|1930]], [[1962 FIFA World Cup|1962]])
+|2||{{sort dash}}||{{sort dash}}
+|-
+|{{fb|URS}}<sup>[[#3|#]]</sup>
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1966 FIFA World Cup|1966]])
+|1||{{sort dash}}||{{sort dash}}
+|-
+|{{fb|BEL}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1986 FIFA World Cup|1986]])
+|1||{{sort dash}}||{{sort dash}}
+|-
+|{{fb|BUL}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[1994 FIFA World Cup|1994]])
+|1||{{sort dash}}||{{sort dash}}
+|-
+|{{fb|KOR}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|align=center|{{sort dash}}
+|1 ([[2002 FIFA World Cup|2002]][[#1|*]])
+|1||{{sort dash}}||{{sort dash}}
+|}

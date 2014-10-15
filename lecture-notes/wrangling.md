@@ -286,6 +286,12 @@
 
 
 
+- Crowdsourcing
+    - Humans are often better at this task
+    - Can use one of the crowdsourcing mechanisms (e.g., Mechanical Turk) for getting human input on the difficult pairs
+    - Quite heavily used commercially (e.g., to disambiguate products, restaurants, etc.)
+
+
 --- 
 
 ## Entity Resolution: Scaling to Big Data
