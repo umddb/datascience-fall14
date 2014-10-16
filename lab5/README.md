@@ -26,8 +26,9 @@ The entity resolution module we are going to use is called [dedupe](http://dedup
 
 To install dedupe in your virtual machine you need to follow the instructions listed below:
 
-1. Open a terminal and execute "pip install dedupe". This will download the necessary packages and install dedupe. 
-TO BE FINALIZED
+1. Open a terminal and execute "sudo pip install dedupe". 
+2. Then execute "sudo pip install zope.interface --upgrade".
+3. Now you should be able to include dedupe in python.
 
 ### Tasks
 
