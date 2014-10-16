@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\renewcommand{\baselinestretch}{1.05}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{fullpage}
+\usepackage{graphics}
+\usepackage{txfonts}
+
+\newcommand{\antijoin}{\rhd}
+
+\setlength{\textheight}{9.2in}
+
+\pagestyle{empty}
+
+\newcommand{\answer}[2]{\noindent {\bf Answer:} #2}
+\newcommand{\justanswer}[1]{\noindent {{\bf Answer:} #1}}
+\newcommand{\mynewpage}{\newpage}
+%\renewcommand{\justanswer}[1]{}
+%\renewcommand{\answer}[2]{\vspace{#1}}
+\renewcommand{\mynewpage}{}
+\newcommand{\pt}[1]{\textbf{\underline{[#1 pts]}}}
+\newcommand{\ptshort}[1]{\textbf{[#1]}}
+\newcommand{\hard}{\textbf{[HARD]}}
+
+\newcommand{\select}{{\bf select}\ }
+\newcommand{\from}{{\bf from}\ }
+\newcommand{\where}{{\bf where}\ }
+\newcommand{\groupby}{{\bf group by}\ }
+\newcommand{\orderby}{{\bf order by}\ }
+\newcommand{\having}{{\bf having}\ }
+\newcommand{\create}{{\bf create}\ }
+\newcommand{\sqlexists}{{\bf exists}\ }
+\newcommand{\sqland}{{\bf and}\ }
+
+\newcommand{\spaces}{\mbox{\ \ \ \ \ \ \ \ }}
+
+\newcommand{\miss}{{\em miss}\ }
+\newcommand{\hit}{{\em hit}\ }
+
+\newcommand{\commentout}[1]{}
+\newcommand{\extracredit}[1]{{\bf [Extra Credit: #1 pts]}}
+
+\newcommand{\fd}[2]{\ensuremath{#1 \rightarrow #2}}
+\newcommand{\mvd}[2]{\ensuremath{#1 \rightarrow\rightarrow #2}}
+
+\begin{document}
+{
+\begin{center}
+%\large
+%UNIVERSITY OF MARYLAND \\
+%Department of Computer Science \\
+%\vspace{5pt}
+\large
+\vspace{5pt}
+\parbox{1.5in}{CMSC498O\\ Fall 2014} \parbox{3in}{\begin{center}\bf Introduction to Data Science I \\ MIDTERM \\ Closed Book\end{center}}
+\parbox{1.5in}{Deshpande}
+\end{center}
+}
+
+\begin{itemize}
+\item Total points: 80. Weight: 15\% of the course grade. 
+\item Show your reasoning. Write partial solutions. You will get a fair amount of the credit if I think you
+know the concepts.
+
+\item Unless otherwise specified, a {\em Yes/No} answer is {\em not sufficient} for any question. No points will be \\ given without
+accompanying explanation.
+\end{itemize}
+
+\underline{\bf \large Your Name:} 
+
+
+
+\newcommand{\qonetopic}{Misc Questions}
+\newcommand{\qtwotopic}{Modelling}
+\newcommand{\qthreetopic}{Functional Dependencies/Normalization}
+\newcommand{\qfourtopic}{Relational Algebra/SQL}
+\newcommand{\qfivetopic}{Buffer Management}
+
+\newcommand{\er}{\textbf{(E/R Modeling)}}
+\newcommand{\normalization}{\textbf{(Normalization)}}
+\newcommand{\raid}{\textbf{(RAID)}}
+
+
+%\section{\qonetopic \textbf{\ [3 pts each, 27 total]}}
+
+\section{Miscellaneous Questions 1 (8 questions - 4 pts each)}
+\begin{enumerate}
+
+\item What is the wrong with the following statistical analysis?
+
+\item Show how to compute the p-value for the following data. You can write the formula and leave it at that.
+
+\item Organizational data with abbreviations. Give some approaches to disambiguate. Which of the
+following is likely to give best results. Explain your reasoning.
+
+\item What is "volunteer bias" in sampling? You can use an example.
+
+\item What is "protocol buffers? What are they used for?
+
+\item List three different data models.
+
+\item On the following table: what is the result of the query?
+
+\item What are some of the single-source data quality problems?
+
+\item What is the difference between `deduplication' and `record linkage'?
+
+\item Briefly explain the two problem settings in data integration.
+
+\item Explain the rule-based approach to relation extraction in information extraction with an
+example.
+
+\item What is `regularization' in statistical modeling?
+
+\item What may be some potential features to use for this problem.
+
+\item List two different techniques used for classification.
+
+\item Consider the relations: $R(A, B)$ and $S(B, C)$, and the SQL query: \\[3pt] {\tt select R.a, count(*) from R natural join S group by R.a;}
+
+Briefly explain the result of this query in words. Why might you want to use {\em left outer natural join} instead of {\em natural join} here ? Assume $A$ is a primary key for $R$.
+
+\answer{2.5in}{The query returns for each tuple in $R$, the number of matching tuples in $S$. The result will not contain any tuples $t = (a, b)$ in $R$ that do not have a match in $S$, and we might want to use outerjoin to produce the result $(a, b, 0)$ for those tuples.}
+
+
+\item Consider the following schema: \\
+        create table r (a integer primary key, c integer); \\
+        create table s (b integer primary key, a integer references r); \\
+        create table t (c integer primary key, b integer references s); \\
+        alter table r add constraint rreft foreign key (c) references t(c);
+
+        \begin{itemize}
+            \item Why can't I add the foreign key reference directly in the ``create table'' statement for table ``r'' ?
+
+                \answer{.6in}{The table ``t'' hasn't been created yet.}
+            \item Explain why the statement ``drop table r'' would be rejected.
+
+                \answer{.6in}{Because there is a referential integrity constraint from ``s''.}
+            \item Is there any way I can delete all the tables ? Explain in words.
+
+                \answer{.8in}{Just reverse what we did to create the ``cyclic'' integrity constraints above. First alter the table ``r'' to 
+                remove the referential integrity constraint, and then delete ``t'', and then ``s'', and finally ``r''.}
+        \end{itemize}
+
+\item What is the result of the following boolean expression when (x, y, z) is as specified below ?
+        \[\ \ \ \ (\ \ (x\ =\ 10)\ OR\ (y\ IS\ NOT\ NULL)\ )\ AND\ (z\ >\ 20)\ \]
+        \begin{itemize} 
+            \item $(10, NULL, 30)$ :  \justanswer{\bfseries true}
+            \item $(NULL, 100, 10)$ : \justanswer{\bfseries false} 
+            \item $(NULL, NULL, 10)$ : \justanswer{\bfseries false}
+            \item $( x =  10, y =  100, z =  30)$ :  \justanswer{\bfseries true}
+            \item $(15, 100, NULL)$ : \justanswer{\bfseries unknown}
+            \item $(NULL, NULL, NULL)$ : \justanswer{\bfseries unknown}
+        \end{itemize}
+
+
+\item 
+
+
+\item SQL 1: The following two queries are not equivalent (they don't always produce identical results) because of NULLs. Identify and explain the problem. Schemas are: $R(a, b, d), S( c, d)$.  Assume $a$ is the primary key for $R$.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|ll|}
+    \hline
+\underline{\bf Query I} \mbox{\ \ \ \ \ \ \ \ \ \ \ \ }\mbox{\ \ \ \ \ \ \ \ \ \ \ \ }&& \underline{\bf Query II}\mbox{\ \ \ \ \ \ \ \ \ \ \
+\ }\mbox{\ \ \ \ \ \ } \\
+{\bf select} a &&     {\bf select} a \\
+{\bf from} R &&   {\bf from} R, S  \\
+{\bf where} R.b = ({\bf select} {\bf count}(S.c) && {\bf where} R.d = S.d  \\
+\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf from} S && {\bf group by} R.a \\
+\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf where} R.d = S.d) && {\bf having} R.b = {\bf count}(S.c);\\
+    \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\answer{2in}{Consider a tuple in $R$: $(R.a = \alpha, R.b = 0, R.d = \beta)$, and say there is  no tuple in $S$ such that $S.d = \beta$. The first query will generate the answer tuple $\alpha$, whereas the second query will not. }
+
+
+\end{document}
+
+
