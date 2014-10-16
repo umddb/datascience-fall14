@@ -20,7 +20,7 @@ The lab5 directory contains the following files:
 
 ### Description of Entity Resolution Module
 
-The entity resolution module we are going to use is called [a dedupe](http://dedupe.readthedocs.org/en/latest/). Before using dedupe, please go over the documentation and variable definitions in the attached link. You can also find a useful example on how to use dedupe for entity resolution when the input corresponds to csv files [a here](https://github.com/datamade/csvdedupe). 
+The entity resolution module we are going to use is called [dedupe](http://dedupe.readthedocs.org/en/latest/). Before using dedupe, please go over the documentation and variable definitions in the attached link. You can also find a useful example on how to use dedupe for entity resolution when the input corresponds to csv files [here](https://github.com/datamade/csvdedupe). 
 
 #### Installation 
 
