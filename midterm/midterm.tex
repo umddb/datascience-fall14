@@ -59,7 +59,7 @@
 }
 
 \begin{itemize}
-\item Total points: 80. Weight: 15\% of the course grade. 
+\item Total points: 45. Weight: 15\% of the course grade. 
 \item Show your reasoning. Write partial solutions. You will get a fair amount of the credit if I think you
 know the concepts.
 
@@ -89,11 +89,11 @@ accompanying explanation.
 
 \item What is ``volunteer bias'' in sampling? You can use an example.
 
-\answer{1.7in}{See class notes.}
+\answer{1.9in}{See class notes.}
 
 \item What are ``protocol buffers''? What are they used for?
 
-\answer{1.7in}{See class notes.}
+\answer{1.9in}{See class notes.}
 
 \item List three different data models.
 
@@ -101,30 +101,31 @@ accompanying explanation.
 
 \item What is the difference between ``deduplication'' and ``record linkage'' in the context of entity resolution?
 
-\answer{2.1in}{See class notes.}
-
-\item Briefly explain the ``local-as-view'' approach in data integration.
-
-\answer{2.1in}{See class notes.}
+\answer{2.9in}{See class notes.}
 
 \item Explain the rule-based approach to {\em relation extraction} in Information Extraction with an
 example.
 
-\answer{2.1in}{See class notes.}
+\answer{2.9in}{See class notes.}
 
-\item Briefly explain the notion of ``regularization'' in statistical modeling.
+\item Briefly explain the notion of ``overfitting'' in statistical modeling.
 
-\answer{2.1in}{See class notes.}
+\answer{2.9in}{See class notes.}
 
 \item List and briefly explain one classification technique.
 
-\answer{2in}{See class notes.}
+\answer{2.5in}{See class notes.}
+
+\item Briefly explain the ``local-as-view'' approach in data integration.
+
+\answer{2.7in}{See class notes.}
+
 
 \item Consider the relations: $R(A, B)$ and $S(B, C)$, and the SQL query: \\[3pt] {\tt select R.a, count(*) from R natural join S group by R.a;} \\[2pt]
 Briefly explain the result of this query in words. Why might you want to use {\em left outer natural join} instead of {\em natural join} here ? 
 Assume $A$ is a primary key for $R$.
 
-\answer{2.5in}{The query returns for each tuple in $R$, the number of matching tuples in $S$. The result will not contain any tuples $t = (a, b)$ in $R$ that do not have a match in $S$, and we might want to use outerjoin to produce the result $(a, b, 0)$ for those tuples.}
+\answer{2.9in}{The query returns for each tuple in $R$, the number of matching tuples in $S$. The result will not contain any tuples $t = (a, b)$ in $R$ that do not have a match in $S$, and we might want to use outerjoin to produce the result $(a, b, 0)$ for those tuples.}
 
 
 
@@ -134,19 +135,104 @@ Assume $A$ is a primary key for $R$.
 \section*{Miscellaneous Questions 2 (9 questions - 3 pt each)}
 \begin{enumerate}
 
-\item What is the wrong with the following statistical analysis?
+\item We want to test whether the average cost of the phones purchased by UMD students this year has gone up or down from previous year. Say we 
+know that the average cost of a phone purchased last year by a UMD student was \$300. Explain the steps you would take to test 
+the null hypothesis that the average cost this year = \$300, including how you would make the decision of rejecting or not rejecting the hypothesis.
 
-\answer{2.8in}{ }
+\answer{3.9in}{ }
 
-\item Show how to compute the p-value for the following data. You can write the formula and leave it at that.
+\item Consider the following schema: \\
+        create table r (a integer primary key, c integer); \\
+        create table s (b integer primary key, a integer references r); \\
+        create table t (c integer primary key, b integer references s); \\
+        alter table r add constraint rreft foreign key (c) references t(c);
 
-\answer{2.5in}{ }
+        \begin{itemize}
+            \item Why can't I add the foreign key reference directly in the ``create table'' statement for table ``r'' ?
 
-\item Organizational data with abbreviations. Give some approaches to disambiguate. Which of the
-following is likely to give best results. Explain your reasoning.
+                \answer{.8in}{The table ``t'' hasn't been created yet.}
+            \item Explain why the statement ``drop table r'' would be rejected.
 
-\answer{2.5in}{ }
+                \answer{.8in}{Because there is a referential integrity constraint from ``s''.}
+            \item Is there any way I can delete all the tables ? Explain in words.
 
+                \answer{.8in}{Just reverse what we did to create the ``cyclic'' integrity constraints above. First alter the table ``r'' to 
+                remove the referential integrity constraint, and then delete ``t'', and then ``s'', and finally ``r''.}
+        \end{itemize}
+
+
+\item What does `I' stand for in ACID properties? Briefly describe one mechanism for ensuring 'I'. 
+
+\answer{2.7in}
+
+\item List and briefly describe three single-source data quality problems.
+
+\answer{2.7in}{ }
+
+
+\item Briefly, at a high level, explain the $k$-means clustering algorithm.
+
+\answer{3in}{}
+
+
+
+\newpage
+\item Fill in the pseudocode for a naive implementation of the aggregation operation in the following query using Hashing.  \\[2pt]
+{\tt select R.A, sum(R.B) from R group by R.A}
+
+\begin{verbatim}
+-----------------------------------------------------------------------------
+HashMap h = new HashMap();
+for each tuple r in R:
+    
+
+
+
+
+
+
+
+// print out the results
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+\end{verbatim}
+
+\item Consider an {\em email} dataset, containing the data about a collection of emails within a company. For each email, we know the email
+addresses of the sender and the recipients, as well as the email text. There are however ambiguities since a person may
+use different accounts, including external (e.g., gmail, or yahoo). Suggest three approaches you would use to disambiguate, i.e., decide which email
+addresses belong to the same person. 
+
+\answer{3.5in}{}
+
+
+
+%\item The following two queries are not equivalent (they don't always produce identical results) because of NULLs. Identify and explain the problem. Schemas are: $R(a, b, d), S( c, d)$.  Assume $a$ is the primary key for $R$.
+%
+%\begin{table}[h]
+%\begin{center}
+%\begin{tabular}{|l|ll|}
+%    \hline
+%\underline{\bf Query I} \mbox{\ \ \ \ \ \ \ \ \ \ \ \ }\mbox{\ \ \ \ \ \ \ \ \ \ \ \ }&& \underline{\bf Query II}\mbox{\ \ \ \ \ \ \ \ \ \ \
+%\ }\mbox{\ \ \ \ \ \ } \\
+%{\bf select} a &&     {\bf select} a \\
+%{\bf from} R &&   {\bf from} R, S  \\
+%{\bf where} R.b = ({\bf select} {\bf count}(S.c) && {\bf where} R.d = S.d  \\
+%\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf from} S && {\bf group by} R.a \\
+%\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf where} R.d = S.d) && {\bf having} R.b = {\bf count}(S.c);\\
+%    \hline
+%\end{tabular}
+%\end{center}
+%\end{table}
+%
+%\answer{2in}{Consider a tuple in $R$: $(R.a = \alpha, R.b = 0, R.d = \beta)$, and say there is  no tuple in $S$ such that $S.d = \beta$. The first query will generate the answer tuple $\alpha$, whereas the second query will not. }
+%
+%
 \item On the following tables, what are the results of the queries listed below?
 
 \begin{table}[h]
@@ -178,84 +264,22 @@ following is likely to give best results. Explain your reasoning.
 
 \begin{itemize}
 \item {\tt select avg(B) from R group by A}:
-\answer{1in}{('a1', 15), ('a2', 15)}
+\answer{.7in}{('a1', 15), ('a2', 15)}
 \item {\tt select * from R where C != 10}:
-\answer{1in}{Second and third rows would be returned, but not the fourth}
-\item {\tt select * from R, S where R.C = S.C or R.C is null}: The result contains three tuples.
+\answer{.7in}{Second and third rows would be returned, but not the fourth}
+\item {\tt select * from R, S where R.C = S.C or R.C is null}: The result contains 3 tuples.
 \answer{1in}{('a2', 30, 30, 30, 'd1'), ('a2', 0, NULL, 30, 'd1'), ('a2', 0, NULL, NULL, 'd2')}
 \end{itemize}
 
-\item Fill in the pseudocode for a naive implementation of the aggregation operation in the following query using Hashing.  \\[2pt]
-{\tt select R.A, sum(R.B) from R group by R.A}
-
-\begin{verbatim}
------------------------------------------------------------------------------
-HashMap h = new HashMap();
-for each tuple r in R:
-    
 
 
+\item (1) Consider an unbiased coin. Which of the two sequences, HHHHHH and HTTHTH, is more likely to happen if I were to roll the die 6 times?
+Explain. \\
+(2) An analyst for a fire department observed that: more firemen sent to control a fire meant higher overall damage. Should he
+recommend that fewer firemen be sent to fires? Why or why not?
+            
 
-
-
-
-
-// print out the results
-
-
-
-
-
-
------------------------------------------------------------------------------
-\end{verbatim}
-
-\item What does `I' stand for in ACID properties? Briefly describe one mechanism for ensuring 'I'. 
-
-\answer{2.5in}
-
-\item List and briefly describe three single-source data quality problems.
-
-\answer{2.5in}{ }
-
-\item Consider the following schema: \\
-        create table r (a integer primary key, c integer); \\
-        create table s (b integer primary key, a integer references r); \\
-        create table t (c integer primary key, b integer references s); \\
-        alter table r add constraint rreft foreign key (c) references t(c);
-
-        \begin{itemize}
-            \item Why can't I add the foreign key reference directly in the ``create table'' statement for table ``r'' ?
-
-                \answer{.6in}{The table ``t'' hasn't been created yet.}
-            \item Explain why the statement ``drop table r'' would be rejected.
-
-                \answer{.6in}{Because there is a referential integrity constraint from ``s''.}
-            \item Is there any way I can delete all the tables ? Explain in words.
-
-                \answer{.8in}{Just reverse what we did to create the ``cyclic'' integrity constraints above. First alter the table ``r'' to 
-                remove the referential integrity constraint, and then delete ``t'', and then ``s'', and finally ``r''.}
-        \end{itemize}
-
-\item SQL 1: The following two queries are not equivalent (they don't always produce identical results) because of NULLs. Identify and explain the problem. Schemas are: $R(a, b, d), S( c, d)$.  Assume $a$ is the primary key for $R$.
-
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|l|ll|}
-    \hline
-\underline{\bf Query I} \mbox{\ \ \ \ \ \ \ \ \ \ \ \ }\mbox{\ \ \ \ \ \ \ \ \ \ \ \ }&& \underline{\bf Query II}\mbox{\ \ \ \ \ \ \ \ \ \ \
-\ }\mbox{\ \ \ \ \ \ } \\
-{\bf select} a &&     {\bf select} a \\
-{\bf from} R &&   {\bf from} R, S  \\
-{\bf where} R.b = ({\bf select} {\bf count}(S.c) && {\bf where} R.d = S.d  \\
-\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf from} S && {\bf group by} R.a \\
-\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf where} R.d = S.d) && {\bf having} R.b = {\bf count}(S.c);\\
-    \hline
-\end{tabular}
-\end{center}
-\end{table}
-
-\answer{2in}{Consider a tuple in $R$: $(R.a = \alpha, R.b = 0, R.d = \beta)$, and say there is  no tuple in $S$ such that $S.d = \beta$. The first query will generate the answer tuple $\alpha$, whereas the second query will not. }
+\answer{2.8in}{ }
 
 \end{enumerate}
 
