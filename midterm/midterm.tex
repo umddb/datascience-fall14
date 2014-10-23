@@ -1,0 +1,306 @@
+\documentclass[11pt]{article}
+\renewcommand{\baselinestretch}{1.02}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{fullpage}
+\usepackage{graphics}
+\usepackage{txfonts}
+
+\newcommand{\antijoin}{\rhd}
+
+\setlength{\textheight}{9.5in}
+\setlength{\topmargin}{-.2in}
+
+\pagestyle{empty}
+
+\newcommand{\answer}[2]{\noindent {\bf Answer:} #2}
+\newcommand{\justanswer}[1]{\noindent {{\bf Answer:} #1}}
+\newcommand{\mynewpage}{\newpage}
+%\renewcommand{\justanswer}[1]{}
+%\renewcommand{\answer}[2]{\vspace{#1}}
+\renewcommand{\mynewpage}{}
+\newcommand{\pt}[1]{\textbf{\underline{[#1 pts]}}}
+\newcommand{\ptshort}[1]{\textbf{[#1]}}
+\newcommand{\hard}{\textbf{[HARD]}}
+
+\newcommand{\select}{{\bf select}\ }
+\newcommand{\from}{{\bf from}\ }
+\newcommand{\where}{{\bf where}\ }
+\newcommand{\groupby}{{\bf group by}\ }
+\newcommand{\orderby}{{\bf order by}\ }
+\newcommand{\having}{{\bf having}\ }
+\newcommand{\create}{{\bf create}\ }
+\newcommand{\sqlexists}{{\bf exists}\ }
+\newcommand{\sqland}{{\bf and}\ }
+
+\newcommand{\spaces}{\mbox{\ \ \ \ \ \ \ \ }}
+
+\newcommand{\miss}{{\em miss}\ }
+\newcommand{\hit}{{\em hit}\ }
+
+\newcommand{\commentout}[1]{}
+\newcommand{\extracredit}[1]{{\bf [Extra Credit: #1 pts]}}
+
+\newcommand{\fd}[2]{\ensuremath{#1 \rightarrow #2}}
+\newcommand{\mvd}[2]{\ensuremath{#1 \rightarrow\rightarrow #2}}
+
+\begin{document}
+{
+\begin{center}
+%\large
+%UNIVERSITY OF MARYLAND \\
+%Department of Computer Science \\
+%\vspace{5pt}
+\large
+\vspace{5pt}
+\parbox{1.5in}{CMSC498O\\ Fall 2014} \parbox{3in}{\begin{center}\bf Introduction to Data Science I \\ MIDTERM \\ Closed Book\end{center}}
+\parbox{1.5in}{Deshpande}
+\end{center}
+}
+
+\begin{itemize}
+\item Total points: 45. Weight: 15\% of the course grade. 
+\item Show your reasoning. Write partial solutions. You will get a fair amount of the credit if I think you
+know the concepts.
+
+\item Unless otherwise specified, a {\em Yes/No} answer is {\em not sufficient} for any question. No points will be \\ given without
+accompanying explanation.
+\end{itemize}
+
+\underline{\bf \large Your Name:} 
+
+
+
+\newcommand{\qonetopic}{Misc Questions}
+\newcommand{\qtwotopic}{Modelling}
+\newcommand{\qthreetopic}{Functional Dependencies/Normalization}
+\newcommand{\qfourtopic}{Relational Algebra/SQL}
+\newcommand{\qfivetopic}{Buffer Management}
+
+\newcommand{\er}{\textbf{(E/R Modeling)}}
+\newcommand{\normalization}{\textbf{(Normalization)}}
+\newcommand{\raid}{\textbf{(RAID)}}
+
+
+%\section{\qonetopic \textbf{\ [3 pts each, 27 total]}}
+
+\section*{Miscellaneous Questions 1 (9 questions - 2 pt each)}
+\begin{enumerate}
+
+\item What is ``volunteer bias'' in sampling? You can use an example.
+
+\answer{1.9in}{See class notes.}
+
+\item What are ``protocol buffers''? What are they used for?
+
+\answer{1.9in}{See class notes.}
+
+\item List three different data models.
+
+\answer{1.7in}{See class notes.}
+
+\item What is the difference between ``deduplication'' and ``record linkage'' in the context of entity resolution?
+
+\answer{2.9in}{See class notes.}
+
+\item Explain the rule-based approach to {\em relation extraction} in Information Extraction with an
+example.
+
+\answer{2.9in}{See class notes.}
+
+\item Briefly explain the notion of ``overfitting'' in statistical modeling.
+
+\answer{2.9in}{See class notes.}
+
+\item List and briefly explain one classification technique.
+
+\answer{2.5in}{See class notes.}
+
+\item Briefly explain the ``local-as-view'' approach in data integration.
+
+\answer{2.7in}{See class notes.}
+
+
+\item Consider the relations: $R(A, B)$ and $S(B, C)$, and the SQL query: \\[3pt] {\tt select R.a, count(*) from R natural join S group by R.a;} \\[2pt]
+Briefly explain the result of this query in words. Why might you want to use {\em left outer natural join} instead of {\em natural join} here ? 
+Assume $A$ is a primary key for $R$.
+
+\answer{2.9in}{The query returns for each tuple in $R$, the number of matching tuples in $S$. The result will not contain any tuples $t = (a, b)$ in $R$ that do not have a match in $S$, and we might want to use outerjoin to produce the result $(a, b, 0)$ for those tuples.}
+
+
+
+
+\end{enumerate}
+
+\section*{Miscellaneous Questions 2 (9 questions - 3 pt each)}
+\begin{enumerate}
+
+\item We want to test whether the average cost of the phones purchased by UMD students this year has gone up or down from previous year. Say we 
+know that the average cost of a phone purchased last year by a UMD student was \$300. Explain the steps you would take to test 
+the null hypothesis that the average cost this year = \$300, including how you would make the decision of rejecting or not rejecting the hypothesis.
+
+\answer{3.9in}{
+    \begin{itemize}
+    \item Take a random sample of the UMD students who have a bought a phone in the current year (you can just take a random sample of the students,
+            and ignore the students who didn't purchase a phone in the current year).
+        \item Let $\mu$ denote the sample mean, and let $\sigma$ denote the sample deviation. Say $\mu > 300$.
+        \item Choose a test statistic, in this case z-statistics is appropriate.
+        \item Compute the z-statistic as: $\mu - 300/ \sigma$. 
+        \item Consult standard formulas to decide how low is the probability of obtaining that z-statistic -- if it is too low (below 0.05), we
+        reject the null hypothesis.
+    \end{itemize}
+}
+
+\item Consider the following schema: \\
+        create table r (a integer primary key, c integer); \\
+        create table s (b integer primary key, a integer references r); \\
+        create table t (c integer primary key, b integer references s); \\
+        alter table r add constraint rreft foreign key (c) references t(c);
+
+        \begin{itemize}
+            \item Why can't I add the foreign key reference directly in the ``create table'' statement for table ``r'' ?
+
+                \answer{.8in}{The table ``t'' hasn't been created yet.}
+            \item Explain why the statement ``drop table r'' would be rejected.
+
+                \answer{.8in}{Because there is a referential integrity constraint from ``s''.}
+            \item Is there any way I can delete all the tables ? Explain in words.
+
+                \answer{.8in}{Just reverse what we did to create the ``cyclic'' integrity constraints above. First alter the table ``r'' to 
+                remove the referential integrity constraint, and then delete ``t'', and then ``s'', and finally ``r''.}
+        \end{itemize}
+
+
+\item What does `I' stand for in ACID properties? Briefly describe one mechanism for ensuring 'I'. 
+
+\answer{2.7in}{See class notes}
+
+\item List and briefly describe three single-source data quality problems.
+
+\answer{2.7in}{See class notes}
+
+
+\item Briefly, at a high level, explain the $k$-means clustering algorithm.
+
+\answer{2.7in}{See class notes}
+
+
+
+\mynewpage
+\item Fill in the pseudocode for a naive implementation of the aggregation operation in the following query using Hashing.  \\[2pt]
+{\tt select R.A, sum(R.B) from R group by R.A}
+
+\begin{verbatim}
+-----------------------------------------------------------------------------
+HashMap h = new HashMap();
+for each tuple r in R:
+    if h.contains(r.A):
+        h.replace(r.A, h.get(r.A) + r.B)
+    else
+        h.put(r.A, r.B)
+
+// print out the results
+for k in h.keySet():
+    print k, h.get(k)
+
+-----------------------------------------------------------------------------
+\end{verbatim}
+
+\item Consider an {\em email} dataset, containing the data about a collection of emails within a company. For each email, we know the email
+addresses of the sender and the recipients, as well as the email text. There are however ambiguities since a person may
+use different accounts, including external (e.g., gmail, or yahoo). Suggest three approaches you would use to disambiguate, i.e., decide which email
+addresses belong to the same person. 
+
+\answer{3.5in}{
+Some options are:
+    \begin{itemize}
+        \item String similarity of the username part of the email address -- should only be used if the username is sufficiently distinct (e.g.,
+                long usernames)
+        \item Analyzing email texts can give fairly good indications about whether they were written by the same user.
+        \item Users tend to send emails to the same group of users. We can generate some potential candidate pairs of email addresses (based on
+        string similarity), and check if receivers of their emails overlap a lot (equivalently, we can check whether the people they receive
+        emails from overlap.
+    \end{itemize}
+}
+
+
+
+%\item The following two queries are not equivalent (they don't always produce identical results) because of NULLs. Identify and explain the problem. Schemas are: $R(a, b, d), S( c, d)$.  Assume $a$ is the primary key for $R$.
+%
+%\begin{table}[h]
+%\begin{center}
+%\begin{tabular}{|l|ll|}
+%    \hline
+%\underline{\bf Query I} \mbox{\ \ \ \ \ \ \ \ \ \ \ \ }\mbox{\ \ \ \ \ \ \ \ \ \ \ \ }&& \underline{\bf Query II}\mbox{\ \ \ \ \ \ \ \ \ \ \
+%\ }\mbox{\ \ \ \ \ \ } \\
+%{\bf select} a &&     {\bf select} a \\
+%{\bf from} R &&   {\bf from} R, S  \\
+%{\bf where} R.b = ({\bf select} {\bf count}(S.c) && {\bf where} R.d = S.d  \\
+%\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf from} S && {\bf group by} R.a \\
+%\mbox{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }{\bf where} R.d = S.d) && {\bf having} R.b = {\bf count}(S.c);\\
+%    \hline
+%\end{tabular}
+%\end{center}
+%\end{table}
+%
+%\answer{2in}{Consider a tuple in $R$: $(R.a = \alpha, R.b = 0, R.d = \beta)$, and say there is  no tuple in $S$ such that $S.d = \beta$. The first query will generate the answer tuple $\alpha$, whereas the second query will not. }
+%
+%
+\item On the following tables, what are the results of the queries listed below?
+
+\begin{table}[h]
+\hspace{1in}{\bf R}\hspace{.2in}
+    \begin{tabular}{|c|c|c|}
+        \hline 
+        {\bf A} & {\bf B} & {\bf C} \\
+        \hline 
+            'a1' & 10 & 10 \\
+        \hline 
+            'a1' & 20 & 20 \\
+        \hline 
+            'a2' & 30 & 30 \\
+        \hline 
+            'a2' & 0  & NULL \\
+        \hline 
+    \end{tabular}
+\hspace{1in}{\bf S}\hspace{.2in}
+    \begin{tabular}{|c|c|}
+        \hline 
+        {\bf C} & {\bf D} \\
+        \hline 
+        30 & 'd1' \\
+        \hline 
+        NULLL & 'd2' \\
+        \hline 
+    \end{tabular}
+\end{table}
+
+\begin{itemize}
+\item {\tt select avg(B) from R group by A}:
+\answer{.7in}{(15), (15)}
+\item {\tt select * from R where C != 10}:
+\answer{.7in}{Second and third rows would be returned, but not the fourth}
+\item {\tt select * from R, S where R.C = S.C or R.C is null}: The result contains 3 tuples.
+\answer{1in}{('a2', 30, 30, 30, 'd1'), ('a2', 0, NULL, 30, 'd1'), ('a2', 0, NULL, NULL, 'd2')}
+\end{itemize}
+
+
+
+\item (1) Consider an unbiased coin. Which of the two sequences, HHHHHH and HTTHTH, is more likely to happen if I were to roll the die 6 times?
+Explain. \\
+(2) An analyst for a fire department observed that: more firemen sent to control a fire meant higher overall damage. Should he
+recommend that fewer firemen be sent to fires? Why or why not?
+            
+
+\answer{2.8in}{ 
+(1) Both sequences are equally likely.
+
+(2) No. Correlation does not equate causation. In this case, both the things (more firement sent to control the fire, and more damage) were likely caused by
+the same underlying thing -- larger fires.
+}
+
+\end{enumerate}
+
+\end{document}
+
+
