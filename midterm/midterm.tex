@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\renewcommand{\baselinestretch}{1.05}
+\renewcommand{\baselinestretch}{1.02}
 \usepackage{times}
 \usepackage{epsfig}
 \usepackage{fullpage}
@@ -16,8 +16,8 @@
 \newcommand{\answer}[2]{\noindent {\bf Answer:} #2}
 \newcommand{\justanswer}[1]{\noindent {{\bf Answer:} #1}}
 \newcommand{\mynewpage}{\newpage}
-\renewcommand{\justanswer}[1]{}
-\renewcommand{\answer}[2]{\vspace{#1}}
+%\renewcommand{\justanswer}[1]{}
+%\renewcommand{\answer}[2]{\vspace{#1}}
 \renewcommand{\mynewpage}{}
 \newcommand{\pt}[1]{\textbf{\underline{[#1 pts]}}}
 \newcommand{\ptshort}[1]{\textbf{[#1]}}
@@ -139,7 +139,17 @@ Assume $A$ is a primary key for $R$.
 know that the average cost of a phone purchased last year by a UMD student was \$300. Explain the steps you would take to test 
 the null hypothesis that the average cost this year = \$300, including how you would make the decision of rejecting or not rejecting the hypothesis.
 
-\answer{3.9in}{ }
+\answer{3.9in}{
+    \begin{itemize}
+    \item Take a random sample of the UMD students who have a bought a phone in the current year (you can just take a random sample of the students,
+            and ignore the students who didn't purchase a phone in the current year).
+        \item Let $\mu$ denote the sample mean, and let $\sigma$ denote the sample deviation. Say $\mu > 300$.
+        \item Choose a test statistic, in this case z-statistics is appropriate.
+        \item Compute the z-statistic as: $\mu - 300/ \sigma$. 
+        \item Consult standard formulas to decide how low is the probability of obtaining that z-statistic -- if it is too low (below 0.05), we
+        reject the null hypothesis.
+    \end{itemize}
+}
 
 \item Consider the following schema: \\
         create table r (a integer primary key, c integer); \\
@@ -163,20 +173,20 @@ the null hypothesis that the average cost this year = \$300, including how you w
 
 \item What does `I' stand for in ACID properties? Briefly describe one mechanism for ensuring 'I'. 
 
-\answer{2.7in}
+\answer{2.7in}{See class notes}
 
 \item List and briefly describe three single-source data quality problems.
 
-\answer{2.7in}{ }
+\answer{2.7in}{See class notes}
 
 
 \item Briefly, at a high level, explain the $k$-means clustering algorithm.
 
-\answer{3in}{}
+\answer{2.7in}{See class notes}
 
 
 
-\newpage
+\mynewpage
 \item Fill in the pseudocode for a naive implementation of the aggregation operation in the following query using Hashing.  \\[2pt]
 {\tt select R.A, sum(R.B) from R group by R.A}
 
@@ -184,21 +194,14 @@ the null hypothesis that the average cost this year = \$300, including how you w
 -----------------------------------------------------------------------------
 HashMap h = new HashMap();
 for each tuple r in R:
-    
-
-
-
-
-
-
+    if h.contains(r.A):
+        h.replace(r.A, h.get(r.A) + r.B)
+    else
+        h.put(r.A, r.B)
 
 // print out the results
-
-
-
-
-
-
+for k in h.keySet():
+    print k, h.get(k)
 
 -----------------------------------------------------------------------------
 \end{verbatim}
@@ -208,7 +211,17 @@ addresses of the sender and the recipients, as well as the email text. There are
 use different accounts, including external (e.g., gmail, or yahoo). Suggest three approaches you would use to disambiguate, i.e., decide which email
 addresses belong to the same person. 
 
-\answer{3.5in}{}
+\answer{3.5in}{
+Some options are:
+    \begin{itemize}
+        \item String similarity of the username part of the email address -- should only be used if the username is sufficiently distinct (e.g.,
+                long usernames)
+        \item Analyzing email texts can give fairly good indications about whether they were written by the same user.
+        \item Users tend to send emails to the same group of users. We can generate some potential candidate pairs of email addresses (based on
+        string similarity), and check if receivers of their emails overlap a lot (equivalently, we can check whether the people they receive
+        emails from overlap.
+    \end{itemize}
+}
 
 
 
@@ -264,7 +277,7 @@ addresses belong to the same person.
 
 \begin{itemize}
 \item {\tt select avg(B) from R group by A}:
-\answer{.7in}{('a1', 15), ('a2', 15)}
+\answer{.7in}{(15), (15)}
 \item {\tt select * from R where C != 10}:
 \answer{.7in}{Second and third rows would be returned, but not the fourth}
 \item {\tt select * from R, S where R.C = S.C or R.C is null}: The result contains 3 tuples.
@@ -279,7 +292,12 @@ Explain. \\
 recommend that fewer firemen be sent to fires? Why or why not?
             
 
-\answer{2.8in}{ }
+\answer{2.8in}{ 
+(1) Both sequences are equally likely.
+
+(2) No. Correlation does not equate causation. In this case, both the things (more firement sent to control the fire, and more damage) were likely caused by
+the same underlying thing -- larger fires.
+}
 
 \end{enumerate}
 
