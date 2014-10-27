@@ -11,29 +11,29 @@ package org.myorg;
 	
 	public class WordCount {
 	
-	   public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
-	     private final static IntWritable one = new IntWritable(1);
-	     private Text word = new Text();
+        public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
+            private final static IntWritable one = new IntWritable(1);
+            private Text word = new Text();
+
+            public void map(LongWritable key, Text value, OutputCollector output, Reporter reporter) throws IOException {
+                String line = value.toString();
+                StringTokenizer tokenizer = new StringTokenizer(line);
+                while (tokenizer.hasMoreTokens()) {
+                    word.set(tokenizer.nextToken());
+                    output.collect(word, one);
+                }
+            }
+        }
 	
-	     public void map(LongWritable key, Text value, Context context) throws IOException {
-	       String line = value.toString();
-	       StringTokenizer tokenizer = new StringTokenizer(line);
-	       while (tokenizer.hasMoreTokens()) {
-	         word.set(tokenizer.nextToken());
-	         context.write(word, one);
-	       }
-	     }
-	   }
-	
-	   public static class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
-	     public void reduce(Text key, Iterator<IntWritable> values, Context context) throws IOException {
-	       int sum = 0;
-	       while (values.hasNext()) {
-	         sum += values.next().get();
-	       }
-	       context.write(key, new IntWritable(sum));
-	     }
-	   }
+        public static class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
+            public void reduce(Text key, Iterator<IntWritable> values, OutputCollector output, Reporter reporter) throws IOException {
+                int sum = 0;
+                while (values.hasNext()) {
+                    sum += values.next().get();
+                }
+                output.collect(key, new IntWritable(sum));
+            }
+        }
 	
 	   public static void main(String[] args) throws Exception {
 	     JobConf conf = new JobConf(WordCount.class);
