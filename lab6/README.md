@@ -40,9 +40,12 @@ Use the following simple instructions to install CDH.
 - Start by pulling the latest version of the git repository, which contains a `lab6` folder.
 - The `lab6` folder has a script called `setup.sh`.
 - Open a terminal in the Linux VM and `cd` into the `lab6` folder.
-- type: 
+- Type: 
 	- chmod 755 setup.sh
 	- ./setup.sh
+- Check whether HADOOP_HOME has been set (`echo $HADOOP_HOME`)
+    - If not, try `source ~/.profile`
+    - If not, check if `~/.profile` sets HADOOP_HOME toward the end and email us
 		
 ---
 
@@ -65,9 +68,9 @@ You can now start/stop the services for CDH. Run the following script in the lab
 #### To Check HDFS functionality do the following:
 - Open a terminal and type:
         echo "This is an HDFS test" >> file.txt
-        hadoop fs -mkdir /tmp
-        hadoop fs -put file.txt /tmp/
-        hadoop fs -cat /tmp/file.txt
+        hadoop fs -mkdir /tmp1
+        hadoop fs -put file.txt /tmp1/
+        hadoop fs -cat /tmp1/file.txt
 - You should see "This is an HDFS test", otherwise something is broken
 
 #### Testing a sample application (Pi)
@@ -92,12 +95,12 @@ hadoop job. For a more detailed explaination for running hadoop jobs, follow thi
 	 `javac -classpath ${HADOOP_HOME}/share/hadoop/common/hadoop-common-2.3.0-cdh5.1.2.jar:${HADOOP_HOME}/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.3.0-cdh5.1.2.jar -d wordcount_classes WordCount.java`
 - Make a jar file by typing the following command:
 
-	 `jar -cvf wordcount.jar -C wordcount_classes/`
+	 `jar cvf wordcount.jar -C wordcount_classes org`
 - Make the appropriate directories in HDFS and load input data (say `test.txt` which coutains some text of your choice.)
 
 		hadoop fs -mkdir wordcount
 		hadoop fs -mkdir wordcount/input
-		hadoop fs -put /path to local file/test.txt wordcount/input/ 
+		hadoop fs -put test.txt wordcount/input/ 
 - Run the word count application:
 		 hadoop jar wordcount.jar org.myorg.WordCount wordcount/input wordcount/output		  	 
  
