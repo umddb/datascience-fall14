@@ -1,0 +1,39 @@
+CREATE DATABASE ctr;
+
+CREATE TABLE clicks (
+    OwnerId INTEGER,
+    AdId INTEGER,
+    numClicks INTEGER,
+    PRIMARY KEY (OwnerId, AdId)
+);
+
+CREATE TABLE impressions (
+    OwnerId INTEGER REFERENCES clicks(OwnerId),
+    AdId INTEGER,
+    numImpressions INTEGER
+);
+
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (1,1,1);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (1,2,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (1,3,1);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (1,4,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (2,1,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (2,2,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (2,3,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (2,4,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (3,1,1);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (3,2,0);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (3,3,2);
+INSERT INTO clicks (OwnerId, AdId, numClicks) VALUES (3,4,1);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (1,1,10);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (1,2,5);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (1,3,20);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (1,4,15);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (2,1,10);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (2,2,55);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (2,3,13);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (2,4,21);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (3,1,32);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (3,2,23);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (3,3,44);
+INSERT INTO impressions (OwnerId, AdId, numImpressions) VALUES (3,4,36);
