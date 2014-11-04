@@ -67,10 +67,14 @@ You can now start/stop the services for CDH. Run the following script in the lab
 
 #### To Check HDFS functionality do the following:
 - Open a terminal and type:
-        echo "This is an HDFS test" >> file.txt
-        hadoop fs -mkdir /tmp1
-        hadoop fs -put file.txt /tmp1/
-        hadoop fs -cat /tmp1/file.txt
+
+```
+echo "This is an HDFS test" >> file.txt
+hadoop fs -mkdir /tmp1
+hadoop fs -put file.txt /tmp1/
+hadoop fs -cat /tmp1/file.txt
+```
+
 - You should see "This is an HDFS test", otherwise something is broken
 
 #### Testing a sample application (Pi)
