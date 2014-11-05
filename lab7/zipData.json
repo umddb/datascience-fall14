@@ -29350,4 +29350,3 @@
 { "_id" : "99926", "city" : "METLAKATLA", "loc" : [ -131.579001, 55.121491 ], "pop" : 1469, "state" : "AK" }
 { "_id" : "99927", "city" : "POINT BAKER", "loc" : [ -133.376372, 56.307858 ], "pop" : 426, "state" : "AK" }
 { "_id" : "99929", "city" : "WRANGELL", "loc" : [ -132.352918, 56.433524 ], "pop" : 2573, "state" : "AK" }
-{ "_id" : "99950", "city" : "KETCHIKAN", "loc" : [ -133.18479, 55.942471 ], "pop" : 422, "state" : "AK" }

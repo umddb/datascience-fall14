@@ -4,11 +4,10 @@ CREATE TABLE clicks (
     OwnerId INTEGER,
     AdId INTEGER,
     numClicks INTEGER,
-    PRIMARY KEY (OwnerId, AdId)
 );
 
 CREATE TABLE impressions (
-    OwnerId INTEGER REFERENCES clicks(OwnerId),
+    OwnerId INTEGER,
     AdId INTEGER,
     numImpressions INTEGER
 );

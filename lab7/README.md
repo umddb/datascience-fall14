@@ -17,7 +17,8 @@ The current major version of the Cassandra Query Language is CQL version 3. The 
 
 ### Installing Cassandra
 
-For this lab we will using a binary tar-ball provided by Apache. The Cassandra release includes the core server, the [nodetool](http://wiki.apache.org/cassandra/NodeTool) administration command-line interface, and a development shell (cqlsh and the cassandra-cli). 
+For this lab we will using a binary tar-ball provided by Apache. The Cassandra release includes the core server, the
+[nodetool](http://wiki.apache.org/cassandra/NodeTool) administration command-line interface, and a development shell (`cqlsh` and `cassandra-cli`). 
 
 Use the following simple instructions to install Cassandra. 
 
@@ -35,7 +36,7 @@ Use the following simple instructions to install Cassandra.
 
 #### Starting Cassandra
 
-- open a terminal and type: cassandra -f.  This should start the cassandra service in the foreground and log to the console. 
+- open a terminal and type: `cassandra -f`.  This should start the cassandra service in the foreground and log to the console. 
 - If you do not see any exceptions then Cassandra should be up and running.
 - More information on the details of setting up and starting Cassandra can be found here: [Quick Start Guide](http://wiki.apache.org/cassandra/GettingStarted) 
 
@@ -43,18 +44,22 @@ Use the following simple instructions to install Cassandra.
 *cqlsh* is an interactive command line interface for Cassandra. *cqlsh* allows you to execute CQL (Cassandra Query Language) statements against Cassandra. Using CQL, you can define a schema, insert data, execute queries.
 
 - open a terminal and type `cqlsh`. You should see the following if successful:
+
 		Connected to Test Cluster at 127.0.0.1:9042.
 		[cqlsh 5.0.1 | Cassandra 2.1.1 | CQL spec 3.2.0 | Native protocol v3]
 		Use HELP for help.	
 - To create and query a table in Cassandra using cqlsh use the following steps: 
 - Step 1: Create a key space -- a namespace of tables. At the cqlsh prompt type:
+
 		CREATE KEYSPACE mykeyspace
 		WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' :1 }; 
 
 - Step 2: Authenticate to the new keyspace. At the cqlsh prompt type: 
+
 		USE mykeyspace;
 		
 - Step 3: Create a users table. At the cqlsh prompt type:
+
 		CREATE TABLE users (
   		user_id int PRIMARY KEY,
   		fname text,
@@ -62,6 +67,7 @@ Use the following simple instructions to install Cassandra.
 		);
 		  
 - Step 4: Storing data into users. At the cqlsh prompt type:
+
 		INSERT INTO users (user_id,  fname, lname)
   		   VALUES (1745, 'john', 'smith');
 		INSERT INTO users (user_id,  fname, lname)
@@ -79,16 +85,19 @@ You should see the following output:
     		 1746 |  john | smith
 		  
 - Step 6: You can retrieve data about users whose last name is smith by creating an index, then querying the table as follows:
+
  		CREATE INDEX ON users (lname);
 
 		SELECT * FROM users WHERE lname = 'smith';
 
-		You shoud see the following output
+		You shoud see the following output:
 
  		user_id | fname | lname
 		--------+-------+-------
     	   1745 |  john | smith
     	   1746 |  john | smith		  
+
+If you try running this query without creating the index, you will get an error.
 
 #### Writing Applications
 Applications can be written over Cassandra in a variety of different languages. For the applications to connect to and query Cassandra, a database
@@ -135,8 +144,9 @@ received and the `impressions` table maintains for each OwnerId and AdId, the nu
  
  
 ### Submission
-Submit the following files:
+Submit the following using the provided template *submission.txt* file.
 
+- SQL Queries that you wrote
 - Python file for the Cassandra application.
 - Output of running the Cassandra application in a text file.
 
@@ -147,7 +157,7 @@ Submit the following files:
 
 ### Installing MongoDB
 
-Follow the instructions [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/) to install MongoDB on the Linux VM.
+MongoDB is already installed on the Virtual Machine, however, you can follow the instructions  [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/) to install it again, or on a different machine.
 
 
 ### Using MongoDB
@@ -155,15 +165,23 @@ Follow the instructions [here](http://docs.mongodb.org/manual/tutorial/install-m
 MongoDB provides a shell 'mongo' for basic database operations. Follow the [Getting Started with MongoDB Guide](http://docs.mongodb.org/manual/tutorial/getting-started/) for using the MongoDB database with the 'mongo' shell. Further information on MongoDB can be found in the [MongoDB manual](http://docs.mongodb.org/manual/). Specifically read the [MongoDB CRUD Introduction](http://docs.mongodb.org/manual/core/crud-introduction/) and [MongoDB CRUD Tutorial](http://docs.mongodb.org/manual/applications/crud/) to better understand MongoDB functionality in terms of inserting and querying documents in MongoDB.  
 
 ### Assignment Part 2
-The lab7 folder contains a json dataset called zipData.json. Load the data using [mongoimport](http://docs.mongodb.org/manual/reference/program/mongoimport/#bin.mongoimport) into a collection called zipcodes and write the following aggregation queries against the data set:
+The lab7 folder contains a JSon dataset called `zipData.json`. Load the data using
+[mongoimport](http://docs.mongodb.org/manual/reference/program/mongoimport/#bin.mongoimport) into a collection called `zipcodes`. 
+
+Insert the following document into the same collection.
+
+        { "_id" : "99950", "city" : "KETCHIKAN", "loc" : [ -133.18479, 55.942471 ], "pop" : 422, "state" : "AK" }
+
+Write the following aggregation queries against the data set:
 
  -  Return cities with population less than 5 million grouped by state.
  -  Return states sorted by their total city population.
  -  Return the cities with minimum population by state.
 
+Finally, write a MapReduce operation to compute, for each state, the average population over the cities associated with the state. 
+See [this](http://docs.mongodb.org/manual/core/map-reduce/) for the overview of MapReduce, and
+[this](http://docs.mongodb.org/manual/tutorial/map-reduce-examples/) for some examples.
+
 ### Submission
 
-Submit the following files:
-
-- Your test file with the mongoDB queries and their output.
-
+Add your MongoDB queries and their outputs to the *submission.txt* file.
