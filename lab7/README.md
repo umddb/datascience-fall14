@@ -152,7 +152,7 @@ received and the `impressions` table maintains for each OwnerId and AdId, the nu
 ### Submission
 Submit the following using the provided template *submission.txt* file.
 
-- SQL Queries that you wrote
+- CQL Queries that you wrote
 - Python file for the Cassandra application.
 - Output of running the Cassandra application in a text file.
 
