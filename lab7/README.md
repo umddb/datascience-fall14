@@ -76,8 +76,10 @@ Use the following simple instructions to install Cassandra.
   			VALUES (1746, 'john', 'smith');  
 
 - Step 5: Fetch the data fom users. At the cqlsh prompt type:
- 			- SELECT * FROM users;
+
+ 		- SELECT * FROM users;
 You should see the following output:
+
  		- user_id | fname | lname
 		 ---------+-------+-------
     	     1745 |  john | smith
