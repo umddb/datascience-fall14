@@ -30,7 +30,9 @@ import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
+
 import org.umd.assignment.spout.RandomSentenceSpout;
+import org.umd.assignment.spout.TwitterSampleSpout;
 
 import java.util.HashMap;
 import java.util.Map;
