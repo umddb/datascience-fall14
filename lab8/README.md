@@ -31,6 +31,8 @@ is built and its dependencies.
 
     mvn compile exec:java -Dstorm.topology=org.umd.assignment.WordCountTopology | grep "count default" | awk -F'[' '{print $3}'| awk -F']' '{print $1}' | awk -F',' '{print $1" "$2}'
 
+- Note that this application will stop after 10 seconds. You can change that by modifying the `WordCountTopology.java` file.
+
 ### What does the application do?
 
 The provided WordCountTopology application prints the counts of the words in the randomly generated sentences. 
@@ -94,6 +96,8 @@ Running the provided Spark application:
     - `mvn package`: This will compile and create a `jar` file (in target/ directory).
     - `YOUR_SPARK_HOME/bin/spark-submit --class JavaNetworkWordCount --master 'local[4]' target/streaming-project-1.0.jar`
            - Make sure to replace YOUR_SPARK_HOME with the appropriate directory (where you downloaded Spark)
+
+Note: The `Spark-Assignment/log4j.properties` suppresses all the extraneous output, so the first output you will see will be after 10 seconds.
 
 ### What does the program do?
 		
