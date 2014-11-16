@@ -25,11 +25,11 @@ is built and its dependencies.
     - Take a look at `pom.xml` if you want to see how the dependencies are described.
 - Run the sample application: 
 
-    mvn compile exec:java -Dstorm.topology=org.umd.assignment.WordCountTopology
+        mvn compile exec:java -Dstorm.topology=org.umd.assignment.WordCountTopology
 
 - You can reduce the unnecessary output by using unix tools:
 
-    mvn compile exec:java -Dstorm.topology=org.umd.assignment.WordCountTopology | grep "count default" | awk -F'[' '{print $3}'| awk -F']' '{print $1}' | awk -F',' '{print $1" "$2}'
+        mvn compile exec:java -Dstorm.topology=org.umd.assignment.WordCountTopology | grep "count default" | awk -F'[' '{print $3}'| awk -F']' '{print $1}' | awk -F',' '{print $1" "$2}'
 
 - Note that this application will stop after 10 seconds. You can change that by modifying the `WordCountTopology.java` file.
 
@@ -37,7 +37,6 @@ is built and its dependencies.
 
 The provided WordCountTopology application prints the counts of the words in the randomly generated sentences. 
 Specifically, it:
-
 	(a) Initializes the Spout named "sentences" that generates a stream of random sentences
 	(b) Creates a Bolt named "words" that takes tuples from "sentences" and splits them into words
 	(c) Creates another Bolt "count" that takes tuples from "words" and counts the frequency of each word
@@ -62,7 +61,7 @@ You would need to make changes in the following two files: `WordCountTopology.ja
 ### Submission
 Submit the following using the provided template `submission.txt` file.
 
-- Your `WordCountTopology.java` file
+- Your `WordCountTopology.java` and `TwitterSampleSpout` files
 - The list of words that mostly co-occur with Obama, sorted by their frequency (in some execution run)
 
 ---
@@ -77,7 +76,7 @@ Even though in lab6 we have written a Spark program in Python, Spark Streaming d
 
 ### Installing Spark Streaming
 
-- You should already have installed. Follow directions from `lab6` to do so if not.
+- You should already have Spark installed. Follow directions from `lab6` to do so if not.
 
 ---
 
@@ -86,16 +85,16 @@ Even though in lab6 we have written a Spark program in Python, Spark Streaming d
 (If you are doing this assignment first, make sure to install `maven` and do a `git pull` to `lab8` directory.)
 
 Running a Netcat Server:	
-	- Open a new terminal and type `nc -lk 9999`
-	- This starts Netcat Server bound to port 9999. You can now type on this terminal to send data to the Netcat server
-	- Any client listening to port 9999 will receive anything thats typed on the Netcat Server terminal 
+- Open a new terminal and type `nc -lk 9999`
+- This starts Netcat Server bound to port 9999. You can now type on this terminal to send data to the Netcat server
+- Any client listening to port 9999 will receive anything thats typed on the Netcat Server terminal 
 
 
 Running the provided Spark application:
-    - `cd Spark-Assignment`
-    - `mvn package`: This will compile and create a `jar` file (in target/ directory).
-    - `YOUR_SPARK_HOME/bin/spark-submit --class JavaNetworkWordCount --master 'local[4]' target/streaming-project-1.0.jar`
-           - Make sure to replace YOUR_SPARK_HOME with the appropriate directory (where you downloaded Spark)
+- `cd Spark-Assignment`
+- `mvn package`: This will compile and create a `jar` file (in target/ directory).
+- `YOUR_SPARK_HOME/bin/spark-submit --class JavaNetworkWordCount --master 'local[4]' target/streaming-project-1.0.jar`
+      - Make sure to replace YOUR_SPARK_HOME with the appropriate directory (where you downloaded Spark)
 
 Note: The `Spark-Assignment/log4j.properties` suppresses all the extraneous output, so the first output you will see will be after 10 seconds.
 
