@@ -61,7 +61,7 @@ You would need to make changes in the following two files: `WordCountTopology.ja
 ### Submission
 Submit the following using the provided template `submission.txt` file.
 
-- Your `WordCountTopology.java` and `TwitterSampleSpout` files
+- Your `WordCountTopology.java` and `TwitterSampleSpout.java` files
 - The list of words that mostly co-occur with Obama, sorted by their frequency (in some execution run)
 
 ---
@@ -102,10 +102,10 @@ Note: The `Spark-Assignment/log4j.properties` suppresses all the extraneous outp
 		
 
 The main file here is: `JavaNetworkWordCount.java` underneath `src`
-	- It starts listerning to port 9999 (where the Netcat server is sending data)
-	- It reads each line from the Netcat server, splits them by space, produces a tuple (word, 1) for each word, and then counts them
-	- Note that the program sets a *batch size* of 10 seconds, which means that the line "wordCounts.print();" will be executed every 10 seconds. *Batch size* is a key notion in Spark Streaming. Spark streaming processes all the data tuples it has received at the end of each batch interval.
-	- Anything you *type on the Netcat server terminal* Spark Streaming will process that. Spark Streaming will print an empty line (with ending time of the current batch) if nothing is typed on the Netcat terminal in a batch window of 10 seconds. 
+- It starts listerning to port 9999 (where the Netcat server is sending data)
+- It reads each line from the Netcat server, splits them by space, produces a tuple (word, 1) for each word, and then counts them
+- Note that the program sets a *batch size* of 10 seconds, which means that the line "wordCounts.print();" will be executed every 10 seconds. *Batch size* is a key notion in Spark Streaming. Spark streaming processes all the data tuples it has received at the end of each batch interval.
+- Anything you *type on the Netcat server terminal* Spark Streaming will process that. Spark Streaming will print an empty line (with ending time of the current batch) if nothing is typed on the Netcat terminal in a batch window of 10 seconds. 
   
 ---
 
