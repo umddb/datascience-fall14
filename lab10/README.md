@@ -9,6 +9,8 @@ based on the tutorial. He also has an interactive tutorial on [transitions](http
 
 You can also find many examples on the D3 website above, and on the web.
 
+Some of the examples we saw in class: [hierarchical bar charts](http://bl.ocks.org/mbostock/1283663), [Voronoi](http://bl.ocks.org/mbostock/4060366), [elections](http://www.nytimes.com/interactive/2012/11/11/sunday-review/counties-moving.html), [updating bar charts](http://examples.oreilly.com/0636920026938/chapter_09/29_dynamic_labels.html).
+
 ### Assignment
 
 The lab10 directory has two files about the Capital Bike Share data, one that contains all trips over a small period of time, and one that contains latitudes and longitudes
