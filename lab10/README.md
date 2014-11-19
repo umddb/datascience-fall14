@@ -14,11 +14,11 @@ You can also find many examples on the D3 website above, and on the web.
 The lab10 directory has two files about the Capital Bike Share data, one that contains all trips over a small period of time, and one that contains latitudes and longitudes
 for the 342 bike stations.
 
-1. Create a scatter plot with the bike stations' locations. If you had like, you can figure out how to overlay this plot on a topological map of DC area. Here are some
+1. Create a scatter plot with the bike stations' locations. If you'd like, you can figure out how to overlay this plot on a topological map of DC area. Here are some
 starting points: [link 1](http://bl.ocks.org/phil-pedruco/7745589), [link 2](http://www.maori.geek.nz/post/d3_js_geo_fun), [link
 3](http://www.d3noob.org/2013/03/a-simple-d3js-map-explained.html)
 
-1. Create an interactive visualization that shows some information about the stations at various times. 
+1. Create an interactive visualization that shows some information about the stations at various times, and does transitions/animations. Below are two suggestions but feel free to do others. 
 
 As an example: for every hour of the day, for every station, count
 the total number of rides that originated at that station during that hour (on any day). You should not try to do this in Javascript -- better to do it in Python and create
