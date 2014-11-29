@@ -61,14 +61,12 @@ denotes the directory where you have extracted Spark (for previous assignments).
 ```
 SPARK_HOME/bin/spark-shell
 ```
-
 1. Import the GraphX Packages. We are ready to start using GraphX at this point.
 ```
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib._
 import org.apache.spark.rdd.RDD
 ```
-
 1. Load some data. First we will define two arrays.
 ```
 val vertexArray = Array(
