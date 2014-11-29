@@ -28,6 +28,8 @@ can't find the queries or the next steps in the tutorial.
 
 ### Assignment Part 1
 
+Add both your commands and the output (truncated if it is too much) into the `submission.txt` file.
+
 1. On the movies graph, write a cypher query to find people born in 1964.
 
 1. On the movies graph, write a cypher query to find all co-actors of 'Wil Wheaton'.
@@ -187,6 +189,8 @@ The messages are aggregated by summing, so at the end of the `reduce`, we have t
 The code afterwards simply finds the average age.
 
 ### Assignment Part 2
+
+Add both your commands/code and the output (truncated if it is too much) into the `submission.txt` file.
 
 1. Understand and print the output of the `graph.triangleCount` function. The output should look like: "Bob participates in 2 triangles." (with one line per user).
 
