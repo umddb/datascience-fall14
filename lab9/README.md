@@ -105,14 +105,14 @@ val graph: Graph[(String, Int), Int] = Graph(vertexRDD, edgeRDD)
 See the Getting Started guide for other built-in functions.
 
 
-6. The following code finds the users who are at least 30 years old using `filter`.
+* The following code finds the users who are at least 30 years old using `filter`.
 ```
 graph.vertices.filter { case (id, (name, age)) => age > 30 }.foreach { case (id, (name, age)) => println(name + " is " + age) }
 ```
 
 `case` is a powerful construct in Scala that is used to do pattern matching.
 
-7. Graph Triplets: One of the core functionalities of GraphX is exposed through the RDD `triplets`. There is one triplet for each edge, that contains information about
+* Graph Triplets: One of the core functionalities of GraphX is exposed through the RDD `triplets`. There is one triplet for each edge, that contains information about
 both the vertices and the edge information. Take a look through:
 `graph.triplets.collect()`
 
@@ -130,14 +130,14 @@ The following command shows another use of `case` to retrieve information from w
 
 `graph.triplets.foreach {t => t.srcAttr match { case (name, age) => println("Source name: " + name)} }`
 
-8. The `subgraph` command can be used to create subgraphs by applying predicates to filters. 
+* The `subgraph` command can be used to create subgraphs by applying predicates to filters. 
 
 `val olderUsers = graph.subgraph(vpred = (id, attr) => attr._2 > 30)`
 
 You can verify that only the vertices with age > 30 are present by doing `g1.vertices.collect()`
 
 
-9. The core aggregation primitive in GraphX is called `mapReduceTriplets`, and has the following signature.
+* The core aggregation primitive in GraphX is called `mapReduceTriplets`, and has the following signature.
 
 ```
 class Graph[VD, ED] {
