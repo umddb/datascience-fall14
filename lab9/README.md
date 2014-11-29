@@ -56,17 +56,20 @@ The following examples are taken either from that guide, or from [another guide]
 
 We will use the *Spark Scala Shell* directly. It might be better for you to write your code in a text editor and cut-n-paste it into the shell.
 
+
 1. Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly. Here `SPARK_HOME`
 denotes the directory where you have extracted Spark (for previous assignments).
 ```
 SPARK_HOME/bin/spark-shell
 ```
+
 1. Import the GraphX Packages. We are ready to start using GraphX at this point.
 ```
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib._
 import org.apache.spark.rdd.RDD
 ```
+
 1. Load some data. First we will define two arrays.
 ```
 val vertexArray = Array(
