@@ -56,12 +56,12 @@ The following examples are taken either from that guide, or from [another guide]
 
 We will use the *Spark Scala Shell* directly. It might be better for you to write your code in a text editor and cut-n-paste it into the shell.
 
-- Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly. Here `SPARK_HOME`
+1. Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly. Here `SPARK_HOME`
 denotes the directory where you have extracted Spark (for previous assignments).
 
 `SPARK_HOME/bin/spark-shell`
 
-- Import the GraphX Packages. We are ready to start using GraphX at this point.
+2. Import the GraphX Packages. We are ready to start using GraphX at this point.
 
 ```
 import org.apache.spark.graphx._
@@ -69,7 +69,7 @@ import org.apache.spark.graphx.lib._
 import org.apache.spark.rdd.RDD
 ```
 
-1. Load some data. First we will define two arrays.
+3. Load some data. First we will define two arrays.
 
 ```
 val vertexArray = Array(
@@ -92,7 +92,7 @@ val edgeArray = Array(
   )
 ```
 
-1. Then we will create the graph out of them, by first creating two RDDs. The first two statements create RDDs by using the `sc.parallelize()` command.
+4. Then we will create the graph out of them, by first creating two RDDs. The first two statements create RDDs by using the `sc.parallelize()` command.
 
 ```
 val vertexRDD: RDD[(Long, (String, Int))] = sc.parallelize(vertexArray)
@@ -100,7 +100,7 @@ val edgeRDD: RDD[Edge[Int]] = sc.parallelize(edgeArray)
 val graph: Graph[(String, Int), Int] = Graph(vertexRDD, edgeRDD)
 ```
 
-1. The Graph class supports quite a few operators, most of which return an RDD as the type.
+5. The Graph class supports quite a few operators, most of which return an RDD as the type.
 
     - `graph.vertices.collect()`: `graph.vertices` just returns the first RDD that was created above, and `collect()` will get all the data from the RDD and print it (this should only be done for small RDDs)
     - `graph.degrees`: This returns an RDD with the degree for each vertex -- use `collect()` to print and see
@@ -109,13 +109,13 @@ val graph: Graph[(String, Int), Int] = Graph(vertexRDD, edgeRDD)
 See the Getting Started guide for other built-in functions.
 
 
-1. The following code finds the users who are at least 30 years old using `filter`.
+6. The following code finds the users who are at least 30 years old using `filter`.
 
 `graph.vertices.filter { case (id, (name, age)) => age > 30 }.foreach { case (id, (name, age)) => println(name + " is " + age) }`
 
 `case` is a powerful construct in Scala that is used to do pattern matching.
 
-1. Graph Triplets: One of the core functionalities of GraphX is exposed through the RDD `triplets`. There is one triplet for each edge, that contains information about
+7. Graph Triplets: One of the core functionalities of GraphX is exposed through the RDD `triplets`. There is one triplet for each edge, that contains information about
 both the vertices and the edge information. Take a look through:
 `graph.triplets.collect()`
 
@@ -133,14 +133,14 @@ The following command shows another use of `case` to retrieve information from w
 
 `graph.triplets.foreach {t => t.srcAttr match { case (name, age) => println("Source name: " + name)} }`
 
-1. The `subgraph` command can be used to create subgraphs by applying predicates to filters. 
+8. The `subgraph` command can be used to create subgraphs by applying predicates to filters. 
 
 `val olderUsers = graph.subgraph(vpred = (id, attr) => attr._2 > 30)`
 
 You can verify that only the vertices with age > 30 are present by doing `g1.vertices.collect()`
 
 
-1. The core aggregation primitive in GraphX is called `mapReduceTriplets`, and has the following signature.
+9. The core aggregation primitive in GraphX is called `mapReduceTriplets`, and has the following signature.
 
 ```
 class Graph[VD, ED] {
