@@ -10,7 +10,9 @@ Neo4j is a leading open-source graph database system, perhaps the most widely us
 
 ### Install and Start
 
-1. Download the community edition using: `wget http://neo4j.com/artifact.php?name=neo4j-community-2.1.6-unix.tar.gz`
+1. Download the community edition using: 
+
+`wget http://neo4j.com/artifact.php?name=neo4j-community-2.1.6-unix.tar.gz`
 
 1. Extract the tar file (it may have a name starting with `artifact`) using `tar zxvf`.
 
@@ -18,7 +20,7 @@ Neo4j is a leading open-source graph database system, perhaps the most widely us
 
 1. Start the server by running: `./bin/neo4j`
 
-1. Open your browser and go to: http://localhost:7474/ Follow the `Jump into code` tutorial which creates a Movie Graph, and illustrates how to run Cypher (Neo4j query
+1. Open your browser and go to: [http://localhost:7474/](https://localhost:7474). Follow the `Jump into code` tutorial which creates a Movie Graph, and illustrates how to run Cypher (Neo4j query
 language) queries on it. The UI of the tutorial is somewhat confusing, especially since it also allows you to browse the data graphically. Make sure to scroll down if you
 can't find the queries or the next steps in the tutorial.
 
@@ -46,15 +48,15 @@ GraphX is a graph analytics platform based on Apache Spark. GraphX does not have
 Scala is a JVM-based functional programming language, but it's syntax and functionality is quite different from Java. 
 The [Wikipedia Article](http://en.wikipedia.org/wiki/Scala_%28programming_language%29) is a good start to learn about Scala, 
 and there are also quite a few tutorials out there. For this assignment, we will try to minimize the amount of Scala you have
-to learn and try to provide sufficient guidance, but we encourage you to learn Scala on your own.
+to learn and try to provide sufficient guidance.
 
 Following are brief step-by-step instructions to get started with GraphX. The [GraphX Getting Started
 Guide](http://spark.apache.org/docs/latest/graphx-programming-guide.html#getting-started) goes into much more depth about the data model, and the functionalities.
 The following examples are taken either from that guide, or from [another guide](https://github.com/amplab/datascience-sp14/blob/master/lab10/graphx-lab.md) by the authors.
 
 We will use the *Spark Scala Shell* directly. It might be better for you to write your code in a text editor and cut-n-paste it into the shell.
-
-1. Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly.
+1. Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly. Here `SPARK_HOME`
+denotes the directory where you have extracted Spark (for previous assignments).
 
 `SPARK_HOME/bin/spark-shell`
 
