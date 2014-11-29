@@ -1,0 +1,35 @@
+val vertexArray = Array(
+    (1L, "Alabama"), (2L, "Arizona"), (3L, "Arkansas"), (4L, "California"), (5L, "Colorado"),
+    (6L, "Connecticut"), (7L, "District of Columbia"), (8L, "Delaware"), (9L, "Florida"), (10L, "Georgia"),
+    (11L, "Idaho"), (12L, "Illinois"), (13L, "Indiana"), (14L, "Iowa"), (15L, "Kansas"),
+    (16L, "Kentucky"), (17L, "Louisiana"), (18L, "Maine"), (19L, "Maryland"), (20L, "Massachusetts"),
+    (21L, "Michigan"), (22L, "Minnesota"), (23L, "Mississippi"), (24L, "Missouri"), (25L, "Montana"),
+    (26L, "Nebraska"), (27L, "Nevada"), (28L, "New Hampshire"), (29L, "New Jersey"), (30L, "New Mexico"),
+    (31L, "New York"), (32L, "North Carolina"), (33L, "North Dakota"), (34L, "Ohio"), (35L, "Oklahoma"),
+    (36L, "Oregon"), (37L, "Pennsylvania"), (38L, "Rhode Island"), (39L, "South Carolina"), (40L, "South Dakota"),
+    (41L, "Tennessee"), (42L, "Texas"), (43L, "Utah"), (44L, "Vermont"), (45L, "Virginia"),
+    (46L, "Washington"), (47L, "West Virginia"), (48L, "Wisconsin"), (49L, "Wyoming")
+)
+
+val edgeArray = Array (
+    Edge(1L, 9L, 196.1), Edge(1L, 10L, 291.3), Edge(1L, 23L, 323.9), Edge(1L, 41L, 146.7), Edge(3L, 17L, 166.5), Edge(3L, 24L, 325.3), Edge(3L, 23L, 282.8),
+    Edge(3L, 35L, 198.2), Edge(3L, 41L, 125.1), Edge(3L, 42L, 65.0), Edge(2L, 4L, 198.4), Edge(2L, 5L, 0.0), Edge(2L, 30L, 391.0), Edge(2L, 27L, 181.4),
+    Edge(2L, 43L, 275.8), Edge(4L, 27L, 608.2), Edge(4L, 36L, 216.3), Edge(5L, 15L, 207.7), Edge(5L, 26L, 173.2), Edge(5L, 30L, 333.0), Edge(5L, 35L, 52.9),
+    Edge(5L, 43L, 276.1), Edge(5L, 49L, 260.2), Edge(6L, 20L, 86.5), Edge(6L, 31L, 82.3), Edge(6L, 38L, 40.3), Edge(7L, 19L, 24.6), Edge(7L, 45L, 1.9),
+    Edge(8L, 19L, 122.0), Edge(8L, 29L, 1.4), Edge(8L, 37L, 22.6), Edge(9L, 10L, 261.4), Edge(10L, 32L, 68.6), Edge(10L, 39L, 249.6), Edge(10L, 41L, 72.6),
+    Edge(14L, 22L, 262.1), Edge(14L, 24L, 235.0), Edge(14L, 26L, 148.9), Edge(14L, 40L, 85.6), Edge(14L, 48L, 86.7), Edge(11L, 25L, 569.8), Edge(11L, 27L, 153.0),
+    Edge(11L, 36L, 305.8), Edge(11L, 43L, 153.6), Edge(11L, 46L, 210.3), Edge(11L, 49L, 170.7), Edge(12L, 14L, 200.5), Edge(12L, 13L, 295.5), Edge(12L, 16L, 122.4),
+    Edge(12L, 24L, 331.6), Edge(12L, 48L, 144.4), Edge(13L, 16L, 296.0), Edge(13L, 21L, 108.4), Edge(13L, 34L, 178.8), Edge(15L, 24L, 307.5), Edge(15L, 26L, 356.5),
+    Edge(15L, 35L, 409.1), Edge(16L, 24L, 59.8), Edge(16L, 34L, 155.5), Edge(16L, 41L, 338.5), Edge(16L, 45L, 119.0), Edge(16L, 47L, 79.1), Edge(17L, 23L, 456.6),
+    Edge(17L, 42L, 222.7), Edge(20L, 28L, 86.7), Edge(20L, 31L, 49.4), Edge(20L, 38L, 62.6), Edge(20L, 44L, 40.9), Edge(19L, 37L, 195.7), Edge(19L, 45L, 253.7),
+    Edge(19L, 47L, 174.0), Edge(18L, 28L, 159.3), Edge(21L, 34L, 69.7), Edge(21L, 48L, 205.1), Edge(22L, 33L, 217.1), Edge(22L, 40L, 180.8), Edge(22L, 48L, 291.1),
+    Edge(24L, 26L, 53.6), Edge(24L, 35L, 34.4), Edge(24L, 41L, 60.9), Edge(23L, 41L, 119.2), Edge(25L, 33L, 210.8), Edge(25L, 40L, 65.3), Edge(25L, 49L, 377.7),
+    Edge(32L, 39L, 312.2), Edge(32L, 41L, 218.9), Edge(32L, 45L, 327.7), Edge(33L, 40L, 359.0), Edge(26L, 40L, 399.4), Edge(26L, 49L, 138.0), Edge(28L, 44L, 180.0),
+    Edge(29L, 31L, 103.4), Edge(29L, 37L, 150.9), Edge(30L, 35L, 34.5), Edge(30L, 42L, 536.2), Edge(30L, 43L, 0.0), Edge(27L, 36L, 152.5), Edge(27L, 43L, 344.6),
+    Edge(31L, 37L, 306.1), Edge(31L, 44L, 80.3), Edge(34L, 37L, 92.4), Edge(34L, 47L, 243.5), Edge(35L, 42L, 715.4), Edge(36L, 46L, 385.8), Edge(37L, 47L, 118.6),
+    Edge(40L, 49L, 137.7), Edge(41L, 45L, 110.7), Edge(43L, 49L, 173.1), Edge(45L, 47L, 381.2)
+)
+
+val vertexRDD: RDD[(Long, (String, Int))] = sc.parallelize(vertexArray)
+val edgeRDD: RDD[Edge[Double]] = sc.parallelize(edgeArray)
+val graph: Graph[(String, Int), Double] = Graph(vertexRDD, edgeRDD)
