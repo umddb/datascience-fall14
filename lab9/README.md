@@ -55,138 +55,139 @@ Guide](http://spark.apache.org/docs/latest/graphx-programming-guide.html#getting
 The following examples are taken either from that guide, or from [another guide](https://github.com/amplab/datascience-sp14/blob/master/lab10/graphx-lab.md) by the authors.
 
 We will use the *Spark Scala Shell* directly. It might be better for you to write your code in a text editor and cut-n-paste it into the shell.
-1. Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly. Here `SPARK_HOME`
-denotes the directory where you have extracted Spark (for previous assignments).
 
-`SPARK_HOME/bin/spark-shell`
+    1. Start the Spark shell. This is basically a Scala shell with appropriate libraries loaded for Spark, so you can also run Scala commands here directly. Here `SPARK_HOME`
+    denotes the directory where you have extracted Spark (for previous assignments).
 
-1. Import the GraphX Packages. We are ready to start using GraphX at this point.
+    `SPARK_HOME/bin/spark-shell`
 
-```
-import org.apache.spark.graphx._
-import org.apache.spark.graphx.lib._
-import org.apache.spark.rdd.RDD
-```
+    1. Import the GraphX Packages. We are ready to start using GraphX at this point.
 
-1. Load some data. First we will define two arrays.
+    ```
+    import org.apache.spark.graphx._
+    import org.apache.spark.graphx.lib._
+    import org.apache.spark.rdd.RDD
+    ```
 
-```
-val vertexArray = Array(
-  (1L, ("Alice", 28)),
-  (2L, ("Bob", 27)),
-  (3L, ("Charlie", 65)),
-  (4L, ("David", 42)),
-  (5L, ("Ed", 55)),
-  (6L, ("Fran", 50))
-  )
-val edgeArray = Array(
-  Edge(2L, 1L, 7),
-  Edge(2L, 4L, 2),
-  Edge(3L, 2L, 4),
-  Edge(3L, 6L, 3),
-  Edge(4L, 1L, 1),
-  Edge(5L, 2L, 2),
-  Edge(5L, 3L, 8),
-  Edge(5L, 6L, 3)
-  )
-```
+    1. Load some data. First we will define two arrays.
 
-1. Then we will create the graph out of them, by first creating two RDDs. The first two statements create RDDs by using the `sc.parallelize()` command.
+    ```
+    val vertexArray = Array(
+      (1L, ("Alice", 28)),
+      (2L, ("Bob", 27)),
+      (3L, ("Charlie", 65)),
+      (4L, ("David", 42)),
+      (5L, ("Ed", 55)),
+      (6L, ("Fran", 50))
+      )
+    val edgeArray = Array(
+      Edge(2L, 1L, 7),
+      Edge(2L, 4L, 2),
+      Edge(3L, 2L, 4),
+      Edge(3L, 6L, 3),
+      Edge(4L, 1L, 1),
+      Edge(5L, 2L, 2),
+      Edge(5L, 3L, 8),
+      Edge(5L, 6L, 3)
+      )
+    ```
 
-```
-val vertexRDD: RDD[(Long, (String, Int))] = sc.parallelize(vertexArray)
-val edgeRDD: RDD[Edge[Int]] = sc.parallelize(edgeArray)
-val graph: Graph[(String, Int), Int] = Graph(vertexRDD, edgeRDD)
-```
+    1. Then we will create the graph out of them, by first creating two RDDs. The first two statements create RDDs by using the `sc.parallelize()` command.
 
-1. The Graph class supports quite a few operators, most of which return an RDD as the type.
+    ```
+    val vertexRDD: RDD[(Long, (String, Int))] = sc.parallelize(vertexArray)
+    val edgeRDD: RDD[Edge[Int]] = sc.parallelize(edgeArray)
+    val graph: Graph[(String, Int), Int] = Graph(vertexRDD, edgeRDD)
+    ```
 
-    - `graph.vertices.collect()`: `graph.vertices` just returns the first RDD that was created above, and `collect()` will get all the data from the RDD and print it (this should only be done for small RDDs)
-    - `graph.degrees`: This returns an RDD with the degree for each vertex -- use `collect()` to print and see
-    
+    1. The Graph class supports quite a few operators, most of which return an RDD as the type.
 
-See the Getting Started guide for other built-in functions.
+        - `graph.vertices.collect()`: `graph.vertices` just returns the first RDD that was created above, and `collect()` will get all the data from the RDD and print it (this should only be done for small RDDs)
+        - `graph.degrees`: This returns an RDD with the degree for each vertex -- use `collect()` to print and see
+        
 
-
-1. The following code finds the users who are at least 30 years old using `filter`.
-
-`graph.vertices.filter { case (id, (name, age)) => age > 30 }.foreach { case (id, (name, age)) => println(name + " is " + age) }`
-
-`case` is a powerful construct in Scala that is used to do pattern matching.
-
-1. Graph Triplets: One of the core functionalities of GraphX is exposed through the RDD `triplets`. There is one triplet for each edge, that contains information about
-both the vertices and the edge information. Take a look through:
-`graph.triplets.collect()`
-
-The output is somewhat hard to parse, but you can see the first entry is: `((2,(Bob,27)),(1,(Alice,28)),7)`, i.e., it contains the full information for both the endpoint
-vertices, and the edge information itself. 
-
-More specifically, a triplet has the following fields: `srcAttr` (the source vertex property), `dstAttr`, `attr` (the edge property), `srcID` (source vertex Id), `dstId`
-
-The following commands will print out information for each edge using the triplets. Note that the following would be hard to do without using triplets, because the data is
-split across multiple RDDs.
-
-`graph.triplets.foreach {t => println("Source attribute: " + t.srcAttr + ", Destination attribute: " + t.dstAttr + ", Edge attribute: " + t.attr)}`
-
-The following command shows another use of `case` to retrieve information from within `srcAttr`. This is the preferred way of doing `casting` in Scala.
-
-`graph.triplets.foreach {t => t.srcAttr match { case (name, age) => println("Source name: " + name)} }`
-
-1. The `subgraph` command can be used to create subgraphs by applying predicates to filters. 
-
-`val olderUsers = graph.subgraph(vpred = (id, attr) => attr._2 > 30)`
-
-You can verify that only the vertices with age > 30 are present by doing `g1.vertices.collect()`
+    See the Getting Started guide for other built-in functions.
 
 
-1. The core aggregation primitive in GraphX is called `mapReduceTriplets`, and has the following signature.
+    1. The following code finds the users who are at least 30 years old using `filter`.
 
-```
-class Graph[VD, ED] {
-  def mapReduceTriplets[A](
-      map: EdgeTriplet[VD, ED] => Iterator[(VertexId, A)],
-      reduce: (A, A) => A)
-    : VertexRDD[A]
-}
-```
+    `graph.vertices.filter { case (id, (name, age)) => age > 30 }.foreach { case (id, (name, age)) => println(name + " is " + age) }`
 
-`mapReduceTriplets` applies the user-provided `map` operation to each triplet (in `graph.triplets`), resulting in messages being sent to either of the endpoints. The
-messages are aggregate using the user-provided `reduce` function.
+    `case` is a powerful construct in Scala that is used to do pattern matching.
 
-The following code uses this operator on a randomly generated graph to compute the average age of older followers for each user. The example is copied verbatim from 
-the Getting Started guide, where more details are provided.
+    1. Graph Triplets: One of the core functionalities of GraphX is exposed through the RDD `triplets`. There is one triplet for each edge, that contains information about
+    both the vertices and the edge information. Take a look through:
+    `graph.triplets.collect()`
 
-```
-// Import random graph generation library
-import org.apache.spark.graphx.util.GraphGenerators
-// Create a graph with "age" as the vertex property.  Here we use a random graph for simplicity.
-val graph: Graph[Double, Int] =
-  GraphGenerators.rmatGraph(sc, 40, 200).mapVertices( (id, _) => id.toDouble )
-// Compute the number of older followers and their total age
-val olderFollowers: VertexRDD[(Int, Double)] = graph.mapReduceTriplets[(Int, Double)](
-  triplet => { // Map Function
-    if (triplet.srcAttr > triplet.dstAttr) {
-      // Send message to destination vertex containing counter and age
-      Iterator((triplet.dstId, (1, triplet.srcAttr)))
-    } else {
-      // Don't send a message for this triplet
-      Iterator.empty
+    The output is somewhat hard to parse, but you can see the first entry is: `((2,(Bob,27)),(1,(Alice,28)),7)`, i.e., it contains the full information for both the endpoint
+    vertices, and the edge information itself. 
+
+    More specifically, a triplet has the following fields: `srcAttr` (the source vertex property), `dstAttr`, `attr` (the edge property), `srcID` (source vertex Id), `dstId`
+
+    The following commands will print out information for each edge using the triplets. Note that the following would be hard to do without using triplets, because the data is
+    split across multiple RDDs.
+
+    `graph.triplets.foreach {t => println("Source attribute: " + t.srcAttr + ", Destination attribute: " + t.dstAttr + ", Edge attribute: " + t.attr)}`
+
+    The following command shows another use of `case` to retrieve information from within `srcAttr`. This is the preferred way of doing `casting` in Scala.
+
+    `graph.triplets.foreach {t => t.srcAttr match { case (name, age) => println("Source name: " + name)} }`
+
+    1. The `subgraph` command can be used to create subgraphs by applying predicates to filters. 
+
+    `val olderUsers = graph.subgraph(vpred = (id, attr) => attr._2 > 30)`
+
+    You can verify that only the vertices with age > 30 are present by doing `g1.vertices.collect()`
+
+
+    1. The core aggregation primitive in GraphX is called `mapReduceTriplets`, and has the following signature.
+
+    ```
+    class Graph[VD, ED] {
+      def mapReduceTriplets[A](
+          map: EdgeTriplet[VD, ED] => Iterator[(VertexId, A)],
+          reduce: (A, A) => A)
+        : VertexRDD[A]
     }
-  },
-  // Add counter and age
-  (a, b) => (a._1 + b._1, a._2 + b._2) // Reduce Function
-)
-// Divide total age by number of older followers to get average age of older followers
-val avgAgeOfOlderFollowers: VertexRDD[Double] =
-  olderFollowers.mapValues( (id, value) => value match { case (count, totalAge) => totalAge / count } )
-// Display the results
-avgAgeOfOlderFollowers.collect.foreach(println(_))
-```
+    ```
 
-Note the key functions here are the `map` function where for every triplet, a message is generated if the follower is older than the user (i.e., if `srcAttr > dstAttr`). 
-The messages are aggregated by summing, so at the end of the `reduce`, we have the total number of older followers as well as a sum of their ages.
+    `mapReduceTriplets` applies the user-provided `map` operation to each triplet (in `graph.triplets`), resulting in messages being sent to either of the endpoints. The
+    messages are aggregate using the user-provided `reduce` function.
 
-The code afterwards simply finds the average age.
+    The following code uses this operator on a randomly generated graph to compute the average age of older followers for each user. The example is copied verbatim from 
+    the Getting Started guide, where more details are provided.
+
+    ```
+    // Import random graph generation library
+    import org.apache.spark.graphx.util.GraphGenerators
+    // Create a graph with "age" as the vertex property.  Here we use a random graph for simplicity.
+    val graph: Graph[Double, Int] =
+      GraphGenerators.rmatGraph(sc, 40, 200).mapVertices( (id, _) => id.toDouble )
+    // Compute the number of older followers and their total age
+    val olderFollowers: VertexRDD[(Int, Double)] = graph.mapReduceTriplets[(Int, Double)](
+      triplet => { // Map Function
+        if (triplet.srcAttr > triplet.dstAttr) {
+          // Send message to destination vertex containing counter and age
+          Iterator((triplet.dstId, (1, triplet.srcAttr)))
+        } else {
+          // Don't send a message for this triplet
+          Iterator.empty
+        }
+      },
+      // Add counter and age
+      (a, b) => (a._1 + b._1, a._2 + b._2) // Reduce Function
+    )
+    // Divide total age by number of older followers to get average age of older followers
+    val avgAgeOfOlderFollowers: VertexRDD[Double] =
+      olderFollowers.mapValues( (id, value) => value match { case (count, totalAge) => totalAge / count } )
+    // Display the results
+    avgAgeOfOlderFollowers.collect.foreach(println(_))
+    ```
+
+    Note the key functions here are the `map` function where for every triplet, a message is generated if the follower is older than the user (i.e., if `srcAttr > dstAttr`). 
+    The messages are aggregated by summing, so at the end of the `reduce`, we have the total number of older followers as well as a sum of their ages.
+
+    The code afterwards simply finds the average age.
 
 ### Assignment Part 2
 
