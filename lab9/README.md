@@ -92,7 +92,6 @@ val edgeArray = Array(
 ```
 
 4. Then we will create the graph out of them, by first creating two RDDs. The first two statements create RDDs by using the `sc.parallelize()` command.
-
 ```
 val vertexRDD: RDD[(Long, (String, Int))] = sc.parallelize(vertexArray)
 val edgeRDD: RDD[Edge[Int]] = sc.parallelize(edgeArray)
@@ -100,17 +99,15 @@ val graph: Graph[(String, Int), Int] = Graph(vertexRDD, edgeRDD)
 ```
 
 5. The Graph class supports quite a few operators, most of which return an RDD as the type.
-
     - `graph.vertices.collect()`: `graph.vertices` just returns the first RDD that was created above, and `collect()` will get all the data from the RDD and print it (this should only be done for small RDDs)
     - `graph.degrees`: This returns an RDD with the degree for each vertex -- use `collect()` to print and see
-    
-
 See the Getting Started guide for other built-in functions.
 
 
 6. The following code finds the users who are at least 30 years old using `filter`.
-
-`graph.vertices.filter { case (id, (name, age)) => age > 30 }.foreach { case (id, (name, age)) => println(name + " is " + age) }`
+```
+graph.vertices.filter { case (id, (name, age)) => age > 30 }.foreach { case (id, (name, age)) => println(name + " is " + age) }
+```
 
 `case` is a powerful construct in Scala that is used to do pattern matching.
 
