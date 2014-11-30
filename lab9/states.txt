@@ -1,4 +1,4 @@
-val vertexArray = Array(
+val vertexArray1 = Array(
     (1L, "Alabama"), (2L, "Arizona"), (3L, "Arkansas"), (4L, "California"), (5L, "Colorado"),
     (6L, "Connecticut"), (7L, "District of Columbia"), (8L, "Delaware"), (9L, "Florida"), (10L, "Georgia"),
     (11L, "Idaho"), (12L, "Illinois"), (13L, "Indiana"), (14L, "Iowa"), (15L, "Kansas"),
@@ -11,7 +11,7 @@ val vertexArray = Array(
     (46L, "Washington"), (47L, "West Virginia"), (48L, "Wisconsin"), (49L, "Wyoming")
 )
 
-val edgeArray = Array (
+val edgeArray1 = Array (
     Edge(1L, 9L, 196.1), Edge(1L, 10L, 291.3), Edge(1L, 23L, 323.9), Edge(1L, 41L, 146.7), Edge(3L, 17L, 166.5), Edge(3L, 24L, 325.3), Edge(3L, 23L, 282.8),
     Edge(3L, 35L, 198.2), Edge(3L, 41L, 125.1), Edge(3L, 42L, 65.0), Edge(2L, 4L, 198.4), Edge(2L, 5L, 0.0), Edge(2L, 30L, 391.0), Edge(2L, 27L, 181.4),
     Edge(2L, 43L, 275.8), Edge(4L, 27L, 608.2), Edge(4L, 36L, 216.3), Edge(5L, 15L, 207.7), Edge(5L, 26L, 173.2), Edge(5L, 30L, 333.0), Edge(5L, 35L, 52.9),
@@ -30,6 +30,6 @@ val edgeArray = Array (
     Edge(40L, 49L, 137.7), Edge(41L, 45L, 110.7), Edge(43L, 49L, 173.1), Edge(45L, 47L, 381.2)
 )
 
-val vertexRDD: RDD[(Long, (String, Int))] = sc.parallelize(vertexArray)
-val edgeRDD: RDD[Edge[Double]] = sc.parallelize(edgeArray)
-val graph: Graph[(String, Int), Double] = Graph(vertexRDD, edgeRDD)
+val vertexRDD1: RDD[(Long, String)] = sc.parallelize(vertexArray1)
+val edgeRDD1: RDD[Edge[Double]] = sc.parallelize(edgeArray1)
+val graph1: Graph[String, Double] = Graph(vertexRDD1, edgeRDD1)
