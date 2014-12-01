@@ -13,3 +13,7 @@
 - [Data Extraction, Integration, and Wrangling](wrangling.md)
 
 - [Implemetation of Relational Databases](relational-databases.md)
+
+- [NoSQL Key-Value Stores](key-value-stores.md)
+
+- [Graphs](graphs.md)
