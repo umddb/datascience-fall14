@@ -18,21 +18,21 @@
     - etc...
 
 - Examples of Tasks
-- {\bf Continuous} (SQL) queries 
-	- E.g. moving average over last hour every 10 mins
-	- SQL extended to support ``windows'' over streams
-	- Proposed extensions: SEQUENCE, CQL, StreamSQL
-- Pattern recognition
-	- Alert me when: $A$, then $B$ within 10 mins
-	- How to specify ? StreamSQL has some support
-- Probabilistic modeling; Applying financial models
-	- Infer hidden variables
-	- Remove noise (from measured readings)
-	- Do complex analysis to decide whether to {\em buy}
-	- We don't even know how to specify these
-- Multimedia data ?
-	- Online object detection, activity detection
-	- Correlating events from different streams
+    - **Continuous** (SQL) queries 
+        - E.g. moving average over last hour every 10 mins
+        - SQL extended to support ``windows'' over streams
+        - Proposed extensions: SEQUENCE, CQL, StreamSQL
+    - Pattern recognition
+        - Alert me when: $A$, then $B$ within 10 mins
+        - How to specify ? StreamSQL has some support
+    - Probabilistic modeling; Applying financial models
+        - Infer hidden variables
+        - Remove noise (from measured readings)
+        - Do complex analysis to decide whether to *buy*
+        - We don't even know how to specify these
+    - Multimedia data ?
+        - Online object detection, activity detection
+        - Correlating events from different streams
 
 - Why can't we use traditional DBMS ?
 
@@ -76,3 +76,10 @@
             - [LogStash](http://logstash.net/): focus more on log data analysis
             - Messaging systems: ZeroMQ, RabbitMQ, Kafka, etc.
      - Somewhat fragmented and rapidly evolving space, with many open and exciting questions
+
+- Apache Storm vs Spark Streaming
+    - Storm is a true streaming system (handles tuple-at-a-time) and can achieve better latencies
+    - Spark Streaming uses **micro-batching** and is fundamentally limited in the latencies it can deliver (because it is based on a batch analytics platform, i.e., Spark)
+    - See the following for more discussion of these concepts:
+        - [Overview and comparison of Storm and Spark](http://www.zdatainc.com/2014/09/apache-storm-apache-spark/)
+        - [Recent slides doing a more fair comparison of the two](http://www.slideshare.net/ptgoetz/apache-storm-vs-spark-streaming)
