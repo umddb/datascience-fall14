@@ -62,6 +62,8 @@
          - Today the support for streams in standard DBMS is still somewhat ad hoc 
          - There are also many specialized vertical tools for specific applications (e.g., finance)
 
+- Also a lot of theoretical work
+    - Especially on **one-pass algorithms**, where you only get one look at the data
 
 - Streaming and real-time analytics has re-emerged in recent years in the NoSQL world
      - [A detailed motivation/rationale by the Apache Storm Project](https://storm.apache.org/documentation/Rationale.html)

@@ -18,8 +18,8 @@
 
 - [NoSQL Key-Value Stores](key-value-stores.md)
 
-- Data Streams/Real-time Analytics (TBP)
+- [Data Streams/Real-time Analytics](streaming.md)
 
 - [Graphs](graphs.md)
 
-- Cloud Computing (TBP)
+- [Cloud Computing](cloudcomputing.pptx)
