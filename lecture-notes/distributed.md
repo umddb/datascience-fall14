@@ -65,3 +65,25 @@
     - Parallel databases also suffered with *slow loading*
         - Databases are generally intended for repeated uses
         - Many of the batch analytics tasks are one-off -- the cost of loading those into database quite high
+
+
+- The MapReduce Programming Model
+	- Proposed by Google around 2005
+	- [PDF Notes from my 724 class](mapreduce.pdf)
+	- [The original paper is also quite accessible](research.google.com/archive/mapreduce-osdi04.pdf)
+
+
+- [Hadoop](http://hadoop.apache.org/)
+	- An open source implementation of the MapReduce model
+	- The term has since evolved to represent an entire ecosystem built around the MR model, including HBase, Pig, YARN, and several other projects
+
+- [DryadLINQ](http://research.microsoft.com/en-us/projects/dryadlinq/)
+	- Aimed at similar types of applications as Hadoop/MR
+	- More expressive and powerful framework (quite similar to Spark)
+
+- [Spark](http://spark.apache.org/)
+	- Key benefit over Hadoop: Avoid disk-based data transfer -- Hadoop uses the file system to transfer data between mappers and reducers
+	- Key abstraction: Resilient Distributed Datasets (RDDs)
+		- All data is stored in RDDs
+		- Data-parallel operations to transform RDDs
+		- See [Spark Programming Guide](http://spark.apache.org/docs/latest/programming-guide.html) or the Lab for more details
